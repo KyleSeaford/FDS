@@ -9,6 +9,7 @@ The Fire Detection System (FDS) utilizes a network of sensors connected to Raspb
 ## Features
 
 - **Sensor Network**: Utilizes a network of sensors including smoke detectors, temperature sensors, and cameras.
+- **Solar Powered Nodes**: Each individual node in the network is solar powered, ensuring continuous operation even in remote areas without access to conventional power sources.
 - **Automated Responses**: Upon detecting any changes or triggers from the sensors, the system automatically initiates responses such as email alerts, text alerts, and notifications to emergency responders.
 - **Data Visualization**: The data collected from the sensor network can be viewed on a webpage created using Flask and HTML, providing real-time monitoring and visualization of environmental conditions.
 
