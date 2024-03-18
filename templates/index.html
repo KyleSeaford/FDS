@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Information - Home</title>
+        <link rel="icon" type="image/x-icon" href="imgs/start.png">
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <h1>Information</h1>
+        <h2>System Information <br> system's name: RON</h2>
+
+        <h3 id="ram-usage">RAM Usage: </h3>
+        <script>
+            $(document).ready(function(){
+                setInterval(function(){
+                    $.getJSON('/ram_usage', function(data) {
+                        $('#ram-usage').text('RAM Usage: ' + data.ram_usage + '%');
+                    });
+                }, 1000); // Update every second
+            });
+        </script>
+
+        <h3 id="current_time">Systems date and time:</h3>
+        <script>
+            $(document).ready(function(){
+                setInterval(function(){
+                    $.getJSON('/current_time', function(data) {
+                        $('#current_time').text('Systems date and time: ' + data.current_time);
+                    });
+                }, 1000); // Update every second
+            });
+        </script>
+        </script>
+    </body>
+</html>
+
+
+<style>
+    body {
+        background-color: #2F4F4F;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        color: #B8860B; 
+        font-size: 2em;
+    }
+
+    h2 {
+    text-align: center;
+    color: silver; 
+    font-size: 1.5em;
+    }
+
+    h3 {
+        text-align: center;
+        color: white; 
+        font-size: 1.2em;
+    }
+</style>
