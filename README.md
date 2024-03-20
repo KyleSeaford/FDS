@@ -1,8 +1,18 @@
 # Fire Detection System (FDS)
 
+## TODO
+- [ ] make static folder with imgs and css in
+- [ ] alline nav buttons to middle
+- [ ] remove big gap between date and time
+- [ ] make pi comunicate to my computer
+- [ ] make website run off my computer with pi's information
+- [ ] get and make pi work with all the sensors
+- [ ] make dashboard for one pi, ensure dashboard is able to be built on (esily add more pis)
+- [ ] make it look good
+- [ ] test
 
-- [ ] make static folder with imgs and css in 
-- Welcome to the Fire Detection System (FDS) repository, a system designed for early detection and prevention of wildfires in remote and forested areas.
+## introduction
+Welcome to the Fire Detection System (FDS) repository, a system designed for early detection and prevention of wildfires in remote and forested areas.
 
 ## Overview
 
