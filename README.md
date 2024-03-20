@@ -2,7 +2,7 @@
 
 
 - [ ] make static folder with imgs and css in 
-Welcome to the Fire Detection System (FDS) repository, a system designed for early detection and prevention of wildfires in remote and forested areas.
+- Welcome to the Fire Detection System (FDS) repository, a system designed for early detection and prevention of wildfires in remote and forested areas.
 
 ## Overview
 
