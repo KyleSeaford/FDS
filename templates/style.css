@@ -1,10 +1,47 @@
+/* body styles */ 
 body {
     background-color: #2F4F4F;
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 20px;
 }
 
+/* headder styles */
+header {
+    background-color: #B8860B;
+    padding: 0px;
+    padding-right: 5px;
+    padding-top: 5px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: silver;
+    transition: background-color 0.3s;
+}
+
+
+
+/* text styles */
 h1 {
     text-align: center;
     color: #B8860B; 
@@ -18,7 +55,14 @@ h2 {
 }
 
 h3 {
-    text-align: center;
     color: white; 
     font-size: 1.2em;
+    padding-left: 5px;
+}
+
+/* nav bar style */
+h4 {
+    color: white; 
+    font-size: 1.2em;
+    padding-left: 5px;
 }
