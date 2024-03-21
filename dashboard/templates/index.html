@@ -9,6 +9,7 @@
         <script src="../static/js/time.js"></script>
         <script src="../static/js/tabButtons.js"></script>
         <script src="../static/js/date.js"></script>
+        <script src="../static/js/ram.js"></script>
     </head>
 
     <body>
@@ -28,6 +29,7 @@
                     <button class="tablink" onclick="openPage('Home', this, 'gray')" id="defaultOpen">Home</button>
                     <button class="tablink" onclick="openPage('Zone_1', this, 'gray')">Zone 1</button>
                     <button class="tablink" onclick="openPage('Zone_2', this, 'gray')">Zone 2</button>
+                    <a href="http://127.0.0.1:5000/ip" class="tablink">my ip</a>
                 </div>
 
                 <div class="logo">
@@ -40,15 +42,7 @@
             <h1>Information</h1>
             <h2>System Information <br> system's name: {{ name }}</h2>
             <h3 id="ram-usage">RAM Usage: </h3>
-            <script>
-                $(document).ready(function () {
-                    setInterval(function () {
-                        $.getJSON('/ram_usage', function (data) {
-                            $('#ram-usage').text('RAM Usage: ' + data.ram_usage + '%');
-                        });
-                    }, 1000); // Update every second
-                });
-            </script>
+        
         </div>
 
         <div id="Zone_1" class="tabcontent">

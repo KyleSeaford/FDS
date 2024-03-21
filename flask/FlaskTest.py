@@ -3,8 +3,10 @@ import psutil
 import datetime
 import platform
 import requests
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)  # Allow CORS for all routes
 
 def get_ram_usage():
     memory_usage = psutil.virtual_memory().percent
@@ -26,7 +28,7 @@ def ip():
 @app.route('/')
 def home():
     system_name = get_system_name()
-    return render_template('index.html', name=system_name)
+    return "FDS "+ system_name
 
 @app.route('/ram_usage')
 def ram_usage():
