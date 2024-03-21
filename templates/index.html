@@ -7,61 +7,47 @@
         <link rel="stylesheet" type="text/css" href="../static/style.css">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="../static/js/tabButtons.js"></script>
+        <script src="../static/js/time.js"></script>
+        <script src="../static/js/date.js"></script>
     </head>
 
     <body>
         <header>
             <nav>
                 <div class="date-time">
+                    <h4 id="current_time">Current Time:</h4>
                     <h4 id="current_date">Current date:</h4>
-                    <script>
-                        $(document).ready(function(){
-                            setInterval(function(){
-                                $.getJSON('/current_date', function(data) {
-                                    $('#current_date').text('Current Date: ' + data.current_date);
-                                });
-                            }, 1000); // Update every second
-                        });
-                    </script>
-        
-                    <h4 id="current_time">Current Time</h4>
-                    <script>
-                        $(document).ready(function(){
-                            setInterval(function(){
-                                $.getJSON('/current_time', function(data) {
-                                    $('#current_time').text('Current Time: ' + data.current_time);
-                                })
-                            }, 1000); // update evrey second 
-                        })
-                    </script>
                 </div>
-                <div class="buttons">
-                    <ul>
-                        <li><a href="#">Button 1</a></li>
-                        <li><a href="#">Button 2</a></li>
-                        <li><a href="#">Button 3</a></li>
-                    </ul>
+
+                <div class="tab">
+                    <button class="tablinks" onclick="openTab(event, 'Home')" id="defaultOpen">Home</button>
+                    <button class="tablinks" onclick="openTab(event, '1')">1</button>
+                    <button class="tablinks" onclick="openTab(event, '2')">2</button>
                 </div>
+
                 <div class="logo">
-                    <img src="..\static\start.png" alt="Logo" width="60" height="60">
+                    <img src="../static/imgs/start.png" alt="Logo" width="60" height="60">
                 </div>
             </nav>
         </header>
+        
 
+        <div id="Home" class="tabcontent">
+            <h1>Information</h1>
+            <h2>System Information <br> system's name: {{ name }}</h2>
 
-        <h1>Information</h1>
-        <h2>System Information <br> system's name: {{ name }}</h2>
-
-        <h3 id="ram-usage">RAM Usage: </h3>
-        <script>
-            $(document).ready(function(){
-                setInterval(function(){
-                    $.getJSON('/ram_usage', function(data) {
-                        $('#ram-usage').text('RAM Usage: ' + data.ram_usage + '%');
-                    });
-                }, 1000); // Update every second
-            });
-        </script>
+            <h3 id="ram-usage">RAM Usage: </h3>
+            <script>
+                $(document).ready(function(){
+                    setInterval(function(){
+                        $.getJSON('/ram_usage', function(data) {
+                            $('#ram-usage').text('RAM Usage: ' + data.ram_usage + '%');
+                        });
+                    }, 1000); // Update every second
+                });
+            </script>
+        </div>
 
 
     </body>

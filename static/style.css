@@ -8,61 +8,74 @@ body {
 /* header styles */
 header {
     background-color: #B8860B;
-    padding: 0px;
-    padding-right: 5px;
-    padding-top: 5px;
+    padding: 5px;
+
 }
 
 nav {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    height: 65px;
+    width: 100%;
 }
 
-nav ul {
+.date-time {
     display: flex;
-    list-style: none;
+    flex-direction: column;
+}
+
+.date-time h4 {
+    color: white; 
+    font-size: 1.2em;
+    padding-left: 5px;
     margin: 0;
-    padding: 0;
 }
 
-nav ul li a {
-    display: block;
-    padding: 10px;
-    color: white;
-    text-decoration: none;
+.logo {
+    margin-left: auto;
 }
 
-nav ul li a:hover {
-    background-color: silver;
+/* Add the following CSS to your existing stylesheet */
+
+/* Center the tab buttons */
+.tab {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px; /* Adjust spacing as needed */
+}
+
+/* Style the tab buttons */
+.tab button {
+    background-color: #f2f2f2;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 20px;
     transition: background-color 0.3s;
 }
 
+/* Style the active tab button */
+.tab button.active {
+    background-color: #4CAF50; /* Change color as desired */
+    color: white;
+}
+
+/* Add box shadow to the tab buttons */
+.tab button {
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); /* Adjust shadow as needed */
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
 
 
 /* text styles */
-h1 {
-    text-align: center;
-    color: #B8860B; 
-    font-size: 2em;
-}
-
-h2 {
-    text-align: center;
-    color: silver; 
-    font-size: 1.5em;
-}
-
-h3 {
+h1, h2, h3, h4 {
+    text-align: center; /* Center text */
     color: white; 
-    font-size: 1.2em;
-    padding-left: 5px;
-}
-
-/* nav bar style */
-h4 {
-    color: white; 
-    font-size: 1.2em;
-    padding-left: 5px;
+    font-size: 1.2em; /* Adjust font size */
 }
