@@ -5,6 +5,8 @@ import platform
 import requests
 from flask_cors import CORS
 
+from location import get_location
+
 app = Flask(__name__)
 CORS(app)  # Allow CORS for all routes
 
@@ -16,19 +18,25 @@ def get_system_name():
     system_name = platform.system()
     return system_name
 
-
 def get_public_ip_address():
     response = requests.get('https://httpbin.org/ip')
     return response.json()['origin']
 
-@app.route('/ip')
-def ip():
-    return jsonify({'ip': get_public_ip_address()})
+
 
 @app.route('/')
 def home():
     system_name = get_system_name()
     return "FDS "+ system_name
+
+@app.route('/location')
+def Location():
+    return jsonify({'location': get_location()})
+
+@app.route('/ip')
+def ip():
+    return jsonify({'ip': get_public_ip_address()})
+
 
 @app.route('/ram_usage')
 def ram_usage():
