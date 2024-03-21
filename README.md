@@ -11,6 +11,10 @@
 - [ ] Make it look good
 - [ ] Test
 
+## improvements 
+- [ ] replace ip location with gps data
+- [ ] 
+
 ## Introduction
 Welcome to the Fire Detection System (FDS) repository, a system designed for early detection and prevention of wildfires in remote and forested areas.
 
