@@ -2,6 +2,7 @@ from flask import Flask, render_template, jsonify
 import psutil
 import datetime
 import platform
+import requests
 
 app = Flask(__name__)
 
@@ -14,7 +15,13 @@ def get_system_name():
     return system_name
 
 
+def get_public_ip_address():
+    response = requests.get('https://httpbin.org/ip')
+    return response.json()['origin']
 
+@app.route('/ip')
+def ip():
+    return jsonify({'ip': get_public_ip_address()})
 
 @app.route('/')
 def home():
