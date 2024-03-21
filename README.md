@@ -1,17 +1,17 @@
 # Fire Detection System (FDS)
 
 ## TODO
-- [x] make static folder with imgs and css in
-- [ ] alline nav buttons to middle
-- [ ] remove big gap between date and time
-- [ ] make pi comunicate to my computer
-- [ ] make website run off my computer with pi's information
-- [ ] get and make pi work with all the sensors
-- [ ] make dashboard for one pi, ensure dashboard is able to be built on (esily add more pis)
-- [ ] make it look good
-- [ ] test
+- [x] make a static folder with images and CSS in
+- [ ] Align nav buttons to the middle
+- [ ] Remove the big gap between the date and time
+- [ ] Make Pi communicate with my computer
+- [ ] Make the website run off my computer with Pi's information
+- [ ] Get and make Pi work with all the sensors
+- [ ] Make a dashboard for one Pi, ensuring the dashboard is easily expandable (to add more Pis)
+- [ ] Make it look good
+- [ ] Test
 
-## introduction
+## Introduction
 Welcome to the Fire Detection System (FDS) repository, a system designed for early detection and prevention of wildfires in remote and forested areas.
 
 ## Overview
@@ -21,23 +21,23 @@ The Fire Detection System (FDS) utilizes a network of sensors connected to Raspb
 ## Features
 
 - **Sensor Network**: Utilizes a network of sensors including smoke detectors, temperature sensors, and cameras.
-- **Solar Powered Nodes**: Each individual node in the network is solar powered, ensuring continuous operation even in remote areas without access to conventional power sources.
+- **Solar-Powered Nodes**: Each node in the network is solar-powered, ensuring continuous operation even in remote areas without access to conventional power sources.
 - **Automated Responses**: Upon detecting any changes or triggers from the sensors, the system automatically initiates responses such as email alerts, text alerts, and notifications to emergency responders.
 - **Data Visualization**: The data collected from the sensor network can be viewed on a webpage created using Flask and HTML, providing real-time monitoring and visualization of environmental conditions.
 
 ## Usage
 
-the Fire Detection System (FDS) continuously monitors the environment for any signs of wildfires. Users can access the web interface to view real-time data and receive alerts in case of any detected anomalies.
+The Fire Detection System (FDS) continuously monitors the environment for any signs of wildfires. Users can access the web interface to view real-time data and receive alerts in case of any detected anomalies.
 
-## Acknowledgements
+## Acknowledgments
 
 We would like to acknowledge the following:
 
-- kyle seaford for programing it
+- Kyle Seaford for programming it
 - Raspberry Pi Foundation for providing the hardware platform.
 - Flask and HTML communities for providing tools for web development.
 - Emergency responders and organizations for their collaboration and support.
 
 ## Contact
 
-For any questions or inquiries related to this project, you can reach out to Kyle Seaford via email or through GitHub.
+For any questions or inquiries related to this project, you can reach out to Kyle Seaford via email or GitHub.
