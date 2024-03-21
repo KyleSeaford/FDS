@@ -1,7 +1,7 @@
 # Fire Detection System (FDS)
 
 ## TODO
-- [ ] make static folder with imgs and css in
+- [x] make static folder with imgs and css in
 - [ ] alline nav buttons to middle
 - [ ] remove big gap between date and time
 - [ ] make pi comunicate to my computer
