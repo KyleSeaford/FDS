@@ -34,42 +34,28 @@ nav {
     margin-left: auto;
 }
 
-/* Add the following CSS to your existing stylesheet */
-
-/* Center the tab buttons */
-.tab {
+.tablink-container {
     display: flex;
     justify-content: center;
-    margin-bottom: 10px; /* Adjust spacing as needed */
+    padding: 10px 0;
 }
 
-/* Style the tab buttons */
-.tab button {
-    background-color: #f2f2f2;
+.tablink {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px; 
+    font-size: 20px; 
     border: none;
     outline: none;
-    cursor: pointer;
-    padding: 10px 20px;
-    transition: background-color 0.3s;
+    margin: 5px;
+    width: 150px; 
+    height: 50px;
 }
 
-/* Style the active tab button */
-.tab button.active {
-    background-color: #4CAF50; /* Change color as desired */
+.tablink:hover {
+    background-color:  rgb(236, 231, 233);
     color: white;
-}
-
-/* Add box shadow to the tab buttons */
-.tab button {
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); /* Adjust shadow as needed */
-}
-
-/* Style the tab content */
-.tabcontent {
-    display: none;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-top: none;
 }
 
 
