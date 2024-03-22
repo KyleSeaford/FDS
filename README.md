@@ -1,9 +1,9 @@
-# Fire Detection System (FDS)
-Welcome to the Fire Detection System (FDS) repository, a system designed for early detection and prevention of wildfires in remote and forested areas.
+# Forest Defence System (FDS)
+Welcome to the Forest Defence System (FDS) repository, a system designed for early detection and prevention of wildfires in remote and forested areas.
 
 ## Overview
 
-The Fire Detection System (FDS) utilizes a network of sensors connected to Raspberry Pis to detect various environmental conditions such as smoke, temperature changes, and visual monitoring through cameras. These sensors continuously monitor the area for any signs of fire or smoke.
+The Forest Defence System (FDS) utilizes a network of sensors connected to Raspberry Pis to detect various environmental conditions such as smoke, temperature changes, and visual monitoring through cameras. These sensors continuously monitor the area for any signs of fire or smoke.
 
 ## Features
 
@@ -14,7 +14,7 @@ The Fire Detection System (FDS) utilizes a network of sensors connected to Raspb
 
 ## Usage
 
-The Fire Detection System (FDS) continuously monitors the environment for any signs of wildfires. Users can access the web interface to view real-time data and receive alerts in case of any detected anomalies.
+The Forest Defencen System (FDS) continuously monitors the environment for any signs of wildfires. Users can access the web interface to view real-time data and receive alerts in case of any detected anomalies.
 
 ## Acknowledgments
 
@@ -31,4 +31,3 @@ For any questions or inquiries related to this project, you can reach out to Kyl
 
 ## improvements 
 - [ ] replace ip location with gps data
-- [ ] 
