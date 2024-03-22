@@ -36,6 +36,7 @@ def Location():
 
 @app.route('/weather')
 def weather():
+    conditions = get_weather()
     return jsonify({'conditions': conditions})
 
 @app.route('/ip')

@@ -1,4 +1,4 @@
-/* body styles */ 
+/* body styles */
 body {
     background-color: #2F4F4F;
     font-family: Arial, sans-serif;
@@ -9,7 +9,6 @@ body {
 header {
     background-color: #B8860B;
     padding: 5px;
-
 }
 
 nav {
@@ -18,16 +17,33 @@ nav {
     width: 100%;
 }
 
-.date-time {
+.nav-content {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1; /* Allow the content to grow to fill the space */
 }
 
-.date-time h4 {
-    color: white; 
+.date-time,
+.geoData {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.date-time h4,
+.geoData h4 {
+    color: white;
     font-size: 1.2em;
-    padding-left: 5px;
     margin: 0;
+}
+
+.date-time {
+    margin-right: 20px; /* Adjust margin for spacing */
+}
+
+.geoData {
+    margin-left: 20px; /* Adjust margin for spacing */
 }
 
 .logo {
@@ -44,24 +60,23 @@ nav {
     background-color: black;
     color: white;
     cursor: pointer;
-    padding: 10px 20px; 
-    font-size: 20px; 
+    padding: 10px 20px;
+    font-size: 20px;
     border: none;
     outline: none;
     margin: 5px;
-    width: 150px; 
+    width: 150px;
     height: 50px;
 }
 
 .tablink:hover {
-    background-color:  rgb(236, 231, 233);
+    background-color: rgb(236, 231, 233);
     color: white;
 }
-
 
 /* text styles */
 h1, h2, h3, h4 {
     text-align: center; /* Center text */
-    color: white; 
+    color: white;
     font-size: 1.2em; /* Adjust font size */
 }
