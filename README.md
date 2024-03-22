@@ -1,21 +1,4 @@
 # Fire Detection System (FDS)
-
-## TODO
-- [x] make a static folder with images and CSS in
-- [ ] Align nav buttons to the middle
-- [ ] Remove the big gap between the date and time
-- [ ] Make Pi communicate with my computer
-- [ ] Make the website run off my computer with Pi's information
-- [ ] Get and make Pi work with all the sensors
-- [ ] Make a dashboard for one Pi, ensuring the dashboard is easily expandable (to add more Pis)
-- [ ] Make it look good
-- [ ] Test
-
-## improvements 
-- [ ] replace ip location with gps data
-- [ ] 
-
-## Introduction
 Welcome to the Fire Detection System (FDS) repository, a system designed for early detection and prevention of wildfires in remote and forested areas.
 
 ## Overview
@@ -45,3 +28,7 @@ We would like to acknowledge the following:
 ## Contact
 
 For any questions or inquiries related to this project, you can reach out to Kyle Seaford via email or GitHub.
+
+## improvements 
+- [ ] replace ip location with gps data
+- [ ] 
