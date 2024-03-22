@@ -20,15 +20,13 @@
             <nav>
                 <div class="tablink-container">
                     <button class="tablink" onclick="openPage('Zone_1', this, 'gray')" id="defaultOpen">Zone 1</button>
-                    <button class="tablink" onclick="openPage('Zone_2', this, 'gray')">Zone 2</button>
-                    <button class="tablink" onclick="openPage('Zone_3', this, 'gray')">Zone 3</button>
-                    <button class="tablink" onclick="openPage('Zone_4', this, 'gray')">Zone 4</button>
-                    <button class="tablink" onclick="openPage('Zone_5', this, 'gray')">Zone 5</button>
                 </div>
                 
                 <div class="logo">
                     <img src="../static/imgs/start.png" alt="Logo" width="60" height="60">
                 </div>
+
+                <button id="settingsButton" class="settingsButton">Settings</button>
             </nav>
         </header>
         
@@ -53,29 +51,12 @@
 
         <div id="Zone_2" class="tabcontent">
             <h1>Zone 2</h1>
-            <h2>Zone 2 Information <br> system's name: {{ name }}</h2>
+            <h2>Zone 2 Information</h2>
         </div>
 
-        <div id="Zone_3" class="tabcontent">
-            <h1>Zone 3</h1>
-            <h2>Zone 3 Information <br> system's name: {{ name }}</h2>
-        </div>
-
-        <div id="Zone_4" class="tabcontent">
-            <h1>Zone 4</h1>
-            <h2>Zone 4 Information <br> system's name: {{ name }}</h2>
-        </div>
-
-        <div id="Zone_5" class="tabcontent">
-            <h1>Zone 5</h1>
-            <h2>Zone 5 Information <br> system's name: {{ name }}</h2>
-        </div>
-
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="../static/js/tabButtons.js"></script>
-        <script>
-            document.getElementById("defaultOpen").click();
-        </script>
+        <script src="../static/js/zones.js"></script>
     </body>
 
 </html>

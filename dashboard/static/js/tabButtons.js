@@ -1,4 +1,5 @@
-function openPage(pageName, elmnt, color) {
+// Function to handle tab switching
+function openPage(pageName, elmnt, color, triggerClick = false) {
     var i, tabcontent, tablinks;
 
     // Hide all tab contents
@@ -20,4 +21,9 @@ function openPage(pageName, elmnt, color) {
     // Add the "clicked" class and set the background color for the clicked button
     elmnt.classList.add("clicked");
     elmnt.style.backgroundColor = color;
+
+    // Trigger click event for the button if specified
+    if (triggerClick) {
+        elmnt.click();
+    }
 }
