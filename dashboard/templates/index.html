@@ -17,47 +17,58 @@
     <body>
         <header>
             <nav>
-                <div class="nav-content">
-                    <div class="date-time">
-                        <h4 id="current_time">Current Time:</h4>
-                        <h4 id="current_date">Current date:</h4>
-                    </div>
-                
-                    <div class="geoData">
-                        <h4 id="current_location">current location:</h4>
-                        <h4 id="conditions">Current Weather:</h4>
-                    </div>
-                </div>
-                
-
                 <div class="tablink-container">
-                    <button class="tablink" onclick="openPage('Home', this, 'gray')" id="defaultOpen">Home</button>
-                    <button class="tablink" onclick="openPage('Zone_1', this, 'gray')">Zone 1</button>
+                    <button class="tablink" onclick="openPage('Zone_1', this, 'gray')" id="defaultOpen">Zone 1</button>
                     <button class="tablink" onclick="openPage('Zone_2', this, 'gray')">Zone 2</button>
+                    <button class="tablink" onclick="openPage('Zone_3', this, 'gray')">Zone 3</button>
+                    <button class="tablink" onclick="openPage('Zone_4', this, 'gray')">Zone 4</button>
+                    <button class="tablink" onclick="openPage('Zone_5', this, 'gray')">Zone 5</button>
                 </div>
-
+                
                 <div class="logo">
                     <img src="../static/imgs/start.png" alt="Logo" width="60" height="60">
                 </div>
             </nav>
         </header>
-
-        <div id="Home" class="tabcontent">
-            <h1>Information</h1>
-            <h2>System Information <br> system's name: {{ name }}</h2>
-            <h3 id="ram-usage">RAM Usage: </h3>
         
+        <div class="info-bar">
+            <div class="date-time">
+                <h4 id="current_time">Current Time:</h4>
+                <h4 id="current_date">Current date:</h4>
+            </div>
+            
+            <div class="geoData">
+                <h4 id="current_location">current location:</h4>
+                <h4 id="conditions">Current Weather:</h4>
+            </div>
         </div>
 
+
         <div id="Zone_1" class="tabcontent">
-            <h1>Zone 1</h1>
-            <h2>Zone 1 Information <br> system's name: {{ name }}</h2>
+            <h1>Information</h1>
+            <h2>System Information <br> system's name: {{ name }}</h2>
         </div>
 
         <div id="Zone_2" class="tabcontent">
             <h1>Zone 2</h1>
             <h2>Zone 2 Information <br> system's name: {{ name }}</h2>
         </div>
+
+        <div id="Zone_3" class="tabcontent">
+            <h1>Zone 3</h1>
+            <h2>Zone 3 Information <br> system's name: {{ name }}</h2>
+        </div>
+
+        <div id="Zone_4" class="tabcontent">
+            <h1>Zone 4</h1>
+            <h2>Zone 4 Information <br> system's name: {{ name }}</h2>
+        </div>
+
+        <div id="Zone_5" class="tabcontent">
+            <h1>Zone 5</h1>
+            <h2>Zone 5 Information <br> system's name: {{ name }}</h2>
+        </div>
+
 
         <script src="../static/js/tabButtons.js"></script>
         <script>

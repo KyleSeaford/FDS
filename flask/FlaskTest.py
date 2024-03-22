@@ -43,12 +43,6 @@ def weather():
 def ip():
     return jsonify({'ip': get_public_ip_address()})
 
-
-@app.route('/ram_usage')
-def ram_usage():
-    ram_usage = get_ram_usage()
-    return jsonify({'ram_usage': ram_usage})
-
 @app.route('/current_date')
 def current_date():
     return jsonify({'current_date': datetime.datetime.now().strftime("%Y-%m-%d")})

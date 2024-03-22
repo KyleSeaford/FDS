@@ -8,75 +8,61 @@ body {
 /* header styles */
 header {
     background-color: #B8860B;
-    padding: 5px;
+    padding: 0px;
 }
 
 nav {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
 }
 
-.nav-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-grow: 1; /* Allow the content to grow to fill the space */
-}
-
-.date-time,
-.geoData {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.date-time h4,
-.geoData h4 {
-    color: white;
-    font-size: 1.2em;
-    margin: 0;
-}
-
-.date-time {
-    margin-right: 20px; /* Adjust margin for spacing */
-}
-
-.geoData {
-    margin-left: 20px; /* Adjust margin for spacing */
-}
-
-.logo {
-    margin-left: auto;
-}
-
 .tablink-container {
     display: flex;
-    justify-content: center;
-    padding: 10px 0;
 }
 
 .tablink {
     background-color: black;
     color: white;
     cursor: pointer;
-    padding: 10px 20px;
-    font-size: 20px;
+    padding: 15px 15px;
+    font-size: 15px;
     border: none;
     outline: none;
-    margin: 5px;
-    width: 150px;
-    height: 50px;
+    width: 110px;
+    margin-right: 5px;
+    margin-left: 5px;
 }
 
-.tablink:hover {
-    background-color: rgb(236, 231, 233);
+.logo {
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+
+.info-bar {
+    display: flex;
+    background-color: #2e2b22;
+
+}
+
+.date-time,
+.geoData {
+    margin-left: 5px;
+    display: flex;
+    font-size: 15px;
     color: white;
 }
 
-/* text styles */
-h1, h2, h3, h4 {
-    text-align: center; /* Center text */
+.date-time h4,
+.geoData h4 {
+    margin-right: 20px;
+}
+
+/* main styles */
+h1, h2, h3 {
     color: white;
-    font-size: 1.2em; /* Adjust font size */
+    font-size: 20px;
+    margin-left: 5px;
 }
