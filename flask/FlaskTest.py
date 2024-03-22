@@ -20,11 +20,11 @@ def get_public_ip_address():
     return response.json()['origin']
 
 
-
+# app routes
 @app.route('/')
 def home():
     system_name = get_system_name()
-    return f"FDS, running on {system_name}."
+    return f"Forest Defense System (FDS), running on {system_name}. Visit <a href='/location'>/location</a>, <a href='/weather'>/weather</a>, <a href='/conditions'>/conditions</a>, <a href='/windspeed'>/windspeed</a>, <a href='/ip'>/ip</a>, <a href='/current_date'>/current_date</a>, <a href='/current_time'>/current_time</a> for more information."
 
 @app.route('/location')
 def Location():
@@ -44,7 +44,7 @@ def wind():
 
 @app.route('/ip')
 def ip():
-    return jsonify({'ip': get_public_ip_address()})
+    return jsonify({'Public ip': get_public_ip_address()})
 
 @app.route('/current_date')
 def current_date():
