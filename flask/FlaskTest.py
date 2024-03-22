@@ -1,5 +1,4 @@
 from flask import Flask, render_template, jsonify
-import psutil
 import datetime
 import platform
 import requests
@@ -11,9 +10,6 @@ from weather import *
 app = Flask(__name__)
 CORS(app)  # Allow CORS for all routes
 
-def get_ram_usage():
-    memory_usage = psutil.virtual_memory().percent
-    return memory_usage
 
 def get_system_name():
     system_name = platform.system()
@@ -36,8 +32,15 @@ def Location():
 
 @app.route('/weather')
 def weather():
-    conditions = get_weather()
-    return jsonify({'conditions': conditions})
+    return jsonify({'weather': get_conditions_all()})
+
+@app.route('/conditions')
+def con():
+    return jsonify({'conditions': get_conditions()})
+
+@app.route('/windspeed')
+def wind():
+    return jsonify({'windspeed': get_windspeed()})
 
 @app.route('/ip')
 def ip():

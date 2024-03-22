@@ -1,4 +1,5 @@
 # ram usage, not used any more
+import psutil
 
 def get_ram_usage():
     memory_usage = psutil.virtual_memory().percent
