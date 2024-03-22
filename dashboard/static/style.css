@@ -8,7 +8,7 @@ body {
 /* header styles */
 header {
     background-color: #B8860B;
-    padding: 0px;
+    padding: 5px;
 }
 
 nav {
@@ -32,24 +32,26 @@ nav {
     outline: none;
     width: 110px;
     margin-right: 5px;
-    margin-left: 5px;
 }
 
-.logo {
-    margin-right: 5px;
-    margin-top: 5px;
-    margin-bottom: 2px;
+.settingsButton {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    padding: 15px 15px;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    width: 110px;
 }
 
 .info-bar {
     display: flex;
     background-color: #2e2b22;
-
 }
 
 .date-time,
 .geoData {
-    margin-left: 5px;
     display: flex;
     font-size: 15px;
     color: white;
