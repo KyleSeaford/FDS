@@ -6,6 +6,7 @@ import requests
 from flask_cors import CORS
 
 from location import get_location
+from weather import *
 
 app = Flask(__name__)
 CORS(app)  # Allow CORS for all routes
@@ -27,11 +28,15 @@ def get_public_ip_address():
 @app.route('/')
 def home():
     system_name = get_system_name()
-    return "FDS "+ system_name
+    return f"FDS, running on {system_name}."
 
 @app.route('/location')
 def Location():
     return jsonify({'location': get_location()})
+
+@app.route('/weather')
+def weather():
+    return jsonify({'conditions': conditions})
 
 @app.route('/ip')
 def ip():

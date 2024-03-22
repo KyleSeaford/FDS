@@ -11,6 +11,7 @@
         <script src="../static/js/date.js"></script>
         <script src="../static/js/ram.js"></script>
         <script src="../static/js/location.js"></script>
+        <script src="../static/js/weather.js"></script>
     </head>
 
     <body>
@@ -23,14 +24,13 @@
 
                 <div class="geoData">
                     <h4 id="current_location">current location:</h4> 
-                    <h4>Current Weather: {{ weather }}</h4>
+                    <h4 id="conditions">Current Weather:</h4>
                 </div>
 
                 <div class="tablink-container">
                     <button class="tablink" onclick="openPage('Home', this, 'gray')" id="defaultOpen">Home</button>
                     <button class="tablink" onclick="openPage('Zone_1', this, 'gray')">Zone 1</button>
                     <button class="tablink" onclick="openPage('Zone_2', this, 'gray')">Zone 2</button>
-                    <a href="http://127.0.0.1:5000/ip" class="tablink">my ip</a>
                 </div>
 
                 <div class="logo">

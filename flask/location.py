@@ -6,7 +6,3 @@ def get_location():
     response_location = requests.get(f'http://ip-api.com/json/{ip}')
     location_data = response_location.json()
     return location_data['city']
-
-
-
-#print(location_data['city'])
