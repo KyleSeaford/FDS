@@ -1,6 +1,3 @@
-// Trigger click event for the default open button after dynamically creating zone buttons
-document.getElementById("defaultOpen").click();
-
 // Function to handle the settings button click
 document.getElementById("settingsButton").addEventListener("click", function () {
     // Prompt the user to enter the number of zones
@@ -10,20 +7,37 @@ document.getElementById("settingsButton").addEventListener("click", function () 
     numberOfZones = parseInt(numberOfZones);
 
     // Validate if the input is a number and greater than 0
-    if (!isNaN(numberOfZones) && numberOfZones > 0) {
-        // Remove existing zone buttons
+    if (!isNaN(numberOfZones) && numberOfZones > 0 && numberOfZones <= 15) {
+        // Remove existing zone buttons and content
         var tablinkContainer = document.querySelector(".tablink-container");
         tablinkContainer.innerHTML = '';
 
-        // Add zone buttons based on the input
+        var tabContentContainer = document.querySelector(".tabcontent-container");
+        tabContentContainer.innerHTML = '';
+
+        // Add zone buttons and corresponding content based on the input
         for (var i = 1; i <= numberOfZones; i++) {
+            // Create zone button
             var zoneButton = document.createElement("button");
             zoneButton.textContent = "Zone " + i;
             zoneButton.className = "tablink";
-            zoneButton.setAttribute("onclick", "openPage('Zone_" + i + "', this, 'gray')");
+            zoneButton.setAttribute("onclick", "openPage('Zone_" + i + "', this, '#0d6efd')");
             tablinkContainer.appendChild(zoneButton);
+
+            // Create zone content div
+            var zoneContentDiv = document.createElement("div");
+            zoneContentDiv.id = "Zone_" + i;
+            zoneContentDiv.className = "tabcontent";
+            zoneContentDiv.innerHTML = `
+                <h1>Zone ${i}</h1>
+                <h2>Zone ${i} Information</h2>
+            `;
+            tabContentContainer.appendChild(zoneContentDiv);
         }
+
+        // Trigger click event on the button corresponding to Zone 1
+        document.getElementById("defaultOpen").click();
     } else {
-        alert("Please enter a valid number of zones.");
+        alert("Please enter a valid number of zones: 1 to 15.");
     }
 });
