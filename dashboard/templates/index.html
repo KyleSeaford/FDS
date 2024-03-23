@@ -22,7 +22,10 @@
 
                 </div>
 
-                <button id="settingsButton" class="settingsButton">Settings</button>
+                <div class="button-container">
+                    <button id="settingsButton" class="settingsButton">Settings</button>
+                    <button id="helpButton" class="helpButton">Help</button>
+                </div>
             </nav>
         </header>
         
@@ -39,7 +42,7 @@
             </div>
             
             <div class="geoData">
-                <h4 id="current_location">current location:</h4>
+                <h4 id="current_location">Current location:</h4>
                 <h4 id="conditions">Current Weather:</h4>
                 <h4 id="windspeed">Wind Speed:</h4>
             </div>
@@ -48,11 +51,12 @@
         <div class="tabcontent-container">
 
         </div>
-
-
+        
+        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="../static/js/tabButtons.js"></script>
         <script src="../static/js/zones.js"></script>
+        <script src="../static/js/help.js"></script>
     </body>
 
 </html>
