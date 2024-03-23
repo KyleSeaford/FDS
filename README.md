@@ -30,7 +30,6 @@ We would like to acknowledge the following:
 For any questions or inquiries related to this project, you can reach out to Kyle Seaford via email or GitHub.
 
 ## ToDo
-- [ ] capital c on location
 - [ ] help notifaction / page when button clicked (help next to settings) in help tell you how to use with link to github
 - [ ] default open on zone 1
 - [ ] save zones until clered
