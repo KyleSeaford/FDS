@@ -30,8 +30,6 @@ We would like to acknowledge the following:
 For any questions or inquiries related to this project, you can reach out to Kyle Seaford via email or GitHub.
 
 ## ToDo
-- [ ] default open on zone 1
-- [ ] save zones until clered
 - [ ] intergrate onto pi
 - [ ] make pi work with all the sensors
 - [ ] show pis data on dashboard
