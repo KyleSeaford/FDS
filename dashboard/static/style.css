@@ -33,10 +33,12 @@ nav {
     outline: none;
     width: 110px;
     margin-right: 5px;
+    transition: 0.5s;
 }
 
 .tablink:hover {
     background-color: #0d6efd;
+    transition: 0.5s;
 }
 
 .settingsButton {
@@ -52,6 +54,7 @@ nav {
 
 .settingsButton:hover {
     background-color: #8a114d;
+    transition: 0.3s;
 }
 
 .info-bar {
@@ -70,6 +73,13 @@ nav {
 .date-time h4,
 .geoData h4 {
     margin-right: 20px;
+}
+
+.n {
+    color: white;
+    font-size: 15px;
+    margin-left: 5px;
+    margin-right: auto;
 }
 
 /* main styles */
