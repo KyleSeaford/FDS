@@ -3,11 +3,11 @@ Welcome to the Forest Defence System (FDS) repository, a system designed for ear
 
 ## Overview
 
-The Forest Defence System (FDS) utilizes a network of sensors connected to Raspberry Pis to detect various environmental conditions such as smoke, temperature changes, and visual monitoring through cameras. These sensors continuously monitor the area for any signs of fire or smoke.
+The Forest Defence System (FDS) utilizes a network of sensors connected to Raspberry Pis to detect various environmental conditions such as smoke, temperature changes, rain as well as visual monitoring through cameras. These sensors continuously monitor the area for any signs of fire or smoke.
 
 ## Features
 
-- **Sensor Network**: Utilizes a network of sensors including smoke detectors, temperature sensors, and cameras.
+- **Sensor Network**: Utilizes a network of sensors including smoke detectors, temperature sensors, rain sensors and cameras.
 - **Solar-Powered Nodes**: Each node in the network is solar-powered, ensuring continuous operation even in remote areas without access to conventional power sources.
 - **Automated Responses**: Upon detecting any changes or triggers from the sensors, the system automatically initiates responses such as email alerts, text alerts, and notifications to emergency responders.
 - **Data Visualization**: The data collected from the sensor network can be viewed on a webpage created using Flask and HTML, providing real-time monitoring and visualization of environmental conditions.
@@ -35,5 +35,15 @@ For any questions or inquiries related to this project, you can reach out to Kyl
 - [ ] show pis data on dashboard
 - [ ] make zones more intresting
 
+## sensors / stuff needed 
+- [x] temperute sensor
+- [ ] smoke sensor
+- [ ] rain sensor
+- [ ] visual camera
+- [ ] solar powerd pi
+- [ ] 3d printed box for whole pi, find out what pole to use
+
 ## improvements 
 - [ ] replace ip location with gps data
+- [ ] repace the tempeture sensor with a tempeture and humdity sensor
+- [ ] improve weather api so it updates more (cant due to free api limit)
