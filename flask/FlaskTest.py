@@ -24,7 +24,7 @@ def get_public_ip_address():
 @app.route('/')
 def home():
     system_name = get_system_name()
-    return f"Forest Defense System (FDS), running on {system_name}. Visit <a href='/location'>/location</a>, <a href='/weather'>/weather</a>, <a href='/conditions'>/conditions</a>, <a href='/windspeed'>/windspeed</a>, <a href='/ip'>/ip</a>, <a href='/current_date'>/current_date</a>, <a href='/current_time'>/current_time</a> for more information."
+    return f"Forest Defense System (FDS), running on {system_name}.<br><br>Visit <a href='/location'>/location</a>, <a href='/weather'>/weather</a>, <a href='/conditions'>/conditions</a>, <a href='/windspeed'>/windspeed</a>, <a href='/ip'>/ip</a>, <a href='/current_date'>/current_date</a>, <a href='/current_time'>/current_time</a> for more information. <br><br>Visit the github repository: <a href='https://github.com/KyleSeaford/FDS' target='_blank'>https://github.com/KyleSeaford/FDS</a>"
 
 @app.route('/location')
 def Location():
