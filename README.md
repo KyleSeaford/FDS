@@ -36,7 +36,7 @@ For any questions or inquiries related to this project, you can reach out to Kyl
 - [ ] make zones more intresting
 
 ## sensors / stuff needed 
-- [x] temperute sensor
+- [x] temperature sensor
 - [ ] smoke sensor
 - [ ] rain sensor
 - [ ] visual camera
