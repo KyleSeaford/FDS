@@ -30,12 +30,12 @@ We would like to acknowledge the following:
 For any questions or inquiries related to this project, you can reach out to Kyle Seaford via email or GitHub.
 
 ## ToDo
-- [ ] default open on zone 1
-- [ ] save zones until clered
-- [ ] make zones more intresting
 - [ ] capital c on location
 - [ ] help notifaction / page when button clicked (help next to settings) in help tell you how to use with link to github
-- [ ] intergrate onto pi 
+- [ ] default open on zone 1
+- [ ] save zones until clered
+- [ ] intergrate onto pi
+- [ ] make zones more intresting
 
 ## improvements 
 - [ ] replace ip location with gps data
