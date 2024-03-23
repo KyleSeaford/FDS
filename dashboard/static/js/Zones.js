@@ -34,9 +34,6 @@ document.getElementById("settingsButton").addEventListener("click", function () 
             `;
             tabContentContainer.appendChild(zoneContentDiv);
         }
-
-        // Trigger click event on the button corresponding to Zone 1
-        document.getElementById("defaultOpen").click();
     } else {
         alert("Please enter a valid number of zones: 1 to 15.");
     }
