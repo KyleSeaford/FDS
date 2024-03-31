@@ -99,7 +99,7 @@ window.addEventListener('load', function () {
             tablinkContainer.appendChild(zoneButton);
 
             // Retrieve the number of units for this zone from localStorage
-            var numberOfUnits = parseInt(localStorage.getItem(`unitsForZone${i}`)) || 1;
+            var numberOfUnits = parseInt(localStorage.getItem(`unitsForZone${i}`)) || 0;
 
             // Create zone content div
             var zoneContentDiv = document.createElement("div");
@@ -114,6 +114,9 @@ window.addEventListener('load', function () {
                 <button class="unitButton" onclick="configureUnits(${i})">Configure Units</button>
             `;
             tabContentContainer.appendChild(zoneContentDiv);
+
+            // Save the number of units to localStorage with default as 0
+            localStorage.setItem(`unitsForZone${i}`, numberOfUnits);
         }
 
         // Trigger click event for the first zone button (Zone 1)
