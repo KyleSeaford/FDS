@@ -27,6 +27,9 @@ document.getElementById("settingsButton").addEventListener("click", function () 
             zoneButton.setAttribute("onclick", "openPage('Zone_" + i + "', this, '#0d6efd')");
             tablinkContainer.appendChild(zoneButton);
 
+            // Retrieve the number of units for this zone from localStorage or set default to 0
+            var numberOfUnits = parseInt(localStorage.getItem(`unitsForZone${i}`)) || 0;
+
             // Create zone content div
             var zoneContentDiv = document.createElement("div");
             zoneContentDiv.id = "Zone_" + i;
@@ -34,8 +37,15 @@ document.getElementById("settingsButton").addEventListener("click", function () 
             zoneContentDiv.innerHTML = `
                 <h1>Zone ${i}</h1>
                 <h2>Zone ${i} Information</h2>
+                <div id="unitInfo_${i}" class="unitInfo">
+                    <h3>Number of Units: ${numberOfUnits}</h3>
+                </div>
+                <button class="unitButton" onclick="configureUnits(${i})">Configure Units</button>
             `;
             tabContentContainer.appendChild(zoneContentDiv);
+
+            // Save the number of units to localStorage with default as 0
+            localStorage.setItem(`unitsForZone${i}`, numberOfUnits);
         }
 
         // Trigger click event for the first zone button (Zone 1)
@@ -45,6 +55,27 @@ document.getElementById("settingsButton").addEventListener("click", function () 
         alert("Please enter a valid number of zones: 1 to 15.");
     }
 });
+
+// Function to handle configuring units
+function configureUnits(zoneNumber) {
+    // Prompt the user to enter the number of units for the specific zone
+    var numberOfUnits = prompt(`Please enter the number of units for Zone ${zoneNumber}:`, localStorage.getItem(`unitsForZone${zoneNumber}`) || "1");
+
+    // Parse the number of units as an integer
+    numberOfUnits = parseInt(numberOfUnits);
+
+    // Validate if the input is a number and greater than 0
+    if (!isNaN(numberOfUnits) && numberOfUnits >= 0 && numberOfUnits <= 5) {
+        // Display the number of units in the zone content
+        var unitInfoDiv = document.getElementById(`unitInfo_${zoneNumber}`);
+        unitInfoDiv.innerHTML = `<h3>Number of Units: ${numberOfUnits}</h3>`;
+
+        // Save the number of units to localStorage or any other operations you want to perform
+        localStorage.setItem(`unitsForZone${zoneNumber}`, numberOfUnits);
+    } else {
+        alert("Please enter a valid number of units: 0 to 5.");
+    }
+}
 
 // Function to create zone buttons and content on page load
 window.addEventListener('load', function () {
@@ -67,6 +98,9 @@ window.addEventListener('load', function () {
             zoneButton.setAttribute("onclick", "openPage('Zone_" + i + "', this, '#0d6efd')");
             tablinkContainer.appendChild(zoneButton);
 
+            // Retrieve the number of units for this zone from localStorage
+            var numberOfUnits = parseInt(localStorage.getItem(`unitsForZone${i}`)) || 0;
+
             // Create zone content div
             var zoneContentDiv = document.createElement("div");
             zoneContentDiv.id = "Zone_" + i;
@@ -74,8 +108,15 @@ window.addEventListener('load', function () {
             zoneContentDiv.innerHTML = `
                 <h1>Zone ${i}</h1>
                 <h2>Zone ${i} Information</h2>
+                <div id="unitInfo_${i}" class="unitInfo">
+                    <h3>Number of Units: ${numberOfUnits}</h3>
+                </div>
+                <button class="unitButton" onclick="configureUnits(${i})">Configure Units</button>
             `;
             tabContentContainer.appendChild(zoneContentDiv);
+
+            // Save the number of units to localStorage with default as 0
+            localStorage.setItem(`unitsForZone${i}`, numberOfUnits);
         }
 
         // Trigger click event for the first zone button (Zone 1)
