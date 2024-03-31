@@ -8,4 +8,3 @@ def get_location():
     location_data = response_location.json()
     return location_data['city']
 
-print(get_location())
