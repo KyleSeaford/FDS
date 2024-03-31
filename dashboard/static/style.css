@@ -54,7 +54,7 @@ nav {
     font-size: 15px;
     border: none;
     outline: none;
-    width: 120px;
+    width: 141px;
 }
 
 .settingsButton:hover {
@@ -70,7 +70,7 @@ nav {
     font-size: 15px;
     border: none;
     outline: none;
-    width: 60px;
+    width: 40px;
     margin-left: 5px; /* Add margin to separate from the settings button */
 }
 

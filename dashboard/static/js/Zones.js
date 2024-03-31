@@ -34,6 +34,8 @@ document.getElementById("settingsButton").addEventListener("click", function () 
             zoneContentDiv.innerHTML = `
                 <h1>Zone ${i}</h1>
                 <h2>Zone ${i} Information</h2>
+                <button class="unitButton" onclick="configureUnits(${i})">Configure Units</button>
+                <div id="unitInfo_${i}" class="unitInfo"></div>
             `;
             tabContentContainer.appendChild(zoneContentDiv);
         }
@@ -46,6 +48,25 @@ document.getElementById("settingsButton").addEventListener("click", function () 
     }
 });
 
+// Function to handle configuring units
+function configureUnits(zoneNumber) {
+    // Prompt the user to enter the number of units for the specific zone
+    var numberOfUnits = prompt(`Please enter the number of units for Zone ${zoneNumber}:`, "1");
+
+    // Parse the number of units as an integer
+    numberOfUnits = parseInt(numberOfUnits);
+
+    // Validate if the input is a number and greater than 0
+    if (!isNaN(numberOfUnits) && numberOfUnits > 0 && numberOfUnits <= 5) {
+        // Display the number of units in the zone content
+        var unitInfoDiv = document.getElementById(`unitInfo_${zoneNumber}`);
+        unitInfoDiv.innerHTML = `<h3>Number of Units: ${numberOfUnits}</h3>`;
+
+        // Save the number of units to localStorage or any other operations you want to perform
+    } else {
+        alert("Please enter a valid number of units: 1 to 5.");
+    }
+}
 // Function to create zone buttons and content on page load
 window.addEventListener('load', function () {
     // Check if numberOfZones is saved in localStorage
@@ -74,6 +95,8 @@ window.addEventListener('load', function () {
             zoneContentDiv.innerHTML = `
                 <h1>Zone ${i}</h1>
                 <h2>Zone ${i} Information</h2>
+                <button class="unitButton" onclick="configureUnits(${i})">Configure Units</button>
+                <div id="unitInfo_${i}" class="unitInfo"></div>
             `;
             tabContentContainer.appendChild(zoneContentDiv);
         }
