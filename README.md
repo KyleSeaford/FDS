@@ -30,12 +30,13 @@ We would like to acknowledge the following:
 For any questions or inquiries related to this project, you can reach out to Kyle Seaford via email or GitHub.
 
 ## ToDo
-- [ ] intergrate onto pi
+
+### pi stuff 
+- [x] intergrate onto pi
 - [ ] make pi work with all the sensors
 - [ ] show pis data on dashboard
-- [ ] make zones more intresting
 
-## sensors / stuff needed 
+#### sensors / stuff needed 
 - [x] temperature sensor
 - [ ] smoke sensor
 - [ ] rain sensor
@@ -43,7 +44,11 @@ For any questions or inquiries related to this project, you can reach out to Kyl
 - [ ] solar powerd pi
 - [ ] 3d printed box for whole pi, find out what pole to use
 
-## improvements 
+### dashboard stuff
+- [ ] change the colours 
+- [ ] dislpay graphs 
+
+### improvements 
 - [ ] replace ip location with gps data
 - [ ] repace the tempeture sensor with a tempeture and humdity sensor
 - [ ] improve weather api so it updates more (cant due to free api limit)
