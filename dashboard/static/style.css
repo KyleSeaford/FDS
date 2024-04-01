@@ -38,9 +38,7 @@ nav {
 
 .tablink:hover {
     background-color: #0d6efd;
-    transition: 0.3s;
 }
-
 
 /* button styles */
 .button-container {
@@ -61,7 +59,6 @@ nav {
 
 .settingsButton:hover {
     background-color: #8a114d;
-    transition: 0.3s;
 }
 
 .helpButton {
@@ -78,7 +75,6 @@ nav {
 
 .helpButton:hover {
     background-color: rgb(167, 1, 1);
-    transition: 0.3s;
 }
 
 .unitButton {
@@ -89,15 +85,13 @@ nav {
     font-size: 15px;
     border: none;
     outline: none;
-    width: 186px;
+    width: 185px; /* Adjusted width to 185px */
     margin-left: 5px; /* Add margin to separate from the settings button */
 }
 
 .unitButton:hover {
     background-color: rgb(167, 1, 1);
-    transition: 0.3s;
 }
-
 
 /* info styles */
 .info-bar {
@@ -134,8 +128,9 @@ nav {
 
 .unit-table {
     margin-top: 5px; /* Adjust spacing as needed */
+    margin-left: 5px; /* Adjust spacing as needed */
     border-collapse: collapse;
-    width: 100%;
+    width: 185px; /* Change to auto to match the content width */
 }
 
 .unit-table th,
@@ -149,8 +144,6 @@ nav {
 .unit-table th {
     background-color: #f2f2f2;
 }
-
-
 
 /* main styles */
 h1, h2, h3 {
