@@ -100,7 +100,7 @@ function configureUnits(zoneNumber) {
 
         // Display the number of units in the zone content
         var unitInfoDiv = document.getElementById(`unitInfo_${zoneNumber}`);
-        unitInfoDiv.innerHTML = `<h1>Zone ${i} | Number of Units: ${numberOfUnits}</h1>`;
+        unitInfoDiv.innerHTML = `<h1>Zone ${zoneNumber} | Number of Units: ${numberOfUnits}</h1>`; // Changed 'i' to 'zoneNumber'
 
         // Update zone data with the new number of units
         zoneData.numberOfUnits = numberOfUnits;
@@ -137,6 +137,7 @@ function configureUnits(zoneNumber) {
         alert("Please enter a valid number of units: 0 to 5.");
     }
 }
+
 
 
 // Function to create zone buttons and content on page load
