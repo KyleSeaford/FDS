@@ -44,6 +44,7 @@ For any questions or inquiries related to this project, you can reach out to Kyl
 - [ ] 3D printed box for the whole pi, find out which pole to use
 
 ### dashboard stuff
+- [ ] default load onto zone1 when zones are added / removed 
 - [ ] change the colors 
 - [ ] display graphs 
 - [ ] change unit description to 'colors' and make it so only a set amount of colors can be chosen or just assign each unit a color e.g. unit1: Yellow. Then make it so the background for the color column is the unit's color 
