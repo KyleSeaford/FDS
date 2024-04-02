@@ -24,7 +24,7 @@ document.getElementById("settingsButton").addEventListener("click", function () 
             var zoneButton = document.createElement("button");
             zoneButton.textContent = "Zone " + i;
             zoneButton.className = "tablink";
-            zoneButton.setAttribute("onclick", "openPage('Zone_" + i + "', this, '#0d6efd')");
+            zoneButton.setAttribute("onclick", "openPage('Zone_" + i + "', this, '#3d8b40')");
             tablinkContainer.appendChild(zoneButton);
 
             // Retrieve existing zone data from localStorage or create new if it doesn't exist
@@ -158,7 +158,7 @@ window.addEventListener('load', function () {
             var zoneButton = document.createElement("button");
             zoneButton.textContent = "Zone " + i;
             zoneButton.className = "tablink";
-            zoneButton.setAttribute("onclick", "openPage('Zone_" + i + "', this, '#0d6efd')");
+            zoneButton.setAttribute("onclick", "openPage('Zone_" + i + "', this, '#3d8b40')");
             tablinkContainer.appendChild(zoneButton);
 
             // Retrieve the number of units for this zone from localStorage

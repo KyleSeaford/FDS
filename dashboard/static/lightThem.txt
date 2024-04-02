@@ -1,6 +1,6 @@
 /* body styles */
 body {
-    background-color: #4b4b4b;
+    background-color: #e6e6e6; /* Main background color (darker off-white) */
     font-family: Arial, sans-serif;
     margin: 0;
     overflow: hidden;
@@ -8,7 +8,7 @@ body {
 
 /* header styles */
 header {
-    background-color: #2e2e2e;
+    background-color: #b3b3b3; /* Header background color (darker gray) */
     padding: 5px;
 }
 
@@ -24,8 +24,8 @@ nav {
 }
 
 .tablink {
-    background-color: #556b2f  ;
-    color: white;
+    background-color: #999999; /* Nav button background color (dark gray) */
+    color: #272727; /* Text color */
     cursor: pointer;
     padding: 15px 15px;
     font-size: 15px;
@@ -37,7 +37,7 @@ nav {
 }
 
 .tablink:hover {
-    background-color: #3d8b40 ;
+    background-color: #808080; /* Nav button hover background color (darker gray) */
 }
 
 /* button styles */
@@ -47,8 +47,8 @@ nav {
 }
 
 .settingsButton {
-    background-color: #272727;
-    color: white;
+    background-color: #b3b3b3; /* Settings button background color (darker gray) */
+    color: #272727; /* Text color */
     cursor: help;
     padding: 15px 15px;
     font-size: 15px;
@@ -58,11 +58,11 @@ nav {
 }
 
 .settingsButton:hover {
-    background-color: #1e1e1e;
+    background-color: #999999; /* Settings button hover background color (dark gray) */
 }
 
 .helpButton {
-    background-color:#ff2200;
+    background-color: #ff2200; /* Help button background color (red) */
     color: white;
     cursor: help;
     padding: 15px 15px;
@@ -74,12 +74,12 @@ nav {
 }
 
 .helpButton:hover {
-    background-color: rgba(255, 0, 0, 0.705);
+    background-color: rgba(255, 0, 0, 0.705); /* Help button hover background color (darker red) */
 }
 
 .unitButton {
-    background-color:#272727;
-    color: white;
+    background-color: #b3b3b3; /* Unit button background color (darker gray) */
+    color: #272727; /* Text color */
     cursor: help;
     padding: 15px 15px;
     font-size: 15px;
@@ -90,13 +90,13 @@ nav {
 }
 
 .unitButton:hover {
-    background-color: #1e1e1e;
+    background-color: #999999; /* Unit button hover background color (dark gray) */
 }
 
 /* info styles */
 .info-bar {
     display: flex;
-    background-color: #3e3e3e ;
+    background-color: #cccccc; /* Info bar background color (gray) */
 }
 
 .date-time,
@@ -104,7 +104,7 @@ nav {
     margin-left: 5px;
     display: flex;
     font-size: 15px;
-    color: black;
+    color: #272727; /* Text color */
 }
 
 .date-time h4,
@@ -113,7 +113,7 @@ nav {
 }
 
 .n {
-    color: black;
+    color: #272727; /* Text color */
     font-size: 15px;
     margin-left: 5px;
     margin-right: auto;
@@ -147,7 +147,7 @@ nav {
 
 /* main styles */
 h1, h2, h3 {
-    color: black;
+    color: #272727; /* Text color */
     font-size: 20px;
     margin-left: 5px;
 }
