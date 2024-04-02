@@ -54,3 +54,4 @@ For any questions or inquiries related to this project, you can reach out to Kyl
 - [ ] replace IP location with GPS data
 - [ ] replace the temperature sensor with a temperature and humidity sensor
 - [ ] improve weather API so it updates more (can't due to free API limit)
+- [ ] a button to change between light snd dark mode 
