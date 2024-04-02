@@ -113,7 +113,7 @@ function configureUnits(zoneNumber) {
         // Update unit table with descriptions
         var descriptions = zoneData.descriptions;
         for (var i = descriptions.length; i < numberOfUnits; i++) {
-            var description = prompt(`Enter the Description for Unit ${i + 1}:`, "");
+            var description = prompt(`Enter the Colour for Unit ${i + 1}:`, "");
             descriptions.push(description);
         }
 
