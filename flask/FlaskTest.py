@@ -25,7 +25,7 @@ def get_public_ip_address():
 @app.route('/')
 def home():
     system_name = get_system_name()
-    return f"Forest Defense System (FDS), running on {system_name}.<br><br>Visit <a href='/location'>/location</a>, <a href='/weather'>/weather</a>, <a href='/conditions'>/conditions</a>, <a href='/windspeed'>/windspeed</a>, <a href='/ip'>/ip</a>, <a href='/current_date'>/current_date</a>, <a href='/current_time'>/current_time</a> for more information.<br><br>For unit one please visit:<a href='/sensor1/temp'>/sensor1/temp</a> <br><br>Visit the github repository: <a href='https://github.com/KyleSeaford/FDS' target='_blank'>https://github.com/KyleSeaford/FDS</a>"
+    return f"Forest Defense System (FDS), running on {system_name}.<br><br>Visit <a href='/location'>/location</a>, <a href='/weather'>/weather</a>, <a href='/conditions'>/conditions</a>, <a href='/windspeed'>/windspeed</a>, <a href='/ip'>/ip</a>, <a href='/current_date'>/current_date</a>, <a href='/current_time'>/current_time</a> for more information.<br><br>For unit one please visit:<a href='/zone1'>/zone1</a>, <a href='/zone1/unit1'>/zone1/unit1</a>, <a href='/zone1/unit1/temp'>/zone1/unit1/temp</a> <br><br>Visit the github repository: <a href='https://github.com/KyleSeaford/FDS' target='_blank'>https://github.com/KyleSeaford/FDS</a>"
 
 @app.route('/location')
 def Location():
@@ -56,11 +56,25 @@ def current_time():
     return jsonify({'current_time': datetime.datetime.now().strftime("%H:%M:%S")})
 
 
-# app routs sensors 
-@app.route('/sensor1/temp')
+# app routs zones
+ 
+# zone 1
+@app.route('/zone1')
+def zone():
+    return"zone1"
+
+# unit 1  
+@app.route('/zone1/unit1')
+def unit():
+    return"zone1 unit1"
+
+@app.route('/zone1/unit1/temp')
 def temp():
     temp = read_temp()
     return jsonify({'temperature': temp})
+
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
