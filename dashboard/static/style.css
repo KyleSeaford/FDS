@@ -151,3 +151,9 @@ h1, h2, h3 {
     font-size: 20px;
     margin-left: 5px;
 }
+
+.color-box {
+    width: 90px; /* Adjust the width of the color box */
+    height: 20px; /* Adjust the height of the color box */
+    border: 1px solid #000; /* Add border to the color box */
+}
