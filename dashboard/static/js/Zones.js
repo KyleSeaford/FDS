@@ -62,16 +62,7 @@ document.getElementById("settingsButton").addEventListener("click", function () 
             tabContentContainer.appendChild(zoneContentDiv);
 
             // Populate unit table with descriptions
-            var unitTableBody = document.getElementById(`unitTableBody_${i}`);
-            unitTableBody.innerHTML = ''; // Clear existing rows
-            for (var j = 0; j < zoneData.descriptions.length; j++) {
-                var newRow = document.createElement('tr');
-                newRow.innerHTML = `
-                    <td>Unit ${j + 1}</td>
-                    <td>${zoneData.descriptions[j]}</td>
-                `;
-                unitTableBody.appendChild(newRow);
-            }
+            populateUnitTableWithColorBoxes(i, zoneData.descriptions);
 
             // Save zone data to localStorage
             localStorage.setItem(`zone${i}`, JSON.stringify(zoneData));
@@ -81,6 +72,23 @@ document.getElementById("settingsButton").addEventListener("click", function () 
     }
 });
 
+// Function to populate unit table with color boxes
+function populateUnitTableWithColorBoxes(zoneNumber, descriptions) {
+    var unitTableBody = document.getElementById(`unitTableBody_${zoneNumber}`);
+    unitTableBody.innerHTML = ''; // Clear existing rows
+
+    if (descriptions) {
+        for (var j = 0; j < descriptions.length; j++) {
+            var newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td>Unit ${j + 1}</td>
+                <td><div class="color-box" style="background-color: ${descriptions[j]};"></div></td>
+            `;
+            unitTableBody.appendChild(newRow);
+        }
+    }
+}
+
 // Function to handle configuring units
 function configureUnits(zoneNumber) {
     // Prompt the user to enter the number of units for the specific zone
@@ -89,15 +97,14 @@ function configureUnits(zoneNumber) {
     // Parse the number of units as an integer
     numberOfUnits = parseInt(numberOfUnits);
 
+    // Retrieve existing zone data or create new if it doesn't exist
+    var zoneData = JSON.parse(localStorage.getItem(`zone${zoneNumber}`)) || {
+        numberOfUnits: 0,
+        descriptions: []
+    };
+
     // Validate if the input is a number and greater than or equal to 0
     if (!isNaN(numberOfUnits) && numberOfUnits >= 0 && numberOfUnits <= 5) {
-        // Retrieve existing zone data or create new if it doesn't exist
-        var zoneData = JSON.parse(localStorage.getItem(`zone${zoneNumber}`)) || {
-            numberOfUnits: 0,
-            descriptions: []
-        };
-
-
         // Display the number of units in the zone content
         var unitInfoDiv = document.getElementById(`unitInfo_${zoneNumber}`);
         unitInfoDiv.innerHTML = `<h1>Zone ${zoneNumber} | Number of Units: ${numberOfUnits}</h1>`; // Changed 'i' to 'zoneNumber'
@@ -108,13 +115,21 @@ function configureUnits(zoneNumber) {
         // If the number of units is set to 0, clear descriptions
         if (numberOfUnits === 0) {
             zoneData.descriptions = [];
+        } else if (numberOfUnits < zoneData.descriptions.length) {
+            // If the new number of units is less than the existing number,
+            // truncate the descriptions array accordingly
+            zoneData.descriptions = zoneData.descriptions.slice(0, numberOfUnits);
         }
+
+        // Predefined list of colors
+        var colors = ['Yellow', 'Red', 'Blue', 'Green', 'Orange', 'Purple', 'Pink', 'Brown', 'Cyan', 'Magenta', 'Lime', 'Teal', 'Indigo', 'Silver', 'Gold'];
 
         // Update unit table with descriptions
         var descriptions = zoneData.descriptions;
         for (var i = descriptions.length; i < numberOfUnits; i++) {
-            var description = prompt(`Enter the Colour for Unit ${i + 1}:`, "");
-            descriptions.push(description);
+            // Assign color from the predefined list
+            var color = colors[i % colors.length];
+            descriptions.push(color);
         }
 
         // Save updated zone data to localStorage
@@ -122,19 +137,25 @@ function configureUnits(zoneNumber) {
         localStorage.setItem(`unitsForZone${zoneNumber}`, numberOfUnits);
         localStorage.setItem(`descriptionsForZone${zoneNumber}`, JSON.stringify(descriptions));
 
-        // Populate unit table with descriptions
-        var unitTableBody = document.getElementById(`unitTableBody_${zoneNumber}`);
-        unitTableBody.innerHTML = ''; // Clear existing rows
-        for (var j = 0; j < descriptions.length; j++) {
-            var newRow = document.createElement('tr');
-            newRow.innerHTML = `
-                <td>Unit ${j + 1}</td>
-                <td>${descriptions[j]}</td>
-            `;
-            unitTableBody.appendChild(newRow);
-        }
+        // Populate unit table with color boxes
+        populateUnitTableWithColorBoxes(zoneNumber, descriptions);
+
     } else {
         alert("Please enter a valid number of units: 0 to 5.");
+    }
+}
+
+// Function to populate unit table with color boxes
+function populateUnitTableWithColorBoxes(zoneNumber, descriptions) {
+    var unitTableBody = document.getElementById(`unitTableBody_${zoneNumber}`);
+    unitTableBody.innerHTML = ''; // Clear existing rows
+    for (var j = 0; j < descriptions.length; j++) {
+        var newRow = document.createElement('tr');
+        newRow.innerHTML = `
+            <td>Unit ${j + 1}</td>
+            <td><div class="color-box" style="background-color: ${descriptions[j]};"></div></td>
+        `;
+        unitTableBody.appendChild(newRow);
     }
 }
 
@@ -192,19 +213,9 @@ window.addEventListener('load', function () {
             `;
             tabContentContainer.appendChild(zoneContentDiv);
 
-            // Populate the unit table with descriptions
+            // Populate unit table with color boxes
             var descriptions = JSON.parse(localStorage.getItem(`descriptionsForZone${i}`));
-            if (descriptions) {
-                var unitTableBody = document.getElementById(`unitTableBody_${i}`);
-                for (var j = 0; j < descriptions.length; j++) {
-                    var newRow = document.createElement('tr');
-                    newRow.innerHTML = `
-                        <td>Unit ${j + 1}</td>
-                        <td>${descriptions[j]}</td>
-                    `;
-                    unitTableBody.appendChild(newRow);
-                }
-            }
+            populateUnitTableWithColorBoxes(i, descriptions);
 
             // Save the number of units to localStorage with default as 0
             localStorage.setItem(`unitsForZone${i}`, numberOfUnits);
@@ -217,4 +228,3 @@ window.addEventListener('load', function () {
         }
     }
 });
-
