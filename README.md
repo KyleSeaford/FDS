@@ -52,6 +52,7 @@ For any questions or inquiries related to this project, you can reach out to Kyl
 - [x] insted of typing colour, type the url for the unit, eg unit1 - yellow, url - http://127.0.0.1:5000/zone1/unit1
 
 ### improvements 
+- [ ] improve ip geolocation because it sometimes thinks were in glasgow (we're not.)
 - [ ] replace IP location with GPS data
 - [ ] replace the temperature sensor with a temperature and humidity sensor
 - [ ] improve weather API so it updates more (can't due to free API limit)
