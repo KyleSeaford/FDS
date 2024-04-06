@@ -1,10 +1,6 @@
 import requests
 
 def get_location():
-    response_ip = requests.get('https://httpbin.org/ip')
-    ip = response_ip.json()['origin']
-    return ip
-    response_location = requests.get(f'http://ip-api.com/json/{ip}')
-    location_data = response_location.json()
-    return location_data['city']
-
+    response = requests.get('http://ip-api.com/json/')
+    data = response.json()
+    return data['city']
