@@ -49,7 +49,7 @@ For any questions or inquiries related to this project, you can reach out to Kyl
 - [ ] display graphs 
 - [x] change unit description to 'colors'
 - [x] make it so only a set amount of colors can be chosen or just assign each unit a color e.g. unit1: Yellow. Then make it so the background for the color column is the unit's color 
-- [ ] insted of typing colour, type the url for the unit, eg unit1 - yellow, url - http://127.0.0.1:5000/zone1/unit1
+- [x] insted of typing colour, type the url for the unit, eg unit1 - yellow, url - http://127.0.0.1:5000/zone1/unit1
 
 ### improvements 
 - [ ] replace IP location with GPS data
