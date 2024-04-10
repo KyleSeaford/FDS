@@ -44,17 +44,16 @@ For any questions or inquiries related to this project, you can reach out to Kyl
 - [ ] 3D printed box for the whole pi, find out which pole to use
 
 ### dashboard stuff
-- [ ] default load onto zone1 when zones are added / removed 
+- [ ] default load onto zone1 when zones are added / removed .  I DON'T KNOW WHY IT DOSE NOT DO THIS AND NOR DOSE ANY AI. probobly bc nonw of them are set as the default but idkkkkk
 - [x] change the colors 
 - [ ] display graphs 
 - [x] change unit description to 'colors'
 - [x] make it so only a set amount of colors can be chosen or just assign each unit a color e.g. unit1: Yellow. Then make it so the background for the color column is the unit's color 
-- [x] insted of typing colour, type the url for the unit, eg unit1 - yellow, url - http://127.0.0.1:5000/zone1/unit1
+- [ ] insted of typing colour, type the url for the unit, eg unit1 - yellow, url - http://127.0.0.1:5000/zone1/unit1
 
 ### improvements 
 - [ ] improve ip geolocation because it sometimes thinks were in glasgow (we're not.)
 - [ ] replace IP location with GPS data
 - [ ] replace the temperature sensor with a temperature and humidity sensor
 - [ ] improve weather API so it updates more (can't due to free API limit)
-- [ ] a button to change between light snd dark mode
 - [ ] insted of typing the urls for each unit, make it so it will just auto do it becasuse the url is going to be the same for all apart from the last numbers (after zone and unit) eg http://127.0.0.1:5000/zone1/unit1
