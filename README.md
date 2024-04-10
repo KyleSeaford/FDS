@@ -57,3 +57,4 @@ For any questions or inquiries related to this project, you can reach out to Kyl
 - [ ] replace the temperature sensor with a temperature and humidity sensor
 - [ ] improve weather API so it updates more (can't due to free API limit)
 - [ ] insted of typing the urls for each unit, make it so it will just auto do it becasuse the url is going to be the same for all apart from the last numbers (after zone and unit) eg http://127.0.0.1:5000/zone1/unit1
+- [ ] change the "FireGuard Pro - Forest Defense System (FDS)" on the info bar to the logo. (FDS\dashboard\static\imgs\name.png) - messed up the styles too much when i tried 
