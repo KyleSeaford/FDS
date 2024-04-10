@@ -7,7 +7,7 @@ document.getElementById("settingsButton").addEventListener("click", function () 
     numberOfZones = parseInt(numberOfZones);
 
     // Validate if the input is a number and greater than 0
-    if (!isNaN(numberOfZones) && numberOfZones > 0 && numberOfZones <= 15) {
+    if (!isNaN(numberOfZones) && numberOfZones > 0 && numberOfZones <= 13) {
         // Save the number of zones to localStorage
         localStorage.setItem('numberOfZones', numberOfZones);
 
@@ -24,7 +24,7 @@ document.getElementById("settingsButton").addEventListener("click", function () 
             var zoneButton = document.createElement("button");
             zoneButton.textContent = "Zone " + i;
             zoneButton.className = "tablink";
-            zoneButton.setAttribute("onclick", "openPage('Zone_" + i + "', this, '#3d8b40')");
+            zoneButton.setAttribute("onclick", "openPage('Zone_" + i + "', this, '#0d95b4')");
             tablinkContainer.appendChild(zoneButton);
 
             // Retrieve existing zone data from localStorage or create new if it doesn't exist
@@ -68,7 +68,7 @@ document.getElementById("settingsButton").addEventListener("click", function () 
             localStorage.setItem(`zone${i}`, JSON.stringify(zoneData));
         }
     } else {
-        alert("Please enter a valid number of zones: 1 to 15.");
+        alert("Please enter a valid number of zones: 1 to 13.");
     }
 });
 
@@ -145,21 +145,6 @@ function configureUnits(zoneNumber) {
     }
 }
 
-// Function to populate unit table with color boxes
-function populateUnitTableWithColorBoxes(zoneNumber, descriptions) {
-    var unitTableBody = document.getElementById(`unitTableBody_${zoneNumber}`);
-    unitTableBody.innerHTML = ''; // Clear existing rows
-    for (var j = 0; j < descriptions.length; j++) {
-        var newRow = document.createElement('tr');
-        newRow.innerHTML = `
-            <td>Unit ${j + 1}</td>
-            <td><div class="color-box" style="background-color: ${descriptions[j]};"></div></td>
-        `;
-        unitTableBody.appendChild(newRow);
-    }
-}
-
-
 // Function to create zone buttons and content on page load
 window.addEventListener('load', function () {
     // Check if numberOfZones is saved in localStorage
@@ -178,7 +163,7 @@ window.addEventListener('load', function () {
             var zoneButton = document.createElement("button");
             zoneButton.textContent = "Zone " + i;
             zoneButton.className = "tablink";
-            zoneButton.setAttribute("onclick", "openPage('Zone_" + i + "', this, '#3d8b40')");
+            zoneButton.setAttribute("onclick", "openPage('Zone_" + i + "', this, '#0d95b4')");
             tablinkContainer.appendChild(zoneButton);
 
             // Retrieve the number of units for this zone from localStorage
@@ -213,7 +198,7 @@ window.addEventListener('load', function () {
             tabContentContainer.appendChild(zoneContentDiv);
 
             // Populate unit table with color boxes
-            var descriptions = JSON.parse(localStorage.getItem(`descriptionsForZone${i}`));
+var descriptions = JSON.parse(localStorage.getItem(`descriptionsForZone${i}`));
             populateUnitTableWithColorBoxes(i, descriptions);
 
             // Save the number of units to localStorage with default as 0
