@@ -146,7 +146,7 @@ function configureUnits(zoneNumber) {
 }
 
 // Function to create zone buttons and content on page load
-window.addEventListener('load', function () {
+document.addEventListener('DOMContentLoaded', function () {
     // Check if numberOfZones is saved in localStorage
     var savedNumberOfZones = localStorage.getItem('numberOfZones');
 
@@ -198,7 +198,7 @@ window.addEventListener('load', function () {
             tabContentContainer.appendChild(zoneContentDiv);
 
             // Populate unit table with color boxes
-var descriptions = JSON.parse(localStorage.getItem(`descriptionsForZone${i}`));
+            var descriptions = JSON.parse(localStorage.getItem(`descriptionsForZone${i}`));
             populateUnitTableWithColorBoxes(i, descriptions);
 
             // Save the number of units to localStorage with default as 0
@@ -208,7 +208,8 @@ var descriptions = JSON.parse(localStorage.getItem(`descriptionsForZone${i}`));
         // Trigger click event for the first zone button (Zone 1)
         var firstZoneButton = document.querySelector(".tablink");
         if (firstZoneButton) {
-            firstZoneButton.click();
+            openPage('Zone_1', firstZoneButton, '#0d95b4', true); // Adjusted to trigger click event
         }
+
     }
 });
