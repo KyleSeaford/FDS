@@ -1,7 +1,11 @@
 import os
 import glob
 import time
+import random
+from bokeh.plotting import figure, show
+from bokeh.io import output_notebook
 
+# Existing code for reading temperature
 os.system('modprobe w1-gpio')
 os.system('modprobe w1-therm')
 
@@ -26,6 +30,16 @@ def read_temp():
         temp_c = float(temp_string) / 1000.0
         return temp_c
 
+# New code for plotting temperature data with Bokeh
+output_notebook() # Output to Jupyter Notebook
+p = figure(title="Temperature Graph", x_axis_label="Time", y_axis_label="Temperature (°C)")
+temps = [] # Store temperature data here
+times = [] # Store time data here
+
 while True:
-    print(read_temp())
-    time.sleep(0.5)
+    temp_c = read_temp()
+    temps.append(temp_c) # Add temperature data to list
+    times.append(time.time()) # Add time data to list
+    p.line(times, temps, legend_label="Temperature", line_width=2)
+    show(p) # Display graph
+    time.sleep(1) # Wait for 1 second

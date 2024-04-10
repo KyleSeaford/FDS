@@ -25,7 +25,7 @@ def get_public_ip_address():
 @app.route('/')
 def home():
     system_name = get_system_name()
-    return f"Forest Defense System (FDS), running on {system_name}.<br><br>Visit <a href='/location'>/location</a>, <a href='/weather'>/weather</a>, <a href='/conditions'>/conditions</a>, <a href='/windspeed'>/windspeed</a>, <a href='/ip'>/ip</a>, <a href='/current_date'>/current_date</a>, <a href='/current_time'>/current_time</a> for more information.<br><br>For unit one please visit:<a href='/zone1'>/zone1</a>, <a href='/zone1/unit1'>/zone1/unit1</a>, <a href='/zone1/unit1/temp'>/zone1/unit1/temp</a> <br><br>Visit the github repository: <a href='https://github.com/KyleSeaford/FDS' target='_blank'>https://github.com/KyleSeaford/FDS</a>"
+    return f"Forest Defense System (FDS), running on {system_name}.<br><br>Visit <a href='/location'>/location</a>, <a href='/weather'>/weather</a>, <a href='/conditions'>/conditions</a>, <a href='/windspeed'>/windspeed</a>, <a href='/ip'>/ip</a>, <a href='/current_date'>/current_date</a>, <a href='/current_time'>/current_time</a> for more information.<br><br>For unit one please visit:<a href='/zone1'>/zone1</a>, <a href='/zone1/unit1'>/zone1/unit1</a> <br><br>Visit the github repository: <a href='https://github.com/KyleSeaford/FDS' target='_blank'>https://github.com/KyleSeaford/FDS</a>"
 
 @app.route('/location')
 def Location():
@@ -57,22 +57,20 @@ def current_time():
 
 
 # app routs zones
- 
+
 # zone 1
 @app.route('/zone1')
 def zone():
-    return"zone1"
+# will show all info from zone one 
+    return"zone1 information will go here"
 
-# unit 1  
+# unit 1, need to configer which pi the info is coming from  
 @app.route('/zone1/unit1')
-def unit():
-    return"zone1 unit1"
-
-@app.route('/zone1/unit1/temp')
-def temp():
+def unit1_info():
+    ip = get_public_ip_address()
     temp = read_temp()
-    return jsonify({'temperature': temp})
-
+    current_time = datetime.datetime.now().strftime("%H:%M:%S")
+    return jsonify({'temperature': temp, 'currentTime': current_time})
 
 
 
