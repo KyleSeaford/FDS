@@ -1,4 +1,4 @@
-# Forest Defense System (FDS)
+# FireGuard Pro (Forest Defense System (FDS))
 Welcome to the Forest Defense System (FDS) repository, a system designed for early detection and prevention of wildfires in remote and forested areas.
 
 ## Overview
