@@ -2,9 +2,14 @@ import os
 import glob
 import time
 import datetime
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
+
+from flask import Flask, render_template, jsonify
+import datetime
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)  # Allow CORS for all routes
 
 # Sensor setup
 os.system('modprobe w1-gpio')
@@ -38,36 +43,10 @@ def unit1_info():
     current_time = datetime.datetime.now().strftime("%H:%M:%S")
     return jsonify({'unit1Temp': temp, 'currentTime': current_time})
 
-# HTML page with real-time temperature display
-html_page = """
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Real-Time Temperature</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-</head>
-<body>
-    <h1>Unit 1 Temperature:</h1>
-    <p id="unit1Temp"></p>
-    <script>
-        // Initialize the current temp from the sensor to server
-        $(document).ready(function(){
-            setInterval(function(){
-                $.getJSON('/unit1/temp', function(data) {
-                    $('#unit1Temp').text('Temperature: ' + data.unit1Temp + '°C');
-                });
-            }, 1000); // Update every second
-        });
-    </script>
-</body>
-</html>
-"""
-
-# Route for the dashboard page
+# HTML page with real-time temperature display in a graph
 @app.route('/')
 def dashboard():
-    return html_page
+    return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(debug=True)
