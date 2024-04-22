@@ -44,7 +44,7 @@ For any questions or inquiries related to this project, you can reach out to Kyl
 - [ ] 3D printed box for the whole pi, find out which pole to use
 
 ### dashboard stuff
-- [ ] default load onto zone1 when zones are added / removed .  I DON'T KNOW WHY IT DOSE NOT DO THIS AND NOR DOSE ANY AI. probobly bc nonw of them are set as the default but idkkkkk
+- [x] default load onto zone1 when zones are added / removed .  I DON'T KNOW WHY IT DOSE NOT DO THIS AND NOR DOSE ANY AI. probobly bc nonw of them are set as the default but idkkkkk
 - [x] change the colors 
 - [ ] display graphs 
 - [x] change unit description to 'colors'
