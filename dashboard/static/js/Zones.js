@@ -42,7 +42,7 @@ document.getElementById("settingsButton").addEventListener("click", function () 
             zoneContentDiv.className = "tabcontent";
             zoneContentDiv.innerHTML = `
                 <div id="unitInfo_${i}" class="unitInfo">
-                    <h1>Zone ${i} | Number of Units: ${zoneData.numberOfUnits || 0}</h1>
+                    
                 </div>
 
                 <div class="unit-container">
@@ -61,6 +61,13 @@ document.getElementById("settingsButton").addEventListener("click", function () 
                         </table>
                     </div>
                 </div>  
+
+                <div class="container">
+                    <div class="box">A</div>
+                    <div class="box">B</div>
+                    <div class="box">C</div>
+                    <div class="box">D</div>
+                </div>
             `;
             tabContentContainer.appendChild(zoneContentDiv);
 
@@ -114,7 +121,7 @@ function configureUnits(zoneNumber) {
     if (!isNaN(numberOfUnits) && numberOfUnits >= 0 && numberOfUnits <= 5) {
         // Display the number of units in the zone content
         var unitInfoDiv = document.getElementById(`unitInfo_${zoneNumber}`);
-        unitInfoDiv.innerHTML = `<h1>Zone ${zoneNumber} | Number of Units: ${numberOfUnits}</h1>`; // Changed 'i' to 'zoneNumber'
+        // unitInfoDiv.innerHTML = `<h1>Zone ${zoneNumber} | Number of Units: ${numberOfUnits}</h1>`; // Changed 'i' to 'zoneNumber'
 
         // Update zone data with the new number of units
         zoneData.numberOfUnits = numberOfUnits;
@@ -185,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function () {
             zoneContentDiv.className = "tabcontent";
             zoneContentDiv.innerHTML = `
                 <div id="unitInfo_${i}" class="unitInfo">
-                    <h1>Zone ${i} | Number of Units: ${numberOfUnits}</h1>
+                    
                 </div>
 
                 <div class="unit-container">
@@ -203,7 +210,14 @@ document.addEventListener('DOMContentLoaded', function () {
                             </tbody>
                         </table>
                     </div>
-                </div>  
+                </div> 
+
+                <div class="container">
+                    <div class="box">A</div>
+                    <div class="box">B</div>
+                    <div class="box">C</div>
+                    <div class="box">D</div>
+                </div>
             `;
             tabContentContainer.appendChild(zoneContentDiv);
 
