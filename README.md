@@ -3,7 +3,7 @@ Welcome to the Forest Defense System (FDS) repository, a system designed for ear
 
 ## Overview
 
-The Forest Defense System (FDS) utilizes a network of sensors connected to Raspberry Pis to detect various environmental conditions such as smoke, temperature changes, rain as well as visual monitoring through cameras. These sensors continuously monitor the area for any signs of fire or smoke.
+The Forest Defense System (FDS) utilizes a network of sensors connected to Raspberry Pis to detect various environmental conditions such as smoke, temperature changes, and rain as well as visual monitoring through cameras. These sensors continuously monitor the area for any signs of fire or smoke.
 
 ## Features
 
@@ -44,17 +44,17 @@ For any questions or inquiries related to this project, you can reach out to Kyl
 - [ ] 3D printed box for the whole pi, find out which pole to use
 
 ### dashboard stuff
-- [x] default load onto zone1 when zones are added / removed .  I DON'T KNOW WHY IT DOSE NOT DO THIS AND NOR DOSE ANY AI. probobly bc nonw of them are set as the default but idkkkkk
+- [x] default load onto zone1 when zones are added/removed.  I DON'T KNOW WHY IT DOSE NOT DO THIS AND NOR DOSE ANY AI. probobly bc nonw of them are set as the default but idkkkkk (dad was able to fix it!!!!)
 - [x] change the colors 
 - [ ] display graphs 
-- [x] change unit description to 'colors'
+- [x] change the unit description to 'colors'
 - [x] make it so only a set amount of colors can be chosen or just assign each unit a color e.g. unit1: Yellow. Then make it so the background for the color column is the unit's color 
-- [ ] insted of typing colour, type the url for the unit, eg unit1 - yellow, url - http://127.0.0.1:5000/zone1/unit1
+- [x] add swagger api
+- [x] change top left name to the logo
+- [ ] insted of typing colour, type the url for the unit, eg unit1 - yellow, url - http://127.0.0.1:5000/zone1/unit1 (am doing this automaticly now, it just knows the url)
 
 ### improvements 
 - [ ] improve ip geolocation because it sometimes thinks were in glasgow (we're not.)
 - [ ] replace IP location with GPS data
-- [ ] replace the temperature sensor with a temperature and humidity sensor
 - [ ] improve weather API so it updates more (can't due to free API limit)
-- [ ] insted of typing the urls for each unit, make it so it will just auto do it becasuse the url is going to be the same for all apart from the last numbers (after zone and unit) eg http://127.0.0.1:5000/zone1/unit1
-- [ ] change the "FireGuard Pro - Forest Defense System (FDS)" on the info bar to the logo. (FDS\dashboard\static\imgs\name.png) - messed up the styles too much when i tried 
+- [x] change the "FireGuard Pro - Forest Defense System (FDS)" on the info bar to the logo. (FDS\dashboard\static\imgs\name.png) - messed up the styles too much when i tried 
