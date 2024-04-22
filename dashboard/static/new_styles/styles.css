@@ -3,13 +3,14 @@ body {
     background-color: #1e1e1e;
     font-family: Arial, sans-serif;
     margin: 0;
+    overflow: hidden; /* Prevent scrollbars from appearing */
 }
 
 /* MARK: Header styles */
 header {
     background-color: #282828;
     position: fixed; /* Fixed position to stick to the viewport */
-    top: 50px; /* Align to the top of the viewport */
+    top: 57px; /* Align to the top of the viewport */
     bottom: 0; /* Extend to the bottom of the viewport */
     left: 0; /* Align to the left side of the viewport */
     width: 200px; /* Adjust width as needed */
@@ -18,6 +19,7 @@ header {
     align-items: center;
     justify-content: flex-start;
 }
+
 
 /* MARK: Navigation styles */
 nav, .tablink-container {
@@ -122,10 +124,9 @@ nav, .tablink-container {
 }
 
 .n {
-    color: white;
-    font-size: 13px;
-    margin-left: 5px;
     margin-right: auto;
+    margin-left: 20px;
+    margin-top: 3px;
 }
 
 
@@ -157,14 +158,13 @@ nav, .tablink-container {
 /* MARK: Unit help styles */
 .unit-container {
     position: absolute;
-    top: 625px;
+    top: 630px;
     right: 1720px;
 }
 
 .unit-table {
     border-collapse: collapse;
     width: 200px;
-    left: 0;
 }
 
 .unit-table th, .unit-table td {
