@@ -19,12 +19,15 @@ document.getElementById("settingsButton").addEventListener("click", function () 
         tabContentContainer.innerHTML = '';
 
         // Add zone buttons and corresponding content based on the input
+        console.log("Adding zone buttons and content based on saved number of zones (top)", numberOfZones);
         for (var i = 1; i <= numberOfZones; i++) {
             // Create zone button
             var zoneButton = document.createElement("button");
             zoneButton.textContent = "Zone " + i;
             zoneButton.className = "tablink";
             zoneButton.setAttribute("onclick", "openPage('Zone_" + i + "', this, '#0d95b4')");
+            if (i == 1)
+                zoneButton.id = "defaultOpen"; // Added to set the first zone as the default open tab
             tablinkContainer.appendChild(zoneButton);
 
             // Retrieve existing zone data from localStorage or create new if it doesn't exist
@@ -67,6 +70,10 @@ document.getElementById("settingsButton").addEventListener("click", function () 
             // Save zone data to localStorage
             localStorage.setItem(`zone${i}`, JSON.stringify(zoneData));
         }
+
+        // Get the element with id="defaultOpen" and click on it
+        console.log("Triggering default open tab (top)");
+        document.getElementById("defaultOpen").click();
     } else {
         alert("Please enter a valid number of zones: 1 to 13.");
     }
@@ -158,12 +165,15 @@ document.addEventListener('DOMContentLoaded', function () {
         var tablinkContainer = document.querySelector(".tablink-container");
         var tabContentContainer = document.querySelector(".tabcontent-container");
 
+        console.log("Adding zone buttons and content based on saved number of zones (bottom)", numberOfZones);
         for (var i = 1; i <= numberOfZones; i++) {
             // Create zone button
             var zoneButton = document.createElement("button");
             zoneButton.textContent = "Zone " + i;
             zoneButton.className = "tablink";
             zoneButton.setAttribute("onclick", "openPage('Zone_" + i + "', this, '#0d95b4')");
+            if (i == 1)
+                zoneButton.id = "defaultOpen"; // Added to set the first zone as the default open tab
             tablinkContainer.appendChild(zoneButton);
 
             // Retrieve the number of units for this zone from localStorage
@@ -204,6 +214,10 @@ document.addEventListener('DOMContentLoaded', function () {
             // Save the number of units to localStorage with default as 0
             localStorage.setItem(`unitsForZone${i}`, numberOfUnits);
         }
+
+        // Get the element with id="defaultOpen" and click on it
+        console.log("Triggering default open tab (bottom)");
+        document.getElementById("defaultOpen").click();
 
         // Trigger click event for the first zone button (Zone 1)
         var firstZoneButton = document.querySelector(".tablink");

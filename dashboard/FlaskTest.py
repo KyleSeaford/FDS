@@ -7,6 +7,7 @@ from flask_cors import CORS
 
 from location import get_location
 from weather import *
+import json
 
 app = Flask(__name__)
 CORS(app)  # Allow CORS for all routes
@@ -52,21 +53,33 @@ def current_time():
 
 
 
-# zone 1
-@app.route('/zone1')
-def zone():
-# will show all info from zone one 
-    return"zone1 information will go here"
 
-# unit 1, need to configer which pi the info is coming from  
-@app.route('/zone1/unit1')
-def unit1_info():
-    ip = get_public_ip_address()
-    temp = 5
-    current_time = datetime.datetime.now().strftime("%H:%M:%S")
-    return jsonify({'temperature': temp, 'currentTime': current_time})
+@app.route('/temp/<int:unit>')
+def temp_int(unit):
+    return jsonify({'temperature': 6, 'unit': unit})
 
+@app.route('/temp/<unit>')
+def temp_string(unit):
+    # get the temperature from the unit
+    unitaddress = 'http://' + unit + ':5000/temp/temp'
+    response = requests.get(unitaddress)
+    return json.loads(response.text)
 
+@app.route('/temps')
+def temps():
+
+    temps = []
+
+    unitaddresses = ['192.168.127.106']
+    for unit in unitaddresses:
+        unitaddress = 'http://' + unit + ':5000/temp/temp'
+        response = requests.get(unitaddress)
+        print(json.loads(response.text))
+
+        temp_data = json.loads(response.text)
+        temps.append({'unit': unit, 'temp': temp_data['temperature']})
+
+    return jsonify(temps)
 
 if __name__ == '__main__':
-    app.run(host='192.168.127.93', port=5000)
+    app.run(host='192.168.127.93', port=5000, debug=True)

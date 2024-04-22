@@ -27,3 +27,4 @@ function openPage(pageName, elmnt, color, triggerClick = false) {
         elmnt.click();
     }
 }
+
