@@ -58,3 +58,9 @@ For any questions or inquiries related to this project, you can reach out to Kyl
 - [ ] replace IP location with GPS data
 - [ ] improve weather API so it updates more (can't due to free API limit)
 - [x] change the "FireGuard Pro - Forest Defense System (FDS)" on the info bar to the logo. (FDS\dashboard\static\imgs\name.png) - messed up the styles too much when i tried 
+
+
+### screenshots 
+
+- 22/04/24 Good Dashboard 
+![goodDash](archive/dash.PNG)
