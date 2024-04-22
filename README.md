@@ -20,9 +20,10 @@ The Forest Defense System (FDS) continuously monitors the environment for any si
 
 We would like to acknowledge the following:
 
-- Kyle Seaford for programming it
 - Raspberry Pi Foundation for providing the hardware platform.
 - Flask and HTML communities for providing tools for web development.
+- Stackoverflow for bug fixes
+- my dad for his mega smart brain
 - Emergency responders and organizations for their collaboration and support.
 
 ## Contact
