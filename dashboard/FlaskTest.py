@@ -18,7 +18,7 @@ def get_public_ip_address():
     return response.json()['origin']
 
 
-# app routes
+# App routes for the dashboard
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -52,11 +52,11 @@ def current_time():
     return jsonify({'current_time': datetime.datetime.now().strftime("%H:%M:%S")})
 
 
-
+# Temp data
 
 @app.route('/temp/<int:unit>')
 def temp_int(unit):
-    return jsonify({'temperature': 6, 'unit': unit})
+    return jsonify({'error': 'unit not found'})
 
 @app.route('/temp/<unit>')
 def temp_string(unit):
@@ -64,8 +64,8 @@ def temp_string(unit):
     unitaddress = 'http://' + unit + ':5000/temp/temp'
     response = requests.get(unitaddress)
     return json.loads(response.text)
-
-@app.route('/temps')
+  
+@app.route('/tempdata')
 def temps():
 
     temps = []
@@ -80,6 +80,95 @@ def temps():
         temps.append({'unit': unit, 'temp': temp_data['temperature']})
 
     return jsonify(temps)
+
+# Smoke data
+
+@app.route('/smoke/<int:unit>')
+def smoke_int(unit):
+    return jsonify({'error': 'unit not found'})
+
+@app.route('/smoke/<unit>')
+def smoke_string(unit):
+    # get the smoke from the unit
+    unitaddress = 'http://' + unit + ':5000/smoke/smoke'
+    response = requests.get(unitaddress)
+    return json.loads(response.text)
+
+@app.route('/smokedata')
+def smokes():
+
+    smokes = []
+
+    unitaddresses = ['192.168.127.106']
+    for unit in unitaddresses:
+        unitaddress = 'http://' + unit + ':5000/smoke/smoke'
+        response = requests.get(unitaddress)
+        print(json.loads(response.text))
+
+        smoke_data = json.loads(response.text)
+        smokes.append({'unit': unit, 'smoke': smoke_data['smoke']})
+
+    return jsonify(smokes)
+
+# Rain data
+
+@app.route('/rain/<int:unit>')
+def rain_int(unit):
+    return jsonify({'error': 'unit not found'})
+
+@app.route('/rain/<unit>')
+def rain_string(unit):
+    # get the smoke from the unit
+    unitaddress = 'http://' + unit + ':5000/rain/rain'
+    response = requests.get(unitaddress)
+    return json.loads(response.text)
+  
+@app.route('/raindata')
+def rains():
+
+    rains = []
+
+    unitaddresses = ['192.168.127.106']
+    for unit in unitaddresses:
+        unitaddress = 'http://' + unit + ':5000/rain/rain'
+        response = requests.get(unitaddress)
+        print(json.loads(response.text))
+
+        rain_data = json.loads(response.text)
+        rains.append({'unit': unit, 'rain': rain_data['rain']})
+
+    return jsonify(rains)
+
+# Camera data
+
+@app.route('/camera/<int:unit>')
+def camera_int(unit):
+    return jsonify({'error': 'unit not found'})
+
+@app.route('/camera/<unit>')
+def camera_string(unit):
+    # get the smoke from the unit
+    unitaddress = 'http://' + unit + ':5000/camera/camera'
+    response = requests.get(unitaddress)
+    return json.loads(response.text)
+
+@app.route('/cameradata')
+def cameras():
+
+    cameras = []
+
+    unitaddresses = ['192.168.127.106']
+    for unit in unitaddresses:
+        unitaddress = 'http://' + unit + ':5000/camera/camera'
+        response = requests.get(unitaddress)
+        print(json.loads(response.text))
+
+        camera_data = json.loads(response.text)
+        cameras.append({'unit': unit, 'camera': camera_data['camera']})
+    
+    return jsonify(cameras)
+
+
 
 if __name__ == '__main__':
     app.run(host='192.168.127.93', port=5000, debug=True)
