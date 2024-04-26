@@ -117,6 +117,7 @@ nav, .tablink-container {
     display: flex;
     font-size: 13px;
     color: white;
+    margin-top: 0.2%;
 }
 
 .date-time h4, .geoData h4 {
