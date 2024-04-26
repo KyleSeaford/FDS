@@ -4,7 +4,7 @@ api = Namespace('Camera', description='camera endpoint')
 import random
 import os
 
-image_dir = "FDS\Pi\endpoints\cameraImgs" 
+image_dir = "/home/robot/FDS/FDS/Pi/endpoints/cameraImgs" 
 images = os.listdir(image_dir)
 
 random_image = random.choice(images)

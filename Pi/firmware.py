@@ -7,7 +7,7 @@ from endpoints.temperature import api as namespaceTemperature
 from endpoints.smoke import api as namespaceSmoke
 from endpoints.rain import api as namespaceRain
 from endpoints.camera import api as namespaceCamera
-from endpoints.system import api as namespaceSystem
+from endpoints.systemN import api as namespaceSystem
 
 app = Flask(__name__)
 CORS(app)  # Allow CORS for all routes
