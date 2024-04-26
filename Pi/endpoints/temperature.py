@@ -1,4 +1,4 @@
-from flask_restx import Namespace, Resource, fields
+from flask_restx import Namespace, Resource
 api = Namespace('Temperature', description='temp endpoint')
 
 import os
