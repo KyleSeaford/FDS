@@ -77,7 +77,6 @@ def temps():
     for unit in unitaddresses:
         unitaddress = 'http://' + unit + ':5000/temp/temp'
         response = requests.get(unitaddress)
-        print(json.loads(response.text))
 
         temp_data = json.loads(response.text)
         temps.append({'unit': unit, 'temp': temp_data['temperature']})
@@ -106,7 +105,6 @@ def smokes():
     for unit in unitaddresses:
         unitaddress = 'http://' + unit + ':5000/smoke/smoke'
         response = requests.get(unitaddress)
-        print(json.loads(response.text))
 
         smoke_data = json.loads(response.text)
         smokes.append({'unit': unit, 'smoke': smoke_data['smoke']})
@@ -135,7 +133,6 @@ def rains():
     for unit in unitaddresses:
         unitaddress = 'http://' + unit + ':5000/rain/rain'
         response = requests.get(unitaddress)
-        print(json.loads(response.text))
 
         rain_data = json.loads(response.text)
         rains.append({'unit': unit, 'rain': rain_data['rain']})
@@ -152,8 +149,8 @@ def camera_int(unit):
 def camera_string(unit):
     # get the smoke from the unit
     unitaddress = 'http://' + unit + ':5000/camera/camera'
-    response = requests.get(unitaddress)
-    return json.loads(response.text)
+    return jsonify(unitaddress)
+
 
 @app.route('/cameradata')
 def cameras():
@@ -163,11 +160,8 @@ def cameras():
     unitaddresses = unitaddresses_full
     for unit in unitaddresses:
         unitaddress = 'http://' + unit + ':5000/camera/camera'
-        response = requests.get(unitaddress)
-        print(json.loads(response.text))
 
-        camera_data = json.loads(response.text)
-        cameras.append({'unit': unit, 'camera': camera_data['camera']})
+        cameras.append({'unit': unit, 'camera': unitaddress})
     
     return jsonify(cameras)
 
@@ -186,7 +180,6 @@ def zone1temps():
     for unit in unitaddresses:
         unitaddress = 'http://' + unit + ':5000/temp/temp'
         response = requests.get(unitaddress)
-        print(json.loads(response.text))
 
         temp_data = json.loads(response.text)
         temps.append({'unit': unit, 'temp': temp_data['temperature']})
@@ -202,7 +195,6 @@ def zone1smokes():
     for unit in unitaddresses:
         unitaddress = 'http://' + unit + ':5000/smoke/smoke'
         response = requests.get(unitaddress)
-        print(json.loads(response.text))
 
         smoke_data = json.loads(response.text)
         smokes.append({'unit': unit, 'smoke': smoke_data['smoke']})
@@ -218,7 +210,6 @@ def zone1rains():
     for unit in unitaddresses:
         unitaddress = 'http://' + unit + ':5000/rain/rain'
         response = requests.get(unitaddress)
-        print(json.loads(response.text))
 
         rain_data = json.loads(response.text)
         rains.append({'unit': unit, 'rain': rain_data['rain']})
@@ -233,88 +224,21 @@ def zone1cameras():
     unitaddresses = zone1_addresses_full
     for unit in unitaddresses:
         unitaddress = 'http://' + unit + ':5000/camera/camera'
-        response = requests.get(unitaddress)
-        print(json.loads(response.text))
 
-        camera_data = json.loads(response.text)
-        cameras.append({'unit': unit, 'camera': camera_data['camera']})
+        cameras.append({'unit': unit, 'camera': unitaddress})
     
     return jsonify(cameras)
-
 
 # MARK: zone 2 app routes
 
 # fill in the addresses of the units in zone 2
 zone2_addresses_full = ['']
 
-@app.route('/zone2tempdata')
-def zone2temps():
 
-    temps = []
-
-    unitaddresses = zone2_addresses_full
-    for unit in unitaddresses:
-        unitaddress = 'http://' + unit + ':5000/temp/temp'
-        response = requests.get(unitaddress)
-        print(json.loads(response.text))
-
-        temp_data = json.loads(response.text)
-        temps.append({'unit': unit, 'temp': temp_data['temperature']})
-
-    return jsonify(temps)
-
-@app.route('/zone2smokedata')
-def zone2smokes():
-
-    smokes = []
-
-    unitaddresses = zone2_addresses_full
-    for unit in unitaddresses:
-        unitaddress = 'http://' + unit + ':5000/smoke/smoke'
-        response = requests.get(unitaddress)
-        print(json.loads(response.text))
-
-        smoke_data = json.loads(response.text)
-        smokes.append({'unit': unit, 'smoke': smoke_data['smoke']})
-
-    return jsonify(smokes)
-
-@app.route('/zone2raindata')
-def zone2rains():
-
-    rains = []
-
-    unitaddresses = zone2_addresses_full
-    for unit in unitaddresses:
-        unitaddress = 'http://' + unit + ':5000/rain/rain'
-        response = requests.get(unitaddress)
-        print(json.loads(response.text))
-
-        rain_data = json.loads(response.text)
-        rains.append({'unit': unit, 'rain': rain_data['rain']})
-
-    return jsonify(rains)
-
-@app.route('/zone2cameradata')
-def zone2cameras():
-
-    cameras = []
-
-    unitaddresses = zone2_addresses_full
-    for unit in unitaddresses:
-        unitaddress = 'http://' + unit + ':5000/camera/camera'
-        response = requests.get(unitaddress)
-        print(json.loads(response.text))
-
-        camera_data = json.loads(response.text)
-        cameras.append({'unit': unit, 'camera': camera_data['camera']})
-    
-    return jsonify(cameras)
 
 
 
 
 # MARK: ip and debug mode
-
 if __name__ == '__main__':
     app.run(host='192.168.127.93', port=5000, debug=True)

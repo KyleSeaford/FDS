@@ -66,7 +66,7 @@ document.getElementById("settingsButton").addEventListener("click", function () 
                     <div class="box" id="temp">Temperature:</div>
                     <div class="box" id="smoke">Smoke Particles:</div>
                     <div class="box" id="rain">Rain Percentage:</div>
-                    <div class="box" id="cam">Image Slide Show</div>
+                    <div class="box" id="camimg">Image SlideShow</div>
                 </div>
             `;
             tabContentContainer.appendChild(zoneContentDiv);
@@ -216,7 +216,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <div class="box" id="temp">Temperature:</div>
                     <div class="box" id="smoke">Smoke Particles:</div>
                     <div class="box" id="rain">Rain Percentage:</div>
-                    <div class="box" id="cam">Image Slide Show</div>
+                    <div class="box" id="camimg">Image SlideShow</div>
                 </div>
             `;
             tabContentContainer.appendChild(zoneContentDiv);
