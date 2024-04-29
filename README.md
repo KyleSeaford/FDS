@@ -51,7 +51,7 @@ For any questions or inquiries related to this project, you can reach out to Kyl
 ![goodDash](archive/dash.PNG)
 
 - 29/04/24 One Zone and One Unit Graphs
-![goodgraphs](archive/graphs.PNG)
+![goodGraphs](archive/graphs.PNG)
 
 ## task for the week
 
