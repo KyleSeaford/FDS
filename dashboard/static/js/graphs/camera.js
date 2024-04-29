@@ -1,4 +1,8 @@
 // Load the camera data from the pi and display it on the dashboard
+
+// dosn't seem to change the image, it just keeps it as the spacefiller image idk why!!!
+
+
 $(document).ready(function(){
     const a =  window.location.origin + '/zone1cameradata';
     $.getJSON(a, function(data) {
@@ -19,5 +23,5 @@ $(document).ready(function(){
             // Replace the contents of the #camimg div with the img tag
             $('#camimg').empty().append(img);
         })
-    }, 60000); // update every minute 
+    }, 30000); // update every 30 seconds
 })
