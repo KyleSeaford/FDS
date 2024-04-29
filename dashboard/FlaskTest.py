@@ -5,10 +5,11 @@ from flask import Flask, render_template, jsonify
 import datetime
 import requests
 from flask_cors import CORS
+import random
+import json
 
 from location import get_location
 from weather import *
-import json
 
 app = Flask(__name__)
 CORS(app)  # Allow CORS for all routes
@@ -218,10 +219,10 @@ def zone1rains():
 
 @app.route('/zone1cameradata')
 def zone1cameras():
-
     cameras = []
 
-    unitaddresses = zone1_addresses_full
+    # Generate a new list of unit addresses on each request
+    unitaddresses = random.sample(zone1_addresses_full, len(zone1_addresses_full))
     for unit in unitaddresses:
         unitaddress = 'http://' + unit + ':5000/camera/camera'
 
