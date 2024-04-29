@@ -54,7 +54,7 @@ For any questions or inquiries related to this project, you can reach out to Kyl
 ## task for the week
 
 ### 29/10/2024
-- [ ] use the data and show it on a graph on the dashboard
+- [x] use the data and show it on a graph on the dashboard
 - [ ] simulate a second unit
 - [ ] show multiple data on each graph
 - [x] show images
