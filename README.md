@@ -20,9 +20,9 @@ The Forest Defense System (FDS) continuously monitors the environment for any si
 
 We would like to acknowledge the following:
 
-- Raspberry Pi Foundation for providing the hardware platform.
-- Flask and HTML communities for providing tools for web development.
-- Stackoverflow for bug fixes
+- [Raspberry Pi Foundation](https://www.raspberrypi.org/) for providing the hardware platform.
+- [Flask](https://flask.palletsprojects.com/en/3.0.x/) and [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) communities for providing tools for web development.
+- [Stack Overflow](https://stackoverflow.com/) for bug fixes 
 - my dad for his mega smart brain
 - Emergency responders and organizations for their collaboration and support.
 
@@ -30,29 +30,14 @@ We would like to acknowledge the following:
 
 For any questions or inquiries related to this project, you can reach out to Kyle Seaford via email or GitHub.
 
-## ToDo
-
-### pi stuff 
-- [x] integrate onto pi
-- [ ] make pi work with all the sensors
-
-#### sensors / stuff needed 
+## ToDo - ToGet
+### sensors / stuff needed 
 - [x] temperature sensor
 - [ ] smoke sensor
 - [ ] rain sensor
 - [ ] visual camera
 - [ ] solar-powered pi
 - [ ] 3D printed box for the whole pi, find out which pole to use
-
-### dashboard stuff
-- [x] default load onto zone1 when zones are added/removed.  I DON'T KNOW WHY IT DOSE NOT DO THIS AND NOR DOSE ANY AI. probobly bc nonw of them are set as the default but idkkkkk (dad was able to fix it!!!!)
-- [x] change the colors 
-- [ ] display graphs 
-- [x] change the unit description to 'colors'
-- [x] make it so only a set amount of colors can be chosen or just assign each unit a color e.g. unit1: Yellow. Then make it so the background for the color column is the unit's color 
-- [x] add swagger api
-- [x] change top left name to the logo
-- [ ] insted of typing colour, type the url for the unit, eg unit1 - yellow, url - http://127.0.0.1:5000/zone1/unit1 (am doing this automaticly now, it just knows the url)
 
 ### improvements 
 - [ ] improve ip geolocation because it sometimes thinks were in glasgow (we're not.)
@@ -65,3 +50,11 @@ For any questions or inquiries related to this project, you can reach out to Kyl
 
 - 22/04/24 Good Dashboard 
 ![goodDash](archive/dash.PNG)
+
+## task for the day
+
+### 29/10/2024
+- [ ] use the data and show it on a graph on the dashboard
+- [ ] simulate a  second unit
+- [ ] show multiple data on each graph
+- [ ] make the photos move 
