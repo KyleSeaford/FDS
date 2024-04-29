@@ -45,16 +45,18 @@ For any questions or inquiries related to this project, you can reach out to Kyl
 - [ ] improve weather API so it updates more (can't due to free API limit)
 - [x] change the "FireGuard Pro - Forest Defense System (FDS)" on the info bar to the logo. (FDS\dashboard\static\imgs\name.png) - messed up the styles too much when i tried 
 
-
 ### screenshots 
 
 - 22/04/24 Good Dashboard 
 ![goodDash](archive/dash.PNG)
 
+- 29/04/24 One Zone and One Unit Graphs
+![goodGraphs](archive/graphs.PNG)
+
 ## task for the week
 
 ### 29/10/2024
-- [ ] use the data and show it on a graph on the dashboard
+- [x] use the data and show it on a graph on the dashboard
 - [ ] simulate a second unit
 - [ ] show multiple data on each graph
 - [x] show images
