@@ -51,10 +51,12 @@ For any questions or inquiries related to this project, you can reach out to Kyl
 - 22/04/24 Good Dashboard 
 ![goodDash](archive/dash.PNG)
 
-## task for the day
+## task for the week
 
 ### 29/10/2024
 - [ ] use the data and show it on a graph on the dashboard
-- [ ] simulate a  second unit
+- [ ] simulate a second unit
 - [ ] show multiple data on each graph
-- [ ] make the photos move 
+- [x] show images
+- [ ] make the photos move
+- [ ] link up the amout of units per zone on the dashboard to the python
