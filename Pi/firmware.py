@@ -3,7 +3,7 @@
 from flask import Flask
 from flask_restx import Api
 from flask_cors import CORS
-from endpoints.temperature import api as namespaceTemperature
+from endpoints.temperature import api as namespaceTemperature # change to tempNOsensor.py if unit has no sensor
 from endpoints.smoke import api as namespaceSmoke
 from endpoints.rain import api as namespaceRain
 from endpoints.camera import api as namespaceCamera
