@@ -63,10 +63,20 @@ document.getElementById("settingsButton").addEventListener("click", function () 
                 </div>  
 
                 <div class="container">
-                    <div class="box" id="temp">Temperature:</div>
-                    <div class="box" id="smoke">Smoke Particles:</div>
-                    <div class="box" id="rain">Rain Percentage:</div>
-                    <div class="box" id="camimg">Image SlideShow</div>
+                    <div class="box">
+                        <canvas id="temperatureChart"></canvas>
+                    </div>
+
+                    <div class="box">
+                        <canvas id="smokeChart"></canvas>
+                    </div>
+
+                    <div class="box">
+                        <canvas id="rainChart"></canvas>
+                        <p>Rain</p>
+                    </div>
+                    
+                    <div class="box" id="">Image SlideShow</div>
                 </div>
             `;
             tabContentContainer.appendChild(zoneContentDiv);
@@ -213,10 +223,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 </div> 
 
                 <div class="container">
-                    <div class="box" id="temp">Temperature:</div>
-                    <div class="box" id="smoke">Smoke Particles:</div>
-                    <div class="box" id="rain">Rain Percentage:</div>
-                    <div class="box" id="camimg">Image SlideShow</div>
+                    <div class="box">
+                        <canvas id="temperatureChart"></canvas>
+                    </div>
+
+                    <div class="box">
+                        <canvas id="smokeChart"></canvas>
+                    </div>
+
+                    <div class="box">
+                        <canvas id="rainChart"></canvas>
+                    </div>
+                    
+                    <div class="box" id="">Image SlideShow</div>
                 </div>
             `;
             tabContentContainer.appendChild(zoneContentDiv);
