@@ -22,7 +22,8 @@ We would like to acknowledge the following:
 
 - [Raspberry Pi Foundation](https://www.raspberrypi.org/) for providing the hardware platform.
 - [Flask](https://flask.palletsprojects.com/en/3.0.x/) and [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) communities for providing tools for web development.
-- [Stack Overflow](https://stackoverflow.com/) for bug fixes 
+- [Stack Overflow](https://stackoverflow.com/) for bug fixes
+- [Chart.js](chartjs.org) for providing the software to make the graphs
 - my dad for his mega smart brain
 - Emergency responders and organizations for their collaboration and support.
 
