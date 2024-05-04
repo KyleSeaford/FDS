@@ -54,9 +54,7 @@ For any questions or inquiries related to this project, you can reach out to Kyl
 - 29/04/24 One Zone and One Unit Graphs
 ![goodGraphs](archive/graphs.PNG)
 
-## task for the week
-
-### 29/10/2024
+## tasks
 - [x] use the data and show it on a graph on the dashboard
 - [ ] simulate a second unit
 - [ ] show multiple data on each graph
