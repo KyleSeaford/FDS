@@ -32,6 +32,7 @@ We would like to acknowledge the following:
 For any questions or inquiries related to this project, you can reach out to Kyle Seaford via email or GitHub.
 
 ## ToDo - ToGet
+
 ### sensors / stuff needed 
 - [x] temperature sensor
 - [ ] smoke sensor
@@ -44,7 +45,7 @@ For any questions or inquiries related to this project, you can reach out to Kyl
 - [ ] improve ip geolocation because it sometimes thinks were in glasgow (we're not.)
 - [ ] replace IP location with GPS data
 - [ ] improve weather API so it updates more (can't due to free API limit)
-- [x] change the "FireGuard Pro - Forest Defense System (FDS)" on the info bar to the logo. (FDS\dashboard\static\imgs\name.png) - messed up the styles too much when i tried 
+- [x] change the "FireGuard Pro - Forest Defense System (FDS)" on the info bar to the logo. (FDS\dashboard\static\imgs\name.png) - messed up the styles too much when I tried 
 
 ### screenshots 
 
