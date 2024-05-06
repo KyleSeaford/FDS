@@ -45,7 +45,8 @@ For any questions or inquiries related to this project, you can reach out to Kyl
 - [ ] improve ip geolocation because it sometimes thinks were in glasgow (we're not.)
 - [ ] replace IP location with GPS data
 - [ ] improve weather API so it updates more (can't due to free API limit)
-- [x] change the "FireGuard Pro - Forest Defense System (FDS)" on the info bar to the logo. (FDS\dashboard\static\imgs\name.png) - messed up the styles too much when I tried 
+- [x] change the "FireGuard Pro - Forest Defense System (FDS)" on the info bar to the logo. (FDS\dashboard\static\imgs\name.png) - messed up the styles too much when I tried
+- [ ] connect the ```zone1_addresses_full = ['192.168.127.106']``` in `FlaskTest.py` to the table that shows the number of units in `Zones.js`
 
 ### screenshots 
 
