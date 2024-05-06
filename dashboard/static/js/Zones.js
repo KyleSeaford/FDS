@@ -73,7 +73,6 @@ document.getElementById("settingsButton").addEventListener("click", function () 
 
                     <div class="box">
                         <canvas id="rainChart"></canvas>
-                        <p>Rain</p>
                     </div>
                     
                     <div class="box" id="">Image SlideShow</div>

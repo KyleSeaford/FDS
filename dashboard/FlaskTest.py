@@ -54,9 +54,9 @@ def current_time():
     return jsonify({'current_time': datetime.datetime.now().strftime("%H:%M:%S")})
 
 
-# MARK: Temp data
 # fill in the addresses for all the units
 unitaddresses_full = ['192.168.127.106']
+# MARK: Temp data
 
 @app.route('/temp/<int:unit>')
 def temp_int(unit):
