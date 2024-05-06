@@ -25,7 +25,7 @@ $(document).ready(function(){
                     label: 'Unit1',
                     data: rainData,
                     fill: false,
-                    borderColor: 'rgb(110, 247, 5)',
+                    borderColor: '#4567B7',
                     tension: 0.1
                 }]
             },

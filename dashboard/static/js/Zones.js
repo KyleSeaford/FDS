@@ -145,8 +145,8 @@ function configureUnits(zoneNumber) {
             zoneData.descriptions = zoneData.descriptions.slice(0, numberOfUnits);
         }
 
-        // Predefined list of colors
-        var colors = ['Yellow', 'Red', 'Blue', 'Green', 'Pink', 'Brown', 'Cyan', 'Magenta', 'Lime', 'Teal', 'Indigo', 'Silver', 'Gold'];
+        // Predefined list of colors for the units (up to 5 units)
+        var colors = ['#4567B7', '#6495ED', '#87A7B1', '#ACCBEA', '#C7D5F5'];
 
         // Update unit table with descriptions
         var descriptions = zoneData.descriptions;
