@@ -62,4 +62,5 @@ For any questions or inquiries related to this project, you can reach out to Kyl
 - [ ] show multiple data on each graph
 - [x] show images
 - [ ] make the photos move
-- [ ] link up the amout of units per zone on the dashboard to the python
+- [ ] link up the amount of units per zone on the dashboard to the python
+- [ ] Removed the hardcoded IP at the bottom of `FlaskTest.py` line `app.run(host='192.168.127.153', port=5000, debug=True)`
