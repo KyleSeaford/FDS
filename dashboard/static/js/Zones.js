@@ -141,18 +141,22 @@ function configureUnits(zoneNumber) {
         } else if (numberOfUnits < zoneData.descriptions.length) {
             // If the new number of units is less than the existing number,
             // truncate the descriptions array accordingly
-            zoneData.descriptions = zoneData.descriptions.slice(0, numberOfUnits);
+            zoneData.descriptions = zoneData.descriptions.slice(0, numberOfUnits); 
         }
+        removeUnits(zoneNumber, numberOfUnits);
 
         // Predefined list of colors for the units (up to 5 units)
         var colors = ['#4567B7', '#6495ED', '#87A7B1', '#ACCBEA', '#C7D5F5'];
 
         // Update unit table with descriptions
         var descriptions = zoneData.descriptions;
-        for (var i = descriptions.length; i < numberOfUnits; i++) {
+        for (var unitNumber = descriptions.length; unitNumber < numberOfUnits; unitNumber++) {
             // Assign color from the predefined list
-            var color = colors[i % colors.length];
-            descriptions.push(color);
+            var color = colors[unitNumber % colors.length];
+            descriptions.push(color); 
+
+            setUnitColor(zoneNumber, unitNumber, color);
+            setUnitAddress(zoneNumber, unitNumber, `192.167.${zoneNumber}.${unitNumber}`);
         }
 
         // Save updated zone data to localStorage
@@ -234,7 +238,18 @@ document.addEventListener('DOMContentLoaded', function () {
                         <canvas id="rainChart"></canvas>
                     </div>
                     
-                    <div class="box" id="">Image SlideShow</div>
+                    <div class="box" id="">
+                        <!-- Image SlideShow -->
+                        Number of Zones= ${getNumberOfZones()}<br />
+                        Current Zone number= ${i}<br />
+                        Current Units in zone = ${numberOfUnits} <br />
+                        zone ${i} unit 1 colour= ${getUnitColor(i, 0)}<br />
+                        zone ${i} unit 1 address= ${getUnitAddress(i, 0)}<br />
+                        zone ${i} unit 2 colour= ${getUnitColor(i, 1)}<br />
+                        zone ${i} unit 2 address= ${getUnitAddress(i, 1)}<br />
+                        zone ${i} unit 3 colour= ${getUnitColor(i, 2)}<br />
+                        zone ${i} unit 3 address= ${getUnitAddress(i, 2)}<br />
+                    </div>
                 </div>
             `;
             tabContentContainer.appendChild(zoneContentDiv);
