@@ -25,4 +25,4 @@ api.add_namespace(namespaceStop, path='/stop')
 
 
 if __name__ == '__main__':
-    app.run(host='192.168.127.153', port=5500, debug=False)
+    app.run(host='0.0.0.0', port=5500, debug=False)

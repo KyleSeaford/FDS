@@ -242,4 +242,4 @@ zone2_addresses_full = ['']
 
 # MARK: ip and debug mode
 if __name__ == '__main__':
-    app.run(host='192.168.127.93', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
