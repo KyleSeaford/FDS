@@ -8,8 +8,8 @@ document.getElementById("settingsButton").addEventListener("click", function () 
 
     // Validate if the input is a number and greater than 0
     if (!isNaN(numberOfZones) && numberOfZones > 0 && numberOfZones <= 13) {
-        // Save the number of zones to localStorage
-        localStorage.setItem('numberOfZones', numberOfZones);
+        // Save the number of zones
+        setNumberOfZones(numberOfZones);
 
         // Remove existing zone buttons and content
         var tablinkContainer = document.querySelector(".tablink-container");
@@ -29,12 +29,6 @@ document.getElementById("settingsButton").addEventListener("click", function () 
             if (i == 1)
                 zoneButton.id = "defaultOpen"; // Added to set the first zone as the default open tab
             tablinkContainer.appendChild(zoneButton);
-
-            // Retrieve existing zone data from localStorage or create new if it doesn't exist
-            var zoneData = JSON.parse(localStorage.getItem(`zone${i}`)) || {
-                numberOfUnits: 0,
-                descriptions: []
-            };
 
             // Create zone content div
             var zoneContentDiv = document.createElement("div");
@@ -81,10 +75,7 @@ document.getElementById("settingsButton").addEventListener("click", function () 
             tabContentContainer.appendChild(zoneContentDiv);
 
             // Populate unit table with descriptions
-            populateUnitTableWithColorBoxes(i, zoneData.descriptions);
-
-            // Save zone data to localStorage
-            localStorage.setItem(`zone${i}`, JSON.stringify(zoneData));
+            populateUnitTableWithColorBoxes(i, getUnitColours(i));
         }
 
         // Get the element with id="defaultOpen" and click on it
@@ -115,16 +106,10 @@ function populateUnitTableWithColorBoxes(zoneNumber, descriptions) {
 // Function to handle configuring units
 function configureUnits(zoneNumber) {
     // Prompt the user to enter the number of units for the specific zone
-    var numberOfUnits = prompt(`Please enter the number of units for Zone ${zoneNumber}:`, localStorage.getItem(`unitsForZone${zoneNumber}`) || "1");
+    var numberOfUnits = prompt(`Please enter the number of units for Zone ${zoneNumber}:`, getNumberOfUnits(zoneNumber) || "1");
 
     // Parse the number of units as an integer
     numberOfUnits = parseInt(numberOfUnits);
-
-    // Retrieve existing zone data or create new if it doesn't exist
-    var zoneData = JSON.parse(localStorage.getItem(`zone${zoneNumber}`)) || {
-        numberOfUnits: 0,
-        descriptions: []
-    };
 
     // Validate if the input is a number and greater than or equal to 0
     if (!isNaN(numberOfUnits) && numberOfUnits >= 0 && numberOfUnits <= 5) {
@@ -132,40 +117,28 @@ function configureUnits(zoneNumber) {
         var unitInfoDiv = document.getElementById(`unitInfo_${zoneNumber}`);
         // unitInfoDiv.innerHTML = `<h1>Zone ${zoneNumber} | Number of Units: ${numberOfUnits}</h1>`; // Changed 'i' to 'zoneNumber'
 
-        // Update zone data with the new number of units
-        zoneData.numberOfUnits = numberOfUnits;
-
-        // If the number of units is set to 0, clear descriptions
-        if (numberOfUnits === 0) {
-            zoneData.descriptions = [];
-        } else if (numberOfUnits < zoneData.descriptions.length) {
-            // If the new number of units is less than the existing number,
-            // truncate the descriptions array accordingly
-            zoneData.descriptions = zoneData.descriptions.slice(0, numberOfUnits); 
-        }
+        // If the new number of units is less than the existing number, truncate the array accordingly
         removeUnits(zoneNumber, numberOfUnits);
 
         // Predefined list of colors for the units (up to 5 units)
         var colors = ['#4567B7', '#6495ED', '#87A7B1', '#ACCBEA', '#C7D5F5'];
 
         // Update unit table with descriptions
-        var descriptions = zoneData.descriptions;
-        for (var unitNumber = descriptions.length; unitNumber < numberOfUnits; unitNumber++) {
+        var unitColourList = getUnitColours(zoneNumber);
+        for (var unitNumber = unitColourList.length; unitNumber < numberOfUnits; unitNumber++) {
             // Assign color from the predefined list
             var color = colors[unitNumber % colors.length];
-            descriptions.push(color); 
+            unitColourList.push(color); 
 
             setUnitColor(zoneNumber, unitNumber, color);
             setUnitAddress(zoneNumber, unitNumber, `192.167.${zoneNumber}.${unitNumber}`);
         }
 
-        // Save updated zone data to localStorage
-        localStorage.setItem(`zone${zoneNumber}`, JSON.stringify(zoneData));
-        localStorage.setItem(`unitsForZone${zoneNumber}`, numberOfUnits);
-        localStorage.setItem(`descriptionsForZone${zoneNumber}`, JSON.stringify(descriptions));
+        // Save updated zone data to Storage
+        setNumberOfUnits(zoneNumber, numberOfUnits);
 
         // Populate unit table with color boxes
-        populateUnitTableWithColorBoxes(zoneNumber, descriptions);
+        populateUnitTableWithColorBoxes(zoneNumber, unitColourList);
 
     } else {
         alert("Please enter a valid number of units: 0 to 5.");
@@ -174,11 +147,11 @@ function configureUnits(zoneNumber) {
 
 // Function to create zone buttons and content on page load
 document.addEventListener('DOMContentLoaded', function () {
-    // Check if numberOfZones is saved in localStorage
-    var savedNumberOfZones = localStorage.getItem('numberOfZones');
+    // Check if numberOfZones is saved in Storage
+    var savedNumberOfZones = getNumberOfZones();
 
     if (savedNumberOfZones !== null) {
-        // Retrieve the number of zones from localStorage
+        // Retrieve the number of zones from Storage
         var numberOfZones = parseInt(savedNumberOfZones);
 
         // Add zone buttons and corresponding content based on the saved number of zones
@@ -196,8 +169,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 zoneButton.id = "defaultOpen"; // Added to set the first zone as the default open tab
             tablinkContainer.appendChild(zoneButton);
 
-            // Retrieve the number of units for this zone from localStorage
-            var numberOfUnits = parseInt(localStorage.getItem(`unitsForZone${i}`)) || 0;
+            // Retrieve the number of units for this zone from Storage
+            var numberOfUnits = parseInt(getNumberOfUnits(i)) || 0;
 
             // Create zone content div
             var zoneContentDiv = document.createElement("div");
@@ -255,11 +228,11 @@ document.addEventListener('DOMContentLoaded', function () {
             tabContentContainer.appendChild(zoneContentDiv);
 
             // Populate unit table with color boxes
-            var descriptions = JSON.parse(localStorage.getItem(`descriptionsForZone${i}`));
+            var descriptions = getUnitColours(i);
             populateUnitTableWithColorBoxes(i, descriptions);
 
-            // Save the number of units to localStorage with default as 0
-            localStorage.setItem(`unitsForZone${i}`, numberOfUnits);
+            // Save the number of units with default as 0
+            setNumberOfUnits(i, numberOfUnits)
         }
 
         // Get the element with id="defaultOpen" and click on it
