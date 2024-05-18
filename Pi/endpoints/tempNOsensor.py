@@ -1,25 +1,23 @@
-from flask_restx import Namespace, Resource
+from flask_restx import Namespace, Resource, Api
+from flask import Flask
 import random
 import datetime
 import sqlite3
 import time
 import threading
 
-
-# use this on units with no sensors for testing 
+app = Flask(__name__)
+api = Api(app)
 api = Namespace('Temp', description='Temp endpoint')
 
-
-# use a separate thread to run the data addition function
+# Use a separate thread to run the data addition function
 class DataAdder(threading.Thread):
     def __init__(self):
         super().__init__()
-        #self.conn = sqlite3.connect('sensordata.db')
-        #self.cursor = self.conn.cursor()
-        self.flag = True
+        self._stop_event = threading.Event()
 
     def run(self):
-        while self.flag:
+        while not self._stop_event.is_set():
             temp = random.randint(0, 100)
             current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
@@ -29,32 +27,33 @@ class DataAdder(threading.Thread):
             conn.commit()
             conn.close()
 
-            time.sleep(10)
+            time.sleep(5)
 
-    def close(self):        
-        #self.conn.close()
-        self.flag = False
-        print("close self.flag: ", self.flag)
+    def stop(self):        
+        self._stop_event.set()
+        print("Data addition stopped")
 
 data_adder = DataAdder()
 data_adder.start()
 
-@api.route('/Temp', doc={"description": "get the temperature"})
+@api.route('/Temp', doc={"description": "Get the temperature"})
 class HelloWorld(Resource):
     def get(self):
         temp = random.randint(0, 100)
         current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        
-        # add data to db
-        data_adder.cursor.execute('INSERT INTO Temp (Temp, Time) VALUES (?, ?)', (temp, current_time))
-        data_adder.conn.commit()
+
+        # Add data to db
+        conn = sqlite3.connect('sensordata.db')
+        cursor = conn.cursor()
+        cursor.execute('INSERT INTO Temp (Temp, Time) VALUES (?, ?)', (temp, current_time))
+        conn.commit()
+        conn.close()
         
         return {'message': 'Temperature data stored successfully'}
-    
-@api.route('/Stop', doc={"description": "Stop the temperature"})
+
+@api.route('/Stop', doc={"description": "Stop the temperature data addition"})
 class Stop(Resource):
     def get(self):
-        #global flag
-        #flag = False
-        data_adder.close()
-        return {'message': 'Temperature data stopped successfully'}
+        data_adder.stop()
+        data_adder.join()  # Ensure the thread has finished
+        return {'message': 'Temperature data addition stopped successfully'}
