@@ -1,3 +1,60 @@
+function CreateZoneContentDiv(i) {
+    var zoneContentDiv = document.createElement("div");
+    zoneContentDiv.id = "Zone_" + i;
+    zoneContentDiv.className = "tabcontent";
+    zoneContentDiv.innerHTML = `
+        <div id="unitInfo_${i}" class="unitInfo">
+            
+        </div>
+
+        <div class="unit-container">
+            <div class="unit-content">
+                <button class="unitButton" onclick="configureUnits(${i})">Configure Units</button>
+                <table class="unit-table" id="unitTable_${i}">
+                    <thead>
+                        <tr>
+                            <th>Unit #</th>
+                            <th>Colour</th>
+                        </tr>
+                    </thead>
+                    <tbody id="unitTableBody_${i}">
+                        <!-- Unit rows will be added dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </div> 
+
+        <div class="container">
+            <div class="box">
+                <canvas id="temperatureChart${i}"></canvas>
+            </div>
+
+            <div class="box">
+                <canvas id="smokeChart"></canvas>
+            </div>
+
+            <div class="box">
+                <canvas id="rainChart"></canvas>
+            </div>
+            
+            <div class="box" id="">
+                <!-- Image SlideShow -->
+                Number of Zones= ${getNumberOfZones()}<br />
+                Current Zone number= ${i}<br />
+                Current Units in zone = ${getNumberOfUnits(i)} <br />
+                zone ${i} unit 1 colour= ${getUnitColor(i, 0)}<br />
+                zone ${i} unit 1 address= ${getUnitAddress(i, 0)}<br />
+                zone ${i} unit 2 colour= ${getUnitColor(i, 1)}<br />
+                zone ${i} unit 2 address= ${getUnitAddress(i, 1)}<br />
+                zone ${i} unit 3 colour= ${getUnitColor(i, 2)}<br />
+                zone ${i} unit 3 address= ${getUnitAddress(i, 2)}<br />
+            </div>
+        </div>
+    `;
+    return zoneContentDiv;
+}
+
+
 // Function to handle the settings button click
 document.getElementById("settingsButton").addEventListener("click", function () {
     // Prompt the user to enter the number of zones
@@ -31,48 +88,7 @@ document.getElementById("settingsButton").addEventListener("click", function () 
             tablinkContainer.appendChild(zoneButton);
 
             // Create zone content div
-            var zoneContentDiv = document.createElement("div");
-            zoneContentDiv.id = "Zone_" + i;
-            zoneContentDiv.className = "tabcontent";
-            zoneContentDiv.innerHTML = `
-                <div id="unitInfo_${i}" class="unitInfo">
-                    
-                </div>
-
-                <div class="unit-container">
-                    <div class="unit-content">
-                        <button class="unitButton" onclick="configureUnits(${i})">Configure Units</button>
-                        <table class="unit-table" id="unitTable_${i}">
-                            <thead>
-                                <tr>
-                                    <th>Unit #</th>
-                                    <th>Colour</th>
-                                </tr>
-                            </thead>
-                            <tbody id="unitTableBody_${i}">
-                                <!-- Unit rows will be added dynamically -->
-                            </tbody>
-                        </table>
-                    </div>
-                </div>  
-
-                <div class="container">
-                    <div class="box">
-                        <canvas id="temperatureChart"></canvas>
-                    </div>
-
-                    <div class="box">
-                        <canvas id="smokeChart"></canvas>
-                    </div>
-
-                    <div class="box">
-                        <canvas id="rainChart"></canvas>
-                    </div>
-                    
-                    <div class="box" id="">Image SlideShow</div>
-                </div>
-            `;
-            tabContentContainer.appendChild(zoneContentDiv);
+            tabContentContainer.appendChild(CreateZoneContentDiv(i));
 
             // Populate unit table with descriptions
             populateUnitTableWithColorBoxes(i, getUnitColours(i));
@@ -81,6 +97,7 @@ document.getElementById("settingsButton").addEventListener("click", function () 
         // Get the element with id="defaultOpen" and click on it
         console.log("Triggering default open tab (top)");
         document.getElementById("defaultOpen").click();
+        graphTemps();
     } else {
         alert("Please enter a valid number of zones: 1 to 13.");
     }
@@ -173,59 +190,7 @@ document.addEventListener('DOMContentLoaded', function () {
             var numberOfUnits = parseInt(getNumberOfUnits(i)) || 0;
 
             // Create zone content div
-            var zoneContentDiv = document.createElement("div");
-            zoneContentDiv.id = "Zone_" + i;
-            zoneContentDiv.className = "tabcontent";
-            zoneContentDiv.innerHTML = `
-                <div id="unitInfo_${i}" class="unitInfo">
-                    
-                </div>
-
-                <div class="unit-container">
-                    <div class="unit-content">
-                        <button class="unitButton" onclick="configureUnits(${i})">Configure Units</button>
-                        <table class="unit-table" id="unitTable_${i}">
-                            <thead>
-                                <tr>
-                                    <th>Unit #</th>
-                                    <th>Colour</th>
-                                </tr>
-                            </thead>
-                            <tbody id="unitTableBody_${i}">
-                                <!-- Unit rows will be added dynamically -->
-                            </tbody>
-                        </table>
-                    </div>
-                </div> 
-
-                <div class="container">
-                    <div class="box">
-                        <canvas id="temperatureChart"></canvas>
-                    </div>
-
-                    <div class="box">
-                        <canvas id="smokeChart"></canvas>
-                    </div>
-
-                    <div class="box">
-                        <canvas id="rainChart"></canvas>
-                    </div>
-                    
-                    <div class="box" id="">
-                        <!-- Image SlideShow -->
-                        Number of Zones= ${getNumberOfZones()}<br />
-                        Current Zone number= ${i}<br />
-                        Current Units in zone = ${numberOfUnits} <br />
-                        zone ${i} unit 1 colour= ${getUnitColor(i, 0)}<br />
-                        zone ${i} unit 1 address= ${getUnitAddress(i, 0)}<br />
-                        zone ${i} unit 2 colour= ${getUnitColor(i, 1)}<br />
-                        zone ${i} unit 2 address= ${getUnitAddress(i, 1)}<br />
-                        zone ${i} unit 3 colour= ${getUnitColor(i, 2)}<br />
-                        zone ${i} unit 3 address= ${getUnitAddress(i, 2)}<br />
-                    </div>
-                </div>
-            `;
-            tabContentContainer.appendChild(zoneContentDiv);
+            tabContentContainer.appendChild(CreateZoneContentDiv(i));
 
             // Populate unit table with color boxes
             var descriptions = getUnitColours(i);

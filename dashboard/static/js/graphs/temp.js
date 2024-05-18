@@ -1,10 +1,23 @@
 $(document).ready(function(){
+    graphTemps();
+});
+
+// Start all temperature graphs
+function graphTemps() {
+    for (let zoneNumber = 1; zoneNumber <= getNumberOfZones(); zoneNumber++){
+        graphTemp(zoneNumber);
+    }
+}
+
+// Start temperature graph
+function graphTemp(zoneNumber) {
+    console.log("Graphing temp for zone", zoneNumber);
+
     var temperatureData = [];
     var temperatureChart;
     var updateInterval = 2000; // Update every 5 seconds
-
     // Get the canvas element for the chart
-    var ctx = document.getElementById('temperatureChart').getContext('2d');
+    var ctx = document.getElementById(`temperatureChart${zoneNumber}`).getContext('2d');
 
     // Function to clear the canvas
     function clearCanvas() {
@@ -17,23 +30,29 @@ $(document).ready(function(){
             clearCanvas();
             temperatureChart.destroy();
         }
+
+        let datasets = [];
+        for (let unitNumber =0; unitNumber < getNumberOfUnits(zoneNumber); unitNumber++){
+            datasets.push({
+                label: `Unit ${unitNumber + 1}`,
+                data: temperatureData,
+                fill: false,
+                borderColor: getUnitColor(zoneNumber, unitNumber),
+                tension: 0.1
+            })
+        }
+
         temperatureChart = new Chart(ctx, {
             type: 'line',
             data: {
                 labels: [],
-                datasets: [{
-                    label: 'Unit1',
-                    data: temperatureData,
-                    fill: false,
-                    borderColor: '#4567B7',
-                    tension: 0.1
-                }]
+                datasets: datasets
             },
             options: {
                 plugins: {
                     title: {
                         display: true,
-                        text: 'Temperature Data for zone1'
+                        text: `Temperature Data for zone${zoneNumber}`
                     }
                 },
                 scales: {
@@ -75,4 +94,5 @@ $(document).ready(function(){
     // Fetch data initially and then at regular intervals
     fetchData();
     setInterval(fetchData, updateInterval);
-});
+}
+
