@@ -55,7 +55,7 @@ def current_time():
 
 
 # fill in the addresses for all the units
-unitaddresses_full = ['192.168.127.117']
+unitaddresses_full = ['192.168.127.117', '192.168.127.117']
 # MARK: Temp data
 
 @app.route('/temp/<int:unit>')
@@ -169,7 +169,7 @@ def cameras():
 # MARK: zone 1 app routes
 
 # fill in the addresses of the units in zone 1
-zone1_addresses_full = ['192.168.127.117']
+zone1_addresses_full = ['192.168.127.117', '192.168.127.133']
 
 @app.route('/zone1tempdata')
 def zone1temps():
