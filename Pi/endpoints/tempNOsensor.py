@@ -36,20 +36,38 @@ class DataAdder(threading.Thread):
 data_adder = DataAdder()
 data_adder.start()
 
+# endpoint to return the temperature once
+
 @api.route('/Temp', doc={"description": "Get the temperature"})
 class HelloWorld(Resource):
     def get(self):
-        temp = random.randint(0, 100)
-        current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-        # Add data to db
+        # get last values from the database
         conn = sqlite3.connect('sensordata.db')
         cursor = conn.cursor()
-        cursor.execute('INSERT INTO Temp (Temp, Time) VALUES (?, ?)', (temp, current_time))
-        conn.commit()
+        cursor.execute('SELECT `temp` FROM `Temp` ORDER BY `Time` DESC LIMIT 1')
+        temps = cursor.fetchall()  
         conn.close()
-        
-        return {'message': 'Temperature data stored successfully'}
+        if len(temps) > 0:
+            temp = temps[0][0]
+        else:
+            temp = "No data available"
+
+        return {'temp': temp}
+
+# endpoint to get the last 10 record from the database
+@api.route('/Temp10', doc={"description": "Get the last 10 records"})
+class HelloWorld(Resource):
+    def get(self):
+        # get last values from the database
+        conn = sqlite3.connect('sensordata.db')
+        cursor = conn.cursor()
+        cursor.execute('SELECT * FROM `Temp` ORDER BY `Time` DESC LIMIT 10')
+        temps = cursor.fetchall()  
+        conn.close()
+
+        return {'temp': temps}
+
+# endpoint to start the temperature data addition
 
 @api.route('/Stop', doc={"description": "Stop the temperature data addition"})
 class Stop(Resource):
