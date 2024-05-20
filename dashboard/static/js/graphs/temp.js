@@ -13,9 +13,9 @@ function graphTemps() {
 function graphTemp(zoneNumber) {
     console.log("Graphing temp for zone", zoneNumber);
 
-    var temperatureData = [];
+    var temperatureData = [[],[],[],[],[]];
     var temperatureChart;
-    var updateInterval = 2000; // Update every 5 seconds
+    var updateInterval = 2000; // Update every 2 seconds
     // Get the canvas element for the chart
     var ctx = document.getElementById(`temperatureChart${zoneNumber}`).getContext('2d');
 
@@ -35,7 +35,7 @@ function graphTemp(zoneNumber) {
         for (let unitNumber =0; unitNumber < getNumberOfUnits(zoneNumber); unitNumber++){
             datasets.push({
                 label: `Unit ${unitNumber + 1}`,
-                data: temperatureData,
+                data: temperatureData[unitNumber],
                 fill: false,
                 borderColor: getUnitColor(zoneNumber, unitNumber),
                 tension: 0.1
@@ -70,8 +70,8 @@ function graphTemp(zoneNumber) {
 
     // Function to update the chart with new data
     function updateChart() {
-        temperatureChart.data.labels = Array.from(Array(temperatureData.length).keys());
-        temperatureChart.data.datasets[0].data = temperatureData;
+        temperatureChart.data.labels = Array.from(Array(temperatureData[0].length).keys());
+        temperatureChart.data.datasets[0].data = temperatureData[0];
         temperatureChart.update();
     }
 
@@ -80,15 +80,48 @@ function graphTemp(zoneNumber) {
 
     // Update the temperature data and display
     function fetchData() {
-        const url = window.location.origin + '/zone1tempdata';
-        $.getJSON(url, function(data) {
-            $('#temp').text('Temperature: ' + data[0].temp);
-            temperatureData.push(data[0].temp);
-            if (temperatureData.length > 10) {
-                temperatureData.shift();
-            }
-            updateChart();
-        });
+        console.log("Fetching data for zone", zoneNumber);
+        if (temperatureData[0].length === 0) {
+            // gets 10 readings from the pi
+            console.log("Fetching 10 readings for zone", zoneNumber);
+            const url = window.location.origin + '/zone1temp10data';
+            $.getJSON(url, function(data) {
+                console.log("data=", data);
+                for (let i = 0; i < data.length; i++) {
+                    let unitdata = data[i];
+                    console.log("unitdata=",unitdata);
+
+                    for (let j = 0; j < unitdata.temp.length; j++) {
+                        let t = unitdata.temp[j][1];
+                        console.log("j=",i,j,t);                        
+                        temperatureData[i].push(t);                        
+                    }
+                }
+                console.log("updatechart temperatureData=",temperatureData);
+                updateChart();
+            });
+
+        }
+        else{
+            // gets on reading from the pi
+            console.log("gets on reading from the pi single reading")
+            console.log("Fetching 1 reading for zone", zoneNumber);
+            const url = window.location.origin + '/zone1tempdata';
+            $.getJSON(url, function(data) {
+                console.log("single data=", data);
+                for (let i = 0; i < data.length; i++) {
+                    let unitdata = data[i];
+                    console.log("single unitdata=",unitdata);
+                    
+                    $('#temp').text('Temperature: ' +unitdata.temp);
+                    temperatureData[i].push(unitdata.temp);
+                    if (temperatureData[i].length > 10) {
+                        temperatureData[i].shift();
+                    }
+                }
+                updateChart();
+            });
+        }
     }
 
     // Fetch data initially and then at regular intervals
