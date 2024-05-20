@@ -6,9 +6,15 @@ import sqlite3
 import time
 import threading
 
+from endpoints.eamilnoti import *
+
 app = Flask(__name__)
 api = Api(app)
 api = Namespace('Temp', description='Temp endpoint')
+
+# Variable to keep track of whether a notification has been sent
+sent = False
+
 
 # Use a separate thread to run the data addition function
 class DataAdder(threading.Thread):
@@ -17,8 +23,15 @@ class DataAdder(threading.Thread):
         self._stop_event = threading.Event()
 
     def run(self):
+        global sent
         while not self._stop_event.is_set():
             temp = random.randint(0, 100)
+
+            if temp > 50 and sent == False:
+                print("Temperature is above 50 degrees")
+                send("Temperature is above 50 degrees", "Temperature Alert")
+                sent = True
+
             current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
             conn = sqlite3.connect('sensordata.db')
@@ -35,6 +48,7 @@ class DataAdder(threading.Thread):
 
 data_adder = DataAdder()
 data_adder.start()
+
 
 # endpoint to return the temperature once
 
@@ -67,8 +81,16 @@ class HelloWorld(Resource):
 
         return {'temp': temps}
 
-# endpoint to start the temperature data addition
+# endpoint to reset notifcations
+@api.route('/Reset', doc={"description": "Reset the temperature notifications"})
+class HelloWorld(Resource):
+    def get(self):
+        global sent
+        sent = False
+        return {'message': 'Notifications reset successfully'}
 
+
+# endpoint to stop the temperature data addition
 @api.route('/Stop', doc={"description": "Stop the temperature data addition"})
 class Stop(Resource):
     def get(self):
