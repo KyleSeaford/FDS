@@ -27,6 +27,8 @@ class DataAdder(threading.Thread):
         while not self._stop_event.is_set():
             temp = random.randint(0, 100)
 
+            print("Temperature: ", temp, "sent", sent)
+
             if temp > 50 and sent == False:
                 print("Temperature is above 50 degrees")
                 send("Temperature is above 50 degrees", "Temperature Alert")

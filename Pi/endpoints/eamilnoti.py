@@ -1,22 +1,33 @@
 import smtplib
+import sqlite3
 from email.mime.text import MIMEText
 
+def getSetting(name):
+    conn = sqlite3.connect('sensordata.db')
+    cursor = conn.cursor()
+    cursor.execute(f'SELECT Svalue FROM Settings WHERE Sname = \'{name}\'')
+    sVAl = cursor.fetchall()  
+    conn.close()
+
+    return sVAl[0][0]
+
+
 def send(message_message, message_subject):
-    sender = 'contact@kyle-seaford.co.uk' # senders email address
-    receivers = ['projects@kyle-seaford.co.uk'] # recipient email address
+    sender = getSetting('sender') # senders email address
+    receiver = getSetting('receiver') # recipient email address
 
     # email details for sender account
-    smtp_server = 'smtp.ionos.co.uk' 
-    smtp_port = 587
-    smtp_username = 'contact@kyle-seaford.co.uk' # senders email address
-    smtp_password = '' # senders email password
+    smtp_server = getSetting('smtp_server')
+    smtp_port = getSetting('smtp_port')
+    smtp_username = getSetting('sender') # senders email address
+    smtp_password = getSetting('password')
 
     # Build the message with MIMEText for proper formatting
     # body of the email
     message = MIMEText(message_message)
     message['Subject'] = message_subject
     message['From'] = sender
-    message['To'] = ', '.join(receivers)
+    message['To'] = receiver
 
     try:
         smtpObj = smtplib.SMTP(smtp_server, smtp_port)
@@ -24,7 +35,7 @@ def send(message_message, message_subject):
         
         smtpObj.login(smtp_username, smtp_password)
         
-        smtpObj.sendmail(sender, receivers, message.as_string())
+        smtpObj.sendmail(sender, receiver, message.as_string())
         print("Successfully sent email")
 
     except smtplib.SMTPException as e:
