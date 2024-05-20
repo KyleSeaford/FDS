@@ -42,7 +42,7 @@ For any questions or inquiries related to this project, you can reach out to Kyl
 - [ ] 3D printed box for the whole pi, find out which pole to use
 
 ### improvements 
-- [ ] improve ip geolocation because it sometimes thinks were in glasgow (we're not.)
+- [x] improve ip geolocation because it sometimes thinks were in glasgow (we're not.)
 - [ ] replace IP location with GPS data
 - [ ] improve weather API so it updates more (can't due to free API limit)
 - [x] change the "FireGuard Pro - Forest Defense System (FDS)" on the info bar to the logo. (FDS\dashboard\static\imgs\name.png) - messed up the styles too much when I tried
@@ -58,9 +58,11 @@ For any questions or inquiries related to this project, you can reach out to Kyl
 
 ## tasks
 - [x] use the data and show it on a graph on the dashboard
-- [ ] simulate a second unit
-- [ ] show multiple data on each graph
+- [x] simulate a second unit
+- [ ] make code easy to add to new units
+- [ ] change the ip additions in dashboard code (want only once)
+- [x] show multiple data on each graph
 - [x] show images
 - [ ] make the photos move
-- [ ] link up the amount of units per zone on the dashboard to the python
 - [x] Removed the hardcoded IP at the bottom of `FlaskTest.py` line `app.run(host='192.168.127.153', port=5000, debug=True)`
+- [ ] add more graphs 
