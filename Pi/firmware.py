@@ -13,7 +13,7 @@ from endpoints.stop import api as namespaceStop
 
 app = Flask(__name__)
 CORS(app)  # Allow CORS for all routes
-api = Api(app, version='1.0', title='Controller Firmware', description='Python Firmware Controller')
+api = Api(app, version='1.0', title='PI Firmware', description='Pi Side Firmware Controller')
 
 api.add_namespace(namespaceSystem, path='/system')
 api.add_namespace(namespaceTemperature, path='/Temp')
