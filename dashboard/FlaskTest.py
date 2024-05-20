@@ -186,6 +186,22 @@ def zone1temps():
 
     return jsonify(temps)
 
+@app.route('/zone1temp10data')
+def zone1temps10():
+    
+        temps = []
+    
+        unitaddresses = zone1_addresses_full
+        for unit in unitaddresses:
+            unitaddress = 'http://' + unit + ':5500/Temp/Temp10'
+            response = requests.get(unitaddress)
+    
+            temp_data = json.loads(response.text)
+            temps.append({'unit': unit, 'temp': temp_data['temp']})
+    
+        return jsonify(temps[:10])
+
+
 """ @app.route('/zone1smokedata')
 def zone1smokes():
 

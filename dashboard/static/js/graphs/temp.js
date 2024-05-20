@@ -80,15 +80,40 @@ function graphTemp(zoneNumber) {
 
     // Update the temperature data and display
     function fetchData() {
-        const url = window.location.origin + '/zone1tempdata';
-        $.getJSON(url, function(data) {
-            $('#temp').text('Temperature: ' + data[0].temp);
-            temperatureData.push(data[0].temp);
-            if (temperatureData.length > 10) {
-                temperatureData.shift();
-            }
-            updateChart();
-        });
+        console.log("Fetching data for zone", zoneNumber);
+        if (temperatureData.length === 0) {
+            // gets 10 readings from the pi
+            console.log("Fetching 10 readings for zone", zoneNumber);
+            const url = window.location.origin + '/zone1temp10data';
+            $.getJSON(url, function(data) {
+                console.log("data=", data);
+                for (let i = 0; i < data.length; i++) {
+                    let unitdata = data[i];
+                    console.log("unitdata=",unitdata);
+
+                    for (let j = 0; j < unitdata.temp.length; j++) {
+                        let t = unitdata.temp[j][1];
+                        console.log("j=",i,j,t);
+                        temperatureData.push(t);
+                    }
+                }
+                updateChart();
+            });
+
+        }
+        else{
+            // gets on reading from the pi
+            console.log("Fetching 1 reading for zone", zoneNumber);
+            const url = window.location.origin + '/zone1tempdata';
+            $.getJSON(url, function(data) {
+                $('#temp').text('Temperature: ' + data[0].temp);
+                temperatureData.push(data[0].temp);
+                if (temperatureData.length > 10) {
+                    temperatureData.shift();
+                }
+                updateChart();
+            });
+        }
     }
 
     // Fetch data initially and then at regular intervals
