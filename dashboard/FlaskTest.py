@@ -55,7 +55,7 @@ def current_time():
 
 
 # fill in the addresses for all the units
-unitaddresses_full = ['192.168.127.106']
+unitaddresses_full = ['192.168.127.117']
 # MARK: Temp data
 
 @app.route('/temp/<int:unit>')
@@ -65,7 +65,7 @@ def temp_int(unit):
 @app.route('/temp/<unit>')
 def temp_string(unit):
     # get the temperature from the unit
-    unitaddress = 'http://' + unit + ':5000/temp/temp'
+    unitaddress = 'http://' + unit + ':5500/Temp/Temp'
     response = requests.get(unitaddress)
     return json.loads(response.text)
   
@@ -76,15 +76,15 @@ def temps():
 
     unitaddresses = unitaddresses_full
     for unit in unitaddresses:
-        unitaddress = 'http://' + unit + ':5000/temp/temp'
+        unitaddress = 'http://' + unit + ':5500/Temp/Temp'
         response = requests.get(unitaddress)
 
         temp_data = json.loads(response.text)
-        temps.append({'unit': unit, 'temp': temp_data['temperature']})
+        temps.append({'unit': unit, 'temp': temp_data['temp']})
 
     return jsonify(temps)
 
-# MARK: Smoke data
+""" # MARK: Smoke data
 
 @app.route('/smoke/<int:unit>')
 def smoke_int(unit):
@@ -165,12 +165,11 @@ def cameras():
         cameras.append({'unit': unit, 'camera': unitaddress})
     
     return jsonify(cameras)
-
-
+ """
 # MARK: zone 1 app routes
 
 # fill in the addresses of the units in zone 1
-zone1_addresses_full = ['192.168.127.106']
+zone1_addresses_full = ['192.168.127.117']
 
 @app.route('/zone1tempdata')
 def zone1temps():
@@ -179,15 +178,15 @@ def zone1temps():
 
     unitaddresses = zone1_addresses_full
     for unit in unitaddresses:
-        unitaddress = 'http://' + unit + ':5000/temp/temp'
+        unitaddress = 'http://' + unit + ':5500/Temp/Temp'
         response = requests.get(unitaddress)
 
         temp_data = json.loads(response.text)
-        temps.append({'unit': unit, 'temp': temp_data['temperature']})
+        temps.append({'unit': unit, 'temp': temp_data['temp']})
 
     return jsonify(temps)
 
-@app.route('/zone1smokedata')
+""" @app.route('/zone1smokedata')
 def zone1smokes():
 
     smokes = []
@@ -234,10 +233,7 @@ def zone1cameras():
 
 # fill in the addresses of the units in zone 2
 zone2_addresses_full = ['']
-
-
-
-
+ """
 
 
 # MARK: ip and debug mode
