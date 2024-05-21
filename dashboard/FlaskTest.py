@@ -54,10 +54,35 @@ def current_time():
     return jsonify({'current_time': datetime.datetime.now().strftime("%H:%M:%S")})
 
 
-# fill in the addresses for all the units
-unitaddresses_full = ['192.168.127.117', '192.168.127.117']
-# MARK: Temp data
+# add the addresses of the units different zones
 
+#zone1_addresses_full = ['192.168.127.127', '192.168.127.133']
+zone1_addresses_full = ['192.168.127.133']
+zone2_addresses_full = ['']
+zone3_addresses_full = ['']
+zone4_addresses_full = ['']
+zone5_addresses_full = ['']
+zone6_addresses_full = ['']
+zone7_addresses_full = ['']
+zone8_addresses_full = ['']
+zone9_addresses_full = ['']
+zone10_addresses_full = ['']
+zone11_addresses_full = ['']
+zone12_addresses_full = ['']
+zone13_addresses_full = ['']
+
+# fill in the addresses for all the units
+unitaddresses_full = zone1_addresses_full + zone2_addresses_full + zone3_addresses_full + zone4_addresses_full + zone5_addresses_full + zone6_addresses_full + zone7_addresses_full + zone8_addresses_full + zone9_addresses_full + zone10_addresses_full + zone11_addresses_full + zone12_addresses_full + zone13_addresses_full
+
+# MARK: Reset all units
+@app.route('/notifications')
+def notifications():
+    for unit in unitaddresses_full:
+        unitaddress = 'http://' + unit + ':5500/Temp/Reset'
+        print(unitaddress)
+    return render_template('noti.html')
+
+# MARK: Temp data
 @app.route('/temp/<int:unit>')
 def temp_int(unit):
     return jsonify({'error': 'unit not found'})
@@ -167,10 +192,6 @@ def cameras():
     return jsonify(cameras)
  """
 # MARK: zone 1 app routes
-
-# fill in the addresses of the units in zone 1
-zone1_addresses_full = ['192.168.127.117', '192.168.127.133']
-
 @app.route('/zone1tempdata')
 def zone1temps():
 

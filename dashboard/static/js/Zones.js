@@ -3,18 +3,19 @@ function CreateZoneContentDiv(i) {
     zoneContentDiv.id = "Zone_" + i;
     zoneContentDiv.className = "tabcontent";
     zoneContentDiv.innerHTML = `
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <div id="unitInfo_${i}" class="unitInfo">
             
         </div>
 
         <div class="unit-container">
             <div class="unit-content">
-                <button class="unitButton" onclick="configureUnits(${i})">Configure Units</button>
+                <button class="unitButton" onclick="configureUnits(${i})">Configure Units <i class="fa fa-gear" aria-hidden="true"></i></button>
                 <table class="unit-table" id="unitTable_${i}">
                     <thead>
                         <tr>
-                            <th>Unit #</th>
-                            <th>Colour</th>
+                            <th>Unit <i class="fa fa-hashtag" aria-hidden="true"></i></th>
+                            <th>Colour <i class="fa fa-paint-brush" aria-hidden="true"></i></th>
                         </tr>
                     </thead>
                     <tbody id="unitTableBody_${i}">
@@ -138,7 +139,7 @@ function configureUnits(zoneNumber) {
         removeUnits(zoneNumber, numberOfUnits);
 
         // Predefined list of colors for the units (up to 5 units)
-        var colors = ['#4567B7', '#6495ED', '#87A7B1', '#ACCBEA', '#C7D5F5'];
+        var colors = ['#4169E1', '#50C878', '#DC143C', '#FFEF00', '#E6E6FA'];
 
         // Update unit table with descriptions
         var unitColourList = getUnitColours(zoneNumber);
