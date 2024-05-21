@@ -60,9 +60,12 @@ For any questions or inquiries related to this project, you can reach out to Kyl
 - [x] use the data and show it on a graph on the dashboard
 - [x] simulate a second unit
 - [ ] make code easy to add to new units
-- [ ] change the ip additions in dashboard code (want only once)
-- [x] show multiple data on each graph
-- [x] show images
+- [x] change the ip additions in dashboard code (want only once)
+- [x] show multiple data on a graph
+- [ ] show images
 - [ ] make the photos move
 - [x] Removed the hardcoded IP at the bottom of `FlaskTest.py` line `app.run(host='192.168.127.153', port=5000, debug=True)`
-- [ ] add more graphs 
+- [ ] change the notification page to a pop up page, the same as it is just pops up insted
+- [ ] make the notifcation button show when a notifcation is there
+- [ ] add more graphs
+- [ ] make notifcations button clear more than just temp
