@@ -79,6 +79,7 @@ unitaddresses_full = zone1_addresses_full + zone2_addresses_full + zone3_address
 def notifications():
     for unit in unitaddresses_full:
         unitaddress = 'http://' + unit + ':5500/Temp/Reset'
+        
         print(unitaddress)
     return render_template('noti.html')
 
