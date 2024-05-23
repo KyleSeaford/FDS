@@ -24,12 +24,16 @@ We would like to acknowledge the following:
 - [Flask](https://flask.palletsprojects.com/en/3.0.x/) and [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) communities for providing tools for web development.
 - [Stack Overflow](https://stackoverflow.com/) for bug fixes
 - [Chart.js](https://www.chartjs.org/) for providing the software to make the graphs
-- my dad for his mega smart brain
 - Emergency responders and organizations for their collaboration and support.
 
 ## Contact
 
 For any questions or inquiries related to this project, you can reach out to Kyle Seaford via email or GitHub.
+
+## Contributors 
+<a href="https://github.com/kyleseaford/FDS/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=kyleseaford/FDS" />
+</a>
 
 ## ToDo - ToGet
 
@@ -43,18 +47,9 @@ For any questions or inquiries related to this project, you can reach out to Kyl
 
 ### improvements 
 - [x] improve ip geolocation because it sometimes thinks were in glasgow (we're not.)
-- [ ] replace IP location with GPS data
 - [ ] improve weather API so it updates more (can't due to free API limit)
 - [x] change the "FireGuard Pro - Forest Defense System (FDS)" on the info bar to the logo. (FDS\dashboard\static\imgs\name.png) - messed up the styles too much when I tried
 - [ ] connect the ```zone1_addresses_full = ['192.168.127.106']``` in `FlaskTest.py` to the table that shows the number of units in `Zones.js`
-
-### screenshots 
-
-- 22/04/24 Good Dashboard 
-![goodDash](archive/dash.PNG)
-
-- 29/04/24 One Zone and One Unit Graphs
-![goodGraphs](archive/graphs.PNG)
 
 ## tasks
 - [x] use the data and show it on a graph on the dashboard
@@ -65,7 +60,7 @@ For any questions or inquiries related to this project, you can reach out to Kyl
 - [ ] show images
 - [ ] make the photos move
 - [x] Removed the hardcoded IP at the bottom of `FlaskTest.py` line `app.run(host='192.168.127.153', port=5000, debug=True)`
-- [ ] change the notification page to a pop up page, the same as it is just pops up insted
-- [ ] make the notifcation button show when a notifcation is there
+- [x] change the notification page to a pop up page, the same as it is just pops up insted
+- [x] make the notifcation button show when a notifcation is there
 - [ ] add more graphs
 - [ ] make notifcations button clear more than just temp
