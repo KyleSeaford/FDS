@@ -69,19 +69,18 @@ zone9_addresses_full = ['']
 zone10_addresses_full = ['']
 zone11_addresses_full = ['']
 zone12_addresses_full = ['']
-zone13_addresses_full = ['']
+zone13_addresses_full = []
 
 # fill in the addresses for all the units
-unitaddresses_full = zone1_addresses_full + zone2_addresses_full + zone3_addresses_full + zone4_addresses_full + zone5_addresses_full + zone6_addresses_full + zone7_addresses_full + zone8_addresses_full + zone9_addresses_full + zone10_addresses_full + zone11_addresses_full + zone12_addresses_full + zone13_addresses_full
+unitaddresses_full = [address for address in zone1_addresses_full + zone2_addresses_full + zone3_addresses_full + zone4_addresses_full + zone5_addresses_full + zone6_addresses_full + zone7_addresses_full + zone8_addresses_full + zone9_addresses_full + zone10_addresses_full + zone11_addresses_full + zone12_addresses_full + zone13_addresses_full if address]
 
 # MARK: Reset all units
 @app.route('/notifications')
 def notifications():
     for unit in unitaddresses_full:
         unitaddress = 'http://' + unit + ':5500/Temp/Reset'
-        
-        # Make a POST request to the unit address without expecting a response
-        requests.post(unitaddress)
+        requests.get(unitaddress)
+        # Make a request to the unit address 
         
     # Return an empty response
     return '', 204

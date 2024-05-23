@@ -92,6 +92,7 @@ nav, .tablink-container {
     color: #ffffff;
     display: flex;
     justify-content: center;
+    cursor: help;
     align-items: center;
     border-radius: 50%;
 }
