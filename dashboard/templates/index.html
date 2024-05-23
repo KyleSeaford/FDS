@@ -12,6 +12,7 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+        <script src="../static/js/popip.js"></script>
         <script src="../static/js/localStoreExtensions.js"></script>
         <script src="../static/js/info/conditions.js"></script>
         <script src="../static/js/info/date.js"></script>
@@ -25,6 +26,7 @@
         <script src="../static/js/graphs/rain.js"></script>
         <script src="../static/js/graphs/camera.js"></script>
     </head>
+
 
     <body>
         <div class="info-bar">
@@ -52,7 +54,12 @@
             </div>
 
             <div class="date-time2">
-                <a href="/notifications"><button id="noti" class="noti"><i class="fa fa-bell" aria-hidden="true"></i></button></a>
+                <a href="/notifications">
+                    <button id="noti" class="popup-button">
+                        <i class="fa fa-bell" aria-hidden="true"></i>
+                    </button>
+                    <span class="noti_badge"> </span>
+                </a>
                 <h4 id="page-name">FireGuard Pro - Forest Defense System (FDS)</h4>
             </div>
         </div>
@@ -72,7 +79,13 @@
             </nav>
         </header>
         
-
+        <div id="popup-window">
+            <h1>FireGuard Pro - Notification System</h1>
+            <div class="container-2">
+                <div class="message">All Notifications Have Been Reset Successfully</div>
+                <a href="/" class="popup-button-2">Back to Dashboard</a>
+            </div>
+        </div>
 
         <div class="tabcontent-container">
 

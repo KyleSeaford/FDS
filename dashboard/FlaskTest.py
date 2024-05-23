@@ -80,8 +80,11 @@ def notifications():
     for unit in unitaddresses_full:
         unitaddress = 'http://' + unit + ':5500/Temp/Reset'
         
-        print(unitaddress)
-    return render_template('noti.html')
+        # Make a POST request to the unit address without expecting a response
+        requests.post(unitaddress)
+        
+    # Return an empty response
+    return '', 204
 
 # MARK: Temp data
 @app.route('/temp/<int:unit>')

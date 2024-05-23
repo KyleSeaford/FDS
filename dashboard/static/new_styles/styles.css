@@ -82,19 +82,19 @@ nav, .tablink-container {
     margin-bottom: 1px;
 }
 
-.noti {
-    background-color: #282828;
-    color: white;
-    cursor: help;
-    font-size: 20px;
-    border: none;
-    outline: none;
-    width: 50px;
-    height: 50px;
-    margin-left: 2px; /* Add margin between the buttons */
-    margin-bottom: 1px;
+.noti_badge {
+    position: fixed;
+    top: 68px;
+    right: 315px; /* Change right to left */
+    width: 10px;
+    height: 10px;
+    background: red;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
 }
-
 
 .helpButton:hover {
     background-color: #161414;
