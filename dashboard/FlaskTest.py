@@ -54,9 +54,7 @@ def current_time():
     return jsonify({'current_time': datetime.datetime.now().strftime("%H:%M:%S")})
 
 
-# add the addresses of the units different zones
-
-#zone1_addresses_full = ['192.168.127.127', '192.168.127.133']
+# add the addresses of the units for the different zones
 zone1_addresses_full = ['192.168.127.133']
 zone2_addresses_full = ['']
 zone3_addresses_full = ['']
@@ -79,6 +77,7 @@ unitaddresses_full = [address for address in zone1_addresses_full + zone2_addres
 def notifications():
     for unit in unitaddresses_full:
         unitaddress = 'http://' + unit + ':5500/Temp/Reset'
+        # add smoke and rain reset
         requests.get(unitaddress)
         # Make a request to the unit address 
         
