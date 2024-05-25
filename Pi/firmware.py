@@ -8,7 +8,7 @@ from endpoints.tempNOsensor import api as namespaceTemperature # change to tempN
 from endpoints.smoke import api as namespaceSmoke
 from endpoints.rain import api as namespaceRain
 from endpoints.camera import api as namespaceCamera
-
+from endpoints.systemsettings import api as namespaceSystemSettings
 from endpoints.stop import api as namespaceStop 
 
 app = Flask(__name__)
@@ -20,7 +20,7 @@ api.add_namespace(namespaceTemperature, path='/Temp')
 api.add_namespace(namespaceSmoke, path='/smoke')
 api.add_namespace(namespaceRain, path='/rain')
 api.add_namespace(namespaceCamera, path='/camera')
-
+api.add_namespace(namespaceSystemSettings, path='/systemsettings')
 api.add_namespace(namespaceStop, path='/stop')
 
 
