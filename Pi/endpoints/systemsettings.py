@@ -10,7 +10,7 @@ app = Flask(__name__)
 api = Api(app)
 api = Namespace('SystemSettings', description='System Settings Endpoint')
 
-databaseName = 'C:\\Code\\FDS\\Pi\\sensordata.db'
+databaseName = '../Pi/sensordata.db'
 class systemsettings():    
     def __init__(self, db = 'sensordata.db'):
         global databaseName
