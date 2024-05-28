@@ -31,7 +31,7 @@ class DataAdder(threading.Thread):
 
             if temp > 50 and sent == False:
                 print("Temperature is above 50 degrees")
-                send("Temperature is above 50 degrees", "Temperature Alert")
+                send(f"A Temperature of 50°C+ has been detected.\nFailure to take immediate action may result in significant damage to property and wildlife.\nPlease navigate to your dashboard and take further action. *link to dashboard*", "URGENT: FireGuardPro Temperature Alert")
                 sent = True
 
             current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")

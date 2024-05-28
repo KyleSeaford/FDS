@@ -49,13 +49,27 @@ class GetSetting(Resource):
         db = database_extensions(databaseName)
         recordExisits = db.fetchSingleValue(f"select count(*) from `Settings` where Sname='{sname}'")
         if recordExisits == 1:
-            return {'message': f'Setting {sname} dose now exisit'}, 400
+            return {'message': f'Setting {sname} dose not exisit'}, 400
         
         db.execute(f"update `Settings` set Svalue='{svalue}' where Sname='{sname}'");
 
         return {'message': 'Setting successfully updated'}, 200
     
-    #TODO add delete
+
+@api.route('/Setting/delete', doc={"description": "Delete a setting"})
+class DeleteSetting(Resource):
+    @api.doc(parser=parserAdd)
+    def post(self):
+        args = parserAdd.parse_args()
+        sname = args['Name']
+        
+        db = database_extensions(databaseName)
+        recordExists = db.fetchSingleValue(f"SELECT COUNT(*) FROM `Settings` WHERE Sname='{sname}'")
+        if recordExists == 0:
+            return {'message': f'Setting {sname} does not exist'}, 400
+        
+        db.execute(f"DELETE FROM `Settings` WHERE Sname='{sname}'")
+        return {'message': 'Setting successfully deleted'}, 200
 
 ### Route /Setting ########################################         
 @api.route('/Setting', doc={"description": "Add a new setting"})

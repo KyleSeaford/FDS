@@ -36,7 +36,7 @@ def send(message_message, message_subject):
         smtpObj.login(smtp_username, smtp_password)
         
         smtpObj.sendmail(sender, receiver, message.as_string())
-        print("Successfully sent email")
+        print("Successfully sent email to: ", receiver)
 
     except smtplib.SMTPException as e:
         print(f"Error: {e}")
