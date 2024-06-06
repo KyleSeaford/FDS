@@ -3,5 +3,6 @@
         "colour",
         "elmnt",
         "tablinks"
-    ]
+    ],
+    "liveServer.settings.port": 5501
 }

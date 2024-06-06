@@ -5,7 +5,6 @@ from flask import Flask, render_template, jsonify
 import datetime
 import requests
 from flask_cors import CORS
-import random
 import json
 
 from location import get_location
@@ -67,7 +66,7 @@ zone9_addresses_full = ['']
 zone10_addresses_full = ['']
 zone11_addresses_full = ['']
 zone12_addresses_full = ['']
-zone13_addresses_full = []
+zone13_addresses_full = ['']
 
 # fill in the addresses for all the units
 unitaddresses_full = [address for address in zone1_addresses_full + zone2_addresses_full + zone3_addresses_full + zone4_addresses_full + zone5_addresses_full + zone6_addresses_full + zone7_addresses_full + zone8_addresses_full + zone9_addresses_full + zone10_addresses_full + zone11_addresses_full + zone12_addresses_full + zone13_addresses_full if address]
