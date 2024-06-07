@@ -10,7 +10,7 @@ api = Namespace('Camera', description='camera endpoint')
 class HelloWorld(Resource):
     def get(self):
         # random images pls ignore 
-        image_dir = "/FDS/Pi/endpoints/cameraImgs"
+        image_dir = "/home/harry/FDS/Pi/endpoints/cameraImgs/"
         images = os.listdir(image_dir)
         random_image = random.choice(images)
         image_path = os.path.join(image_dir, random_image)
