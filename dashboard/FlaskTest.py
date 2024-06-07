@@ -233,11 +233,11 @@ def zone1smokes():
 
     unitaddresses = zone1_addresses_full
     for unit in unitaddresses:
-        unitaddress = 'http://' + unit + ':5000/smoke/smoke'
+        unitaddress = 'http://' + unit + ':5500/smoke/Smoke'
         response = requests.get(unitaddress)
 
         smoke_data = json.loads(response.text)
-        smokes.append({'unit': unit, 'smoke': smoke_data['smoke']})
+        smokes.append({'unit': unit, 'smoke': smoke_data['smokes']})
 
     return jsonify(smokes)
 
@@ -248,7 +248,7 @@ def zone1smokes10():
 
     unitaddresses = zone1_addresses_full
     for unit in unitaddresses:
-        unitaddress = 'http://' + unit + ':5000/smoke/smoke10'
+        unitaddress = 'http://' + unit + ':5500/smoke/Smoke10'
         response = requests.get(unitaddress)
 
         smoke_data = json.loads(response.text)

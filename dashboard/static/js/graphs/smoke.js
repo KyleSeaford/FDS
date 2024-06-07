@@ -15,7 +15,7 @@ function graphSmoke(zoneNumber) {
 
     var smokeData = [[],[],[],[],[]];
     var smokeChart;
-    var updateInterval = 2000; // Update every 2 seconds
+    var updateInterval = 2200; // Update every 2 seconds
     // Get the canvas element for the chart
     var ctx = document.getElementById(`smokeChart${zoneNumber}`).getContext('2d');
 
@@ -105,7 +105,7 @@ function graphSmoke(zoneNumber) {
             // gets 1 reading from the unit
             console.log("gets on reading from the pi single reading")
             console.log("Fetching 1 reading for zone", zoneNumber);
-            const url = window.location.origin + '/zone1smoke1data';
+            const url = window.location.origin + '/zone1smokedata';
             $.get(url, function(data){
                 console.log("data=", data);
                 for (let i = 0; i < data.length; i++){
