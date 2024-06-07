@@ -39,32 +39,42 @@ function CreateZoneContentDiv(i) {
             </div>
             
             <div class="box" id="">
+                <h3>Camera Feed for Zone1</h3>
                 <div class="img-wrapper">
-                    <img id="camimg0" src="" alt="Camera Image" class="camera-img">
+                    <img id="camimg" src="" class="camera-img">
                 </div>
             </div>
         </div>
         <style>
             .img-wrapper {
                 overflow: hidden;
+                width: 95%;
+                height: 85%;
+                border-radius: 5px;
+                margin-bottom: 20px;
             }
-
+            
             .camera-img {
-                transition: transform 1s ease;
-                width: 100%;
-                hight: auto;
+                transition: transform 0.6s ease;
             }
-
+            
             .camera-img.exit {
                 transform: translateX(-100%);
             }
-
+            
             .camera-img.enter {
                 transform: translateX(100%);
             }
-
+            
             .camera-img.active {
                 transform: translateX(0);
+            }
+            
+            h3 {
+                text-align: center;
+                margin-bottom: 20px;
+                color: gray;
+                font-size: 0.7rem;
             }
         </style>
     `;
