@@ -69,13 +69,13 @@ class HelloWorld(Resource):
         return {'rain': rain}
 
 # endpoint to get the last 10 record from the database
-@api.route('/Rain10', doc={"description": "Get the last 10"})
+@api.route('/Rain10', doc={"description": "Get the last 10 records"})
 class HelloWorld(Resource):
     def get(self):
         # get last values from the database
         conn = sqlite3.connect('sensordata.db')
         cursor = conn.cursor()
-        cursor.execute('SELECT `rain` FROM `Rain` ORDER BY `Time` DESC LIMIT 10')
+        cursor.execute('SELECT * FROM `Rain` ORDER BY `Time` DESC LIMIT 10')
         rains = cursor.fetchall()
         conn.close()
 

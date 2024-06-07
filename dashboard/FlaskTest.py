@@ -286,6 +286,7 @@ def zone1rains10():
 
     return jsonify(rains[:10])
 
+
 """@app.route('/zone1cameradata')
 def zone1cameras():
     cameras = []
