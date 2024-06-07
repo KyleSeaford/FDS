@@ -39,18 +39,34 @@ function CreateZoneContentDiv(i) {
             </div>
             
             <div class="box" id="">
-                <!-- Image SlideShow -->
-                Number of Zones= ${getNumberOfZones()}<br />
-                Current Zone number= ${i}<br />
-                Current Units in zone = ${getNumberOfUnits(i)} <br />
-                zone ${i} unit 1 colour= ${getUnitColor(i, 0)}<br />
-                zone ${i} unit 1 address= ${getUnitAddress(i, 0)}<br />
-                zone ${i} unit 2 colour= ${getUnitColor(i, 1)}<br />
-                zone ${i} unit 2 address= ${getUnitAddress(i, 1)}<br />
-                zone ${i} unit 3 colour= ${getUnitColor(i, 2)}<br />
-                zone ${i} unit 3 address= ${getUnitAddress(i, 2)}<br />
+                <div class="img-wrapper">
+                    <img id="camimg0" src="" alt="Camera Image" class="camera-img">
+                </div>
             </div>
         </div>
+        <style>
+            .img-wrapper {
+                overflow: hidden;
+            }
+
+            .camera-img {
+                transition: transform 1s ease;
+                width: 100%;
+                hight: auto;
+            }
+
+            .camera-img.exit {
+                transform: translateX(-100%);
+            }
+
+            .camera-img.enter {
+                transform: translateX(100%);
+            }
+
+            .camera-img.active {
+                transform: translateX(0);
+            }
+        </style>
     `;
     return zoneContentDiv;
 }

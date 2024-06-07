@@ -168,7 +168,7 @@ def rains():
 
     return jsonify(rains)
 
-"""# MARK: Camera data
+# MARK: Camera data
 @app.route('/camera/<int:unit>')
 def camera_int(unit):
     return jsonify({'error': 'unit not found'})
@@ -176,7 +176,7 @@ def camera_int(unit):
 @app.route('/camera/<unit>')
 def camera_string(unit):
     # get the smoke from the unit
-    unitaddress = 'http://' + unit + ':5000/camera/camera'
+    unitaddress = 'http://' + unit + ':5500/camera/camera'
     return jsonify(unitaddress)
 
 
@@ -187,12 +187,11 @@ def cameras():
 
     unitaddresses = unitaddresses_full
     for unit in unitaddresses:
-        unitaddress = 'http://' + unit + ':5000/camera/camera'
+        unitaddress = 'http://' + unit + ':5500/camera/camera'
 
         cameras.append({'unit': unit, 'camera': unitaddress})
     
     return jsonify(cameras)
-"""
 
 # MARK: zone 1 app routes
 @app.route('/zone1tempdata')
@@ -287,14 +286,14 @@ def zone1rains10():
     return jsonify(rains[:10])
 
 
-"""@app.route('/zone1cameradata')
+@app.route('/zone1cameradata')
 def zone1cameras():
     cameras = []
 
     # Generate a new list of unit addresses on each request
-    unitaddresses = random.sample(zone1_addresses_full, len(zone1_addresses_full))
+    unitaddresses = zone1_addresses_full
     for unit in unitaddresses:
-        unitaddress = 'http://' + unit + ':5000/camera/camera'
+        unitaddress = 'http://' + unit + ':5500/camera/camera'
 
         cameras.append({'unit': unit, 'camera': unitaddress})
     
@@ -304,7 +303,7 @@ def zone1cameras():
 
 # fill in the addresses of the units in zone 2
 zone2_addresses_full = ['']
- """
+
 
 
 # MARK: ip and debug mode
