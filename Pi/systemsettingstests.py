@@ -1,3 +1,4 @@
+# Unit tests for the systemsettings endpoint
 import unittest
 import tempfile
 import sqlite3

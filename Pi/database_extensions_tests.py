@@ -1,3 +1,4 @@
+# Unit tests for the database_extensions class
 import unittest
 import tempfile
 import sqlite3

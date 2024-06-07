@@ -1,3 +1,4 @@
+# code for the emergency stop endpoint
 import os
 from flask_restx import Namespace, Resource
 

@@ -1,3 +1,4 @@
+# holds the system settings endpoint which allows the user to add, update, delete and get system settings
 from flask_restx import Namespace, Resource, Api, fields, reqparse
 from flask import Flask, request
 import platform

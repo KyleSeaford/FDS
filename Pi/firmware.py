@@ -1,4 +1,4 @@
-# pi side 
+# main entry point for the firmware. It is for the units
 from flask import Flask
 from flask_restx import Api
 from flask_cors import CORS

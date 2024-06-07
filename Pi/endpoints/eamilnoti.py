@@ -1,3 +1,4 @@
+# send email notification to the user
 import smtplib
 import sqlite3
 from email.mime.text import MIMEText

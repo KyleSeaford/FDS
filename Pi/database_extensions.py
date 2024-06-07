@@ -1,3 +1,4 @@
+# This file contains the database_extensions class that is used to interact with the database.
 import sqlite3
 
 class database_extensions():
