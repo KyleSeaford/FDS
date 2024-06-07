@@ -1,8 +1,4 @@
 // Load the camera data from the pi and display it on the dashboard
-
-// dosn't seem to change the image, it just keeps it as the spacefiller image idk why!!!
-
-
 $(document).ready(function(){
     const a =  window.location.origin + '/zone1cameradata';
     $.getJSON(a, function(data) {
