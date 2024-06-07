@@ -16,7 +16,6 @@ api = Namespace('Temp', description='Temp endpoint')
 # Variable to keep track of whether a notification has been sent
 sent = False
 
-
 # Use a separate thread to run the data addition function
 class DataAdder(threading.Thread):
     def __init__(self):
@@ -51,7 +50,6 @@ class DataAdder(threading.Thread):
 
 data_adder = DataAdder()
 data_adder.start()
-
 
 # endpoint to return the temperature once
 @api.route('/Temp', doc={"description": "Get the temperature"})
@@ -90,7 +88,6 @@ class HelloWorld(Resource):
         global sent
         sent = False
         return {'message': 'Notifications reset successfully'}
-
 
 # endpoint to stop the temperature data addition
 @api.route('/Stop', doc={"description": "Stop the temperature data addition"})

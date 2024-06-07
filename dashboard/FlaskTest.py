@@ -77,9 +77,11 @@ def notifications():
     for unit in unitaddresses_full:
         unitaddress_temp = 'http://' + unit + ':5500/Temp/Reset'
         unitaddress_smoke = 'http://' + unit + ':5500/smoke/Reset'
-        # add smoke and rain reset
+        unitaddress_rain = 'http://' + unit + ':5000/rain/Reset'
+        # reset the temperature, smoke and rain data
         requests.get(unitaddress_temp)
         requests.get(unitaddress_smoke)
+        requests.get(unitaddress_rain)
         # Make a request to the unit address 
         
     # Return an empty response
@@ -113,7 +115,6 @@ def temps():
     return jsonify(temps)
 
 # MARK: Smoke data
-
 @app.route('/smoke/<int:unit>')
 def smoke_int(unit):
     return jsonify({'error': 'unit not found'})
@@ -140,8 +141,7 @@ def smokes():
 
     return jsonify(smokes)
 
-"""# MARK: Rain data
-
+# MARK: Rain data
 @app.route('/rain/<int:unit>')
 def rain_int(unit):
     return jsonify({'error': 'unit not found'})
@@ -168,8 +168,7 @@ def rains():
 
     return jsonify(rains)
 
-# MARK: Camera data
-
+"""# MARK: Camera data
 @app.route('/camera/<int:unit>')
 def camera_int(unit):
     return jsonify({'error': 'unit not found'})
@@ -257,14 +256,14 @@ def zone1smokes10():
     return jsonify(smokes[:10])
 
 
-"""@app.route('/zone1raindata')
+@app.route('/zone1raindata')
 def zone1rains():
 
     rains = []
 
     unitaddresses = zone1_addresses_full
     for unit in unitaddresses:
-        unitaddress = 'http://' + unit + ':5000/rain/rain'
+        unitaddress = 'http://' + unit + ':5000/rain/Rain'
         response = requests.get(unitaddress)
 
         rain_data = json.loads(response.text)
@@ -272,7 +271,7 @@ def zone1rains():
 
     return jsonify(rains)
 
-@app.route('/zone1cameradata')
+"""@app.route('/zone1cameradata')
 def zone1cameras():
     cameras = []
 

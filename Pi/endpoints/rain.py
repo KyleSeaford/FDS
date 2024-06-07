@@ -28,10 +28,10 @@ class DataAdder(threading.Thread):
             rain = random.randint(0, 100)
 
             print("Rain: ", rain, "sent", sent)
-            # sends email if rain is above 80 and a notification has not been sent
-            if rain > 80 and sent == False:
-                print("Rain Percentage is above 80%")
-                send(f"A Rain Percentage of 80%+ has been detected.\nFailure to take immediate action may result in significant damage to property and wildlife.\nPlease navigate to your dashboard and take further action. *link to dashboard*", "URGENT: FireGuardPro Rain Alert")
+            # sends email if rain is above 20 and a notification has not been sent
+            if rain > 20 and sent == False:
+                print("Rain Percentage is above 20%")
+                send(f"A Rain Percentage of 20%+ has been detected.\nFailure to take immediate action may result in significant damage to property and wildlife.\nPlease navigate to your dashboard and take further action. *link to dashboard*", "URGENT: FireGuardPro Rain Alert")
                 sent = True
 
             current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -88,7 +88,6 @@ class HelloWorld(Resource):
         global sent
         sent = False
         return {'message': 'Notifications reset successfully'}
-
 
 # endpoint to stop the rain data addition
 @api.route('/Stop', doc={"description": "Stop the rain data addition"})
