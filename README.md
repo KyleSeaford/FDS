@@ -46,6 +46,8 @@ For any questions or inquiries related to this project, you can reach out to Kyl
 - [x] change the "FireGuard Pro - Forest Defense System (FDS)" on the info bar to the logo. (FDS\dashboard\static\imgs\name.png)
 - [ ] improve weather API so it updates more (can't due to free API limit)
 - [ ] show how many notifications are not cleared
+- [ ] improve responsiveness, it's not the best right now
+- [ ] improve refreshes 
 
 ## tasks
 - [x] use the data and show it on a graph on the dashboard
