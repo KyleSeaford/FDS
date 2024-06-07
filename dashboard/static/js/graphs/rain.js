@@ -91,7 +91,7 @@ function graphRain(zoneNumber) {
                     let unitdata = data[i];
                     console.log("unitdata=", unitdata);
 
-                    for (let j = 0; j < unitdata.length; j++) {
+                    for (let j = 0; j < unitdata.rain.length; j++) {
                         let r = unitdata.rain[j][1];
                         console.log("j=", i, j, r);
                         rainData[i].push(r);
