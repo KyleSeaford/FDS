@@ -80,9 +80,9 @@ function graphTemp(zoneNumber) {
 
     // Update the temperature data and display
     function fetchData() {
-        console.log("Fetching data for zone", zoneNumber);
+        console.log("Fetching temp data for zone", zoneNumber);
         if (temperatureData[0].length === 0) {
-            // gets 10 readings from the pi
+            // gets 10 readings from the unit
             console.log("Fetching 10 readings for zone", zoneNumber);
             const url = window.location.origin + '/zone1temp10data';
             $.getJSON(url, function(data) {
@@ -100,10 +100,9 @@ function graphTemp(zoneNumber) {
                 console.log("updatechart temperatureData=",temperatureData);
                 updateChart();
             });
-
         }
         else{
-            // gets on reading from the pi
+            // gets 1 reading from the unit
             console.log("gets on reading from the pi single reading")
             console.log("Fetching 1 reading for zone", zoneNumber);
             const url = window.location.origin + '/zone1tempdata';
@@ -128,4 +127,3 @@ function graphTemp(zoneNumber) {
     fetchData();
     setInterval(fetchData, updateInterval);
 }
-

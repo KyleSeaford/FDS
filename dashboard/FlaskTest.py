@@ -75,9 +75,11 @@ unitaddresses_full = [address for address in zone1_addresses_full + zone2_addres
 @app.route('/notifications')
 def notifications():
     for unit in unitaddresses_full:
-        unitaddress = 'http://' + unit + ':5500/Temp/Reset'
+        unitaddress_temp = 'http://' + unit + ':5500/Temp/Reset'
+        unitaddress_smoke = 'http://' + unit + ':5500/smoke/Reset'
         # add smoke and rain reset
-        requests.get(unitaddress)
+        requests.get(unitaddress_temp)
+        requests.get(unitaddress_smoke)
         # Make a request to the unit address 
         
     # Return an empty response
@@ -110,7 +112,7 @@ def temps():
 
     return jsonify(temps)
 
-""" # MARK: Smoke data
+# MARK: Smoke data
 
 @app.route('/smoke/<int:unit>')
 def smoke_int(unit):
@@ -138,7 +140,7 @@ def smokes():
 
     return jsonify(smokes)
 
-# MARK: Rain data
+"""# MARK: Rain data
 
 @app.route('/rain/<int:unit>')
 def rain_int(unit):
@@ -191,7 +193,8 @@ def cameras():
         cameras.append({'unit': unit, 'camera': unitaddress})
     
     return jsonify(cameras)
- """
+"""
+
 # MARK: zone 1 app routes
 @app.route('/zone1tempdata')
 def zone1temps():
@@ -223,8 +226,7 @@ def zone1temps10():
     
         return jsonify(temps[:10])
 
-
-""" @app.route('/zone1smokedata')
+@app.route('/zone1smokedata')
 def zone1smokes():
 
     smokes = []
@@ -239,7 +241,23 @@ def zone1smokes():
 
     return jsonify(smokes)
 
-@app.route('/zone1raindata')
+@app.route('/zone1smoke10data')
+def zone1smokes10():
+
+    smokes = []
+
+    unitaddresses = zone1_addresses_full
+    for unit in unitaddresses:
+        unitaddress = 'http://' + unit + ':5000/smoke/smoke10'
+        response = requests.get(unitaddress)
+
+        smoke_data = json.loads(response.text)
+        smokes.append({'unit': unit, 'smoke': smoke_data['smoke']})
+
+    return jsonify(smokes[:10])
+
+
+"""@app.route('/zone1raindata')
 def zone1rains():
 
     rains = []
