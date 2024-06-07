@@ -1,5 +1,4 @@
-# rain sensor endpoint with email notification
-
+# rain code with simulating data and email notification
 from flask_restx import Namespace, Resource, Api
 from flask import Flask
 import random

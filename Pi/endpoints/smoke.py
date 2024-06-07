@@ -1,5 +1,4 @@
-# smoke sensor endpoint with email notification
-
+# smoke code with simulating data and email notification
 from flask_restx import Namespace, Resource, Api
 from flask import Flask
 import random

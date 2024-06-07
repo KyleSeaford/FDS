@@ -3,8 +3,7 @@ from flask import Flask
 from flask_restx import Api
 from flask_cors import CORS
 
-from endpoints.systemN import api as namespaceSystem
-from endpoints.tempNOsensor import api as namespaceTemperature # change to tempNOsensor.py if unit has no sensor
+from endpoints.temperature import api as namespaceTemperature
 from endpoints.smoke import api as namespaceSmoke
 from endpoints.rain import api as namespaceRain
 from endpoints.camera import api as namespaceCamera
@@ -15,7 +14,6 @@ app = Flask(__name__)
 CORS(app)  # Allow CORS for all routes
 api = Api(app, version='1.0', title='PI Firmware', description='Pi Side Firmware Controller')
 
-api.add_namespace(namespaceSystem, path='/system')
 api.add_namespace(namespaceTemperature, path='/Temp')
 api.add_namespace(namespaceSmoke, path='/smoke')
 api.add_namespace(namespaceRain, path='/rain')

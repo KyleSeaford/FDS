@@ -1,5 +1,6 @@
 from flask_restx import Namespace, Resource, Api, fields, reqparse
 from flask import Flask, request
+import platform
 from database_extensions import database_extensions
 
 app = Flask(__name__)
@@ -87,3 +88,13 @@ class AddSetting(Resource):
         
         db.execute(f"INSERT INTO `Settings` (Sname, Svalue) VALUES ('{sname}', '{svalue}')")
         return {'message': 'Setting added successfully'}, 201
+    
+def get_system_name():
+    system_name = platform.system()
+    return system_name
+
+@api.route('/Setting/systemName', doc={"description": "get system name"})
+class HelloWorld(Resource):
+    def get(self):
+        systemName = get_system_name()
+        return {'system name': systemName}
