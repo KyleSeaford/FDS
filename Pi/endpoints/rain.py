@@ -79,7 +79,7 @@ class HelloWorld(Resource):
         rains = cursor.fetchall()
         conn.close()
 
-        return {'rains': rains}
+        return {'rain': rains}
     
 # endpoint to reset notifications
 @api.route('/Reset', doc={"description": "Reset the rain notifications"})

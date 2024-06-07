@@ -35,7 +35,7 @@ function CreateZoneContentDiv(i) {
             </div>
 
             <div class="box">
-                <canvas id="rainChart"></canvas>
+                <canvas id="rainChart${i}"></canvas>
             </div>
             
             <div class="box" id="">
