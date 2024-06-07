@@ -7,6 +7,8 @@ The Forest Defense System (FDS) utilizes a network of sensors connected to Raspb
 
 ## Screenshots
 
+
+
 ## Features
 
 - **Sensor Network**: Utilizes a network of sensors including smoke detectors, temperature sensors, rain sensors, and cameras.
@@ -17,6 +19,9 @@ The Forest Defense System (FDS) utilizes a network of sensors connected to Raspb
 ## Usage
 
 The Forest Defense System (FDS) continuously monitors the environment for any signs of wildfires. Users can access the web interface to view real-time data and receive alerts in case of any detected anomalies.
+
+Example Dashboard: 
+Example Unit Firmware:
 
 ## Contact
 
