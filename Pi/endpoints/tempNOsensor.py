@@ -1,3 +1,5 @@
+# temperature sensor endpoint with email notification
+
 from flask_restx import Namespace, Resource, Api
 from flask import Flask
 import random
@@ -53,7 +55,6 @@ data_adder.start()
 
 
 # endpoint to return the temperature once
-
 @api.route('/Temp', doc={"description": "Get the temperature"})
 class HelloWorld(Resource):
     def get(self):
@@ -83,7 +84,7 @@ class HelloWorld(Resource):
 
         return {'temp': temps}
 
-# endpoint to reset notifcations
+# endpoint to reset notifications
 @api.route('/Reset', doc={"description": "Reset the temperature notifications"})
 class HelloWorld(Resource):
     def get(self):
