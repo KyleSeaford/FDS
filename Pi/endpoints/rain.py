@@ -59,7 +59,7 @@ class HelloWorld(Resource):
         conn = sqlite3.connect('sensordata.db')
         cursor = conn.cursor()
         cursor.execute('SELECT `rain` FROM `Rain` ORDER BY `Time` DESC LIMIT 1')
-        rains = cursor.fetchone()
+        rains = cursor.fetchall()
         conn.close()
         if len(rains) > 0:
             rain = rains[0][0]
