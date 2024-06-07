@@ -300,7 +300,7 @@ def zone1cameras():
     return jsonify(cameras)
 
 # MARK: zone 2 app routes
-
+# in the production version, the code for zone 2 will be similar to the code for zone 1
 # fill in the addresses of the units in zone 2
 zone2_addresses_full = ['']
 
