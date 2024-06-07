@@ -67,7 +67,7 @@ class HelloWorld(Resource):
         else:
             smoke = "No data available"
 
-        return {'smokes': smoke}
+        return {'smoke': smoke}
 
 # endpoint to get the last 10 record from the database
 @api.route('/Smoke10', doc={"description": "Get the last 10 records"})

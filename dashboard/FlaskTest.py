@@ -237,7 +237,7 @@ def zone1smokes():
         response = requests.get(unitaddress)
 
         smoke_data = json.loads(response.text)
-        smokes.append({'unit': unit, 'smoke': smoke_data['smokes']})
+        smokes.append({'unit': unit, 'smoke': smoke_data['smoke']})
 
     return jsonify(smokes)
 
