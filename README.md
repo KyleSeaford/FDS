@@ -5,16 +5,56 @@ Welcome to the Forest Defense System (FDS) repository, a system designed for ear
 
 The Forest Defense System (FDS) utilizes a network of sensors connected to Raspberry Pis to detect various environmental conditions such as smoke, temperature changes, and rain as well as visual monitoring through cameras. These sensors continuously monitor the area for any signs of fire or smoke.
 
-## Screenshots
-
-
-
 ## Features
 
 - **Sensor Network**: Utilizes a network of sensors including smoke detectors, temperature sensors, rain sensors, and cameras.
 - **Solar-Powered Nodes**: Each node in the network is solar-powered, ensuring continuous operation even in remote areas without access to conventional power sources.
 - **Automated Responses**: Upon detecting any changes or triggers from the sensors, the system automatically initiates responses such as email alerts, text alerts, and notifications to emergency responders.
 - **Data Visualization**: The data collected from the sensor network can be viewed on a webpage created using Flask and HTML, providing real-time monitoring and visualization of environmental conditions.
+
+## Screenshots
+### Home Page and Overview
+- The main dashboard of the Forest Defense System
+- The main dashboard with one unit
+- The main dashboard with two units
+
+### Sensor Data Visualization
+-  Sensor data displayed in a the graphs.
+
+-  Real-time data feed from the sensor network
+
+-  Temperature database
+-  Smoke database
+-  Rain database
+
+### Automated Responses
+- Examples of an alert notifications triggered by the system
+- Temperature alert
+- Smoke alert
+- Rain alert
+
+### Camera Feed
+-  Real-time camera feed
+
+-  Smooth transition effect for the camera images
+
+### User Interface Elements
+- Configuration page where users can set alert parameters
+
+- Notifications page displaying that there is an active
+- Help buttons Tips box
+- Configure Zones Button
+- Dynamicllly changing Tabbuttons
+- Configure Unit Button
+- Dynamically changing Unit Table 
+
+### Firmware (units) Page
+- Homepage
+- Temperature endpoints
+- Smoke endpoints
+- Rain endpoints
+- Camera endpoints
+- System settings endpoints
 
 ## Usage
 
