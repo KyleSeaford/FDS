@@ -20,8 +20,8 @@ The Forest Defense System (FDS) utilizes a network of sensors connected to Raspb
 
 The Forest Defense System (FDS) continuously monitors the environment for any signs of wildfires. Users can access the web interface to view real-time data and receive alerts in case of any detected anomalies.
 
-Example Dashboard: 
-Example Unit Firmware:
+-Example Dashboard: [https://fireguardprodashboard.pythonanywhere.com/](https://fireguardprodashboard.pythonanywhere.com/)
+-Example Unit Firmware: [https://fireguardprounit1.pythonanywhere.com/](https://fireguardprounit1.pythonanywhere.com/)
 
 ## Contact
 
