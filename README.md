@@ -14,51 +14,77 @@ The Forest Defense System (FDS) utilizes a network of sensors connected to Raspb
 
 ## Screenshots
 ### Home Page and Overview
-- The main dashboard of the Forest Defense System
-- The main dashboard with one unit
-- The main dashboard with two units
+- The main dashboard of the Forest Defense System:
+> ![main dashboard](Documentation/Screenshots/dash0unit.png)
+- The main dashboard with one unit:
+> ![main dashboard 1 unit](Documentation/Screenshots/dash1unit.png)
+- The main dashboard with two units: 
+> ![the main dashboard 2 unit](Documentation/Screenshots/dash2unit.png)
+- The main dashboard and real-time data:
+> <video src="Documentation/Screenshots/fulldash.mp4" controls></video>
 
 ### Sensor Data Visualization
-- Sensor data displayed in a the graphs.
-
-- Real-time data feed from the sensor network
+- Sensor data is displayed in the graphs.
+> ![main dashboard](Documentation/Screenshots/data.png)
+- Real-time data feed from the sensor network:
+> ![real-time data](Documentation/Screenshots/realtimedata.png)
 
 - Temperature database
+> ![temp data](Documentation/Screenshots/tempdb.png)
 - Smoke database
+> ![smoke data](Documentation/Screenshots/smokedb.png)
 - Rain database
+> ![rain data](Documentation/Screenshots/raindb.png)
 
 ### Automated Responses
-- Examples of an alert notifications triggered by the system
-- Temperature alert
-- Smoke alert
-- Rain alert
+- Examples of alert notifications triggered by the system:
+- Temperature alert:
+> ![temp alert](Documentation/Screenshots/tempnot.png)
+- Smoke alert:
+> ![smoke alert](Documentation/Screenshots/smokenoti.png)
+- Rain alert:
+> ![rain alert](Documentation/Screenshots/rainnoti.png)
 
 ### Camera Feed
-- Real-time camera feed
+- Real-time camera feed:
+> ![camera](Documentation/Screenshots/realtimeimg.png)
 
-- Smooth transition effect for the camera images
+- Smooth transition effect for the camera images:
+> <video src="Documentation/Screenshots/smothcamera.mp4" controls></video>
 
 ### User Interface Elements
 - Configuration page where users can set alert parameters
-
-- Notifications page displaying that there is an active
-- Help buttons Tips box
-- Configure Zones Button
-- Dynamicllly changing Tabbuttons
-- Configure Unit Button
-- Dynamically changing Unit Table 
+> ![settings](Documentation/Screenshots/putnoticationsetting.png)
+- The notifications page displays that there is an active notification:
+> ![notification](Documentation/Screenshots/notifcation.png)
+- Help buttons Tips box:
+> ![help](Documentation/Screenshots/helpbox.png)
+- Configure Zones Button:
+> ![zones](Documentation/Screenshots/zonebutton.png)
+- Dynamically changing Tabbuttons:
+> ![buttons](Documentation/Screenshots/tabbuttons.png)
+- Configure Unit Button:
+> ![u button](Documentation/Screenshots/unitbutton.png)
+- Dynamically changing Unit Table:
+> ![u table](Documentation/Screenshots/unittable.png)
 
 ### Firmware (units) Page
 - Homepage
+> ![settings](Documentation/Screenshots/unithomepage.png)
 - Temperature endpoints
+> ![settings](Documentation/Screenshots/unittemp.png)
 - Smoke endpoints
+> ![settings](Documentation/Screenshots/unitsmoke.png)
 - Rain endpoints
+> ![settings](Documentation/Screenshots/unitrain.png)
 - Camera endpoints
+> ![settings](Documentation/Screenshots/unitimg.png)
 - System settings endpoints
+> ![settings](Documentation/Screenshots/unitsettings.png)
 
 ## Usage
 
-The Forest Defense System (FDS) continuously monitors the environment for any signs of wildfires. Users can access the web interface to view real-time data and receive alerts in case of any detected anomalies, Examples are bellow 
+The Forest Defense System (FDS) continuously monitors the environment for any signs of wildfires. Users can access the web interface to view real-time data and receive alerts in case of any detected anomalies, Examples are below 
 
 - Example Dashboard: 
 - Example Unit Firmware: 
@@ -103,4 +129,4 @@ For any questions or inquiries related to this project, you can reach out to Kyl
 - [x] Make the notifications button clear more than just temp
 - [x] Make code easy to add to new units
 - [ ] Deploy examples
-- [ ] Take screenshots
+- [x] Take screenshots
