@@ -17,11 +17,15 @@ The Forest Defense System (FDS) utilizes a network of sensors connected to Raspb
 - The main dashboard of the Forest Defense System:
 > ![main dashboard](Documentation/Screenshots/dash0unit.png)
 - The main dashboard with one unit:
-> ![main dashboard 1 unit](Documentation/Screenshots/dash1unit.png)
+> ![main dashboard 1 unit](Documentation/Screenshots/dash1unit.PNG)
 - The main dashboard with two units: 
-> ![the main dashboard 2 unit](Documentation/Screenshots/dash2unit.png)
+> ![the main dashboard 2 unit](Documentation/Screenshots/dash2unit.PNG)
 - The main dashboard and real-time data:
-> <video src="Documentation/Screenshots/fulldash.mp4" controls></video>
+<video src="Documentation/Screenshots/fulldash.mp4
+
+https://github.com/KyleSeaford/FDS/assets/147045805/658e68b0-b1e9-4baa-9c89-e8fdb32be0af
+
+" controls></video>
 
 ### Sensor Data Visualization
 - Sensor data is displayed in the graphs.
@@ -45,13 +49,6 @@ The Forest Defense System (FDS) utilizes a network of sensors connected to Raspb
 - Rain alert:
 > ![rain alert](Documentation/Screenshots/rainnoti.png)
 
-### Camera Feed
-- Real-time camera feed:
-> ![camera](Documentation/Screenshots/realtimeimg.png)
-
-- Smooth transition effect for the camera images:
-> <video src="Documentation/Screenshots/smothcamera.mp4" controls></video>
-
 ### User Interface Elements
 - Configuration page where users can set alert parameters
 > ![settings](Documentation/Screenshots/putnoticationsetting.png)
@@ -74,7 +71,7 @@ The Forest Defense System (FDS) utilizes a network of sensors connected to Raspb
 - Temperature endpoints
 > ![settings](Documentation/Screenshots/unittemp.png)
 - Smoke endpoints
-> ![settings](Documentation/Screenshots/unitsmoke.png)
+> ![settings](Documentation/Screenshots/unitsmoek.png)
 - Rain endpoints
 > ![settings](Documentation/Screenshots/unitrain.png)
 - Camera endpoints
