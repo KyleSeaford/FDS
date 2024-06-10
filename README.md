@@ -21,11 +21,9 @@ The Forest Defense System (FDS) utilizes a network of sensors connected to Raspb
 - The main dashboard with two units: 
 > ![the main dashboard 2 unit](Documentation/Screenshots/dash2unit.PNG)
 - The main dashboard and real-time data:
-<video src="Documentation/Screenshots/fulldash.mp4
 
 https://github.com/KyleSeaford/FDS/assets/147045805/658e68b0-b1e9-4baa-9c89-e8fdb32be0af
 
-" controls></video>
 
 ### Sensor Data Visualization
 - Sensor data is displayed in the graphs.
