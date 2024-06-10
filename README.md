@@ -81,8 +81,9 @@ https://github.com/KyleSeaford/FDS/assets/147045805/658e68b0-b1e9-4baa-9c89-e8fd
 
 The Forest Defense System (FDS) continuously monitors the environment for any signs of wildfires. Users can access the web interface to view real-time data and receive alerts in case of any detected anomalies, Examples are below 
 
-- Example Dashboard: 
-- Example Unit Firmware: 
+- To get started click "Configure Zones" and enter "1" then click "Configure Units" then enter "1". (If it doesn't load, refresh the page, Desktop View Only)
+- Example Dashboard: [https://dash-eight-blond.vercel.app/](https://dash-eight-blond.vercel.app/)
+- Example Unit Firmware: [https://unit-gamma.vercel.app/](https://unit-gamma.vercel.app/)
 
 ## Contact
 
@@ -123,5 +124,5 @@ For any questions or inquiries related to this project, you can reach out to Kyl
 - [x] Add more graphs
 - [x] Make the notifications button clear more than just temp
 - [x] Make code easy to add to new units
-- [ ] Deploy examples
+- [x] Deploy examples
 - [x] Take screenshots
