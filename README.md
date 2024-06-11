@@ -81,7 +81,7 @@ https://github.com/KyleSeaford/FDS/assets/147045805/658e68b0-b1e9-4baa-9c89-e8fd
 
 The Forest Defense System (FDS) continuously monitors the environment for any signs of wildfires. Users can access the web interface to view real-time data and receive alerts in case of any detected anomalies, Examples are below 
 
-- To get started click "Configure Zones" and enter "1" then click "Configure Units" then enter "1". (If it doesn't load, refresh the page, Desktop View Only)
+- To get started click "Configure Zones" and enter "1" then click "Configure Units" then enter "1". (If it doesn't load, refresh the page)
 - Example Dashboard: [https://dash-eight-blond.vercel.app/](https://dash-eight-blond.vercel.app/)
 - Example Unit Firmware: [https://unit-gamma.vercel.app/](https://unit-gamma.vercel.app/)
 
@@ -108,8 +108,8 @@ For any questions or inquiries related to this project, you can reach out to Kyl
 - [x] Change the "FireGuard Pro - Forest Defense System (FDS)" on the info bar to the logo. (FDS\dashboard\static\imgs\name.png)
 - [ ] Improve weather API so it updates more (can't due to free API limit)
 - [ ] Show how many notifications are not cleared
-- [ ] Improve responsiveness, it's not the best right now
-- [ ] Improve refreshes 
+- [x] Improve responsiveness, it's not the best right now
+- [x] Improve refreshes 
 
 ## Tasks
 - [x] Use the data and show it on a graph on the dashboard
